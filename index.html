@@ -125,7 +125,7 @@ color: white !important;
 <body class="font-body bg-white text-black">
 
 <!-- ================= NAVBAR ================= -->
-<header id="siteHeader" class="fixed w-full z-50">
+<header id="siteHeader" class="fixed w-full z-40">
   <nav class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
 
     <!-- Logo -->
@@ -153,10 +153,8 @@ color: white !important;
           <i class="bx bx-chevron-down text-sm"></i>
         </button>
 
-        <div class="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-64 rounded-xl bg-white shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+        <div class="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-52 rounded-xl bg-white shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
           <a href="app/pages/tujh.html" class="block px-5 py-3 text-sm text-slate-800 hover:bg-slate-50 rounded-t-xl">तुझी माझी रेशिम गाठ</a>
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSd1iYjysBpHZU2kn7-ZWCnDjVzGMxLgu3IsnJtVFArfmKVCDA/viewform" target="_blank" class="block px-5 py-3 text-sm text-slate-800 hover:bg-slate-50">Marriage Guidance Form</a>
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdhQ26S9fwF6jaf6x2Shh3azRmbYRh0LHMirg5gZM8ujCkgVw/viewform" target="_blank" class="block px-5 py-3 text-sm text-slate-800 hover:bg-slate-50">Membership Form</a>
           <a href="app/pages/contact.html" class="block px-5 py-3 text-sm text-slate-800 hover:bg-slate-50 rounded-b-xl">Contact Us</a>
         </div>
       </li>
@@ -212,8 +210,6 @@ color: white !important;
 
       <div id="mobileExploreMenu" class="mt-4 ml-4 space-y-4 hidden text-base">
         <a href="app/pages/tujh.html" class="block">तुझी माझी रेशिम गाठ</a>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSd1iYjysBpHZU2kn7-ZWCnDjVzGMxLgu3IsnJtVFArfmKVCDA/viewform" target="_blank" class="block">Marriage Guidance Form</a>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdhQ26S9fwF6jaf6x2Shh3azRmbYRh0LHMirg5gZM8ujCkgVw/viewform" target="_blank" class="block">Membership Form</a>
         <a href="app/pages/contact.html" class="block">Contact Us</a>
       </div>
     </div>
@@ -232,21 +228,7 @@ color: white !important;
   </nav>
 </div>
 
-<!-- ================= MEMBERSHIP BANNER ================= -->
-<section class="bg-gradient-to-r from-indigo-600 to-purple-600 py-4">
-  <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
-    <div class="text-white">
-      <span class="text-sm font-medium">Join our community today!</span>
-      <span class="hidden sm:inline ml-2 text-white/80">Become a member of Vijayanand Foundation</span>
-    </div>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdhQ26S9fwF6jaf6x2Shh3azRmbYRh0LHMirg5gZM8ujCkgVw/viewform" 
-       target="_blank"
-       class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white text-indigo-600 font-medium hover:bg-slate-50 transition text-sm">
-      <i class="bx bx-user-plus"></i>
-      <span>Membership Form</span>
-    </a>
-  </div>
-</section>
+
 
 <!-- ================= HERO ================= -->
 <section class="relative min-h-screen flex items-center overflow-hidden text-white">
@@ -314,8 +296,24 @@ color: white !important;
   </div>
 </section>
 
+<!-- ================= MEMBERSHIP BANNER ================= -->
+<section class="bg-gradient-to-r from-indigo-600 to-purple-600 py-4">
+  <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+    <div class="text-white">
+      <span class="text-sm font-medium">Join our community today!</span>
+      <span class="hidden sm:inline ml-2 text-white/80">Become a member of Vijayanand Foundation</span>
+    </div>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdhQ26S9fwF6jaf6x2Shh3azRmbYRh0LHMirg5gZM8ujCkgVw/viewform" 
+       target="_blank"
+       class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white text-indigo-600 font-medium hover:bg-slate-50 transition text-sm">
+      <i class="bx bx-user-plus"></i>
+      <span>Membership Form</span>
+    </a>
+  </div>
+</section>
+
 <!-- ================= SERVICES SECTION ================= -->
-<section class="py-20 bg-slate-50">
+<section class="py-10 bg-slate-50">
   <div class="max-w-7xl mx-auto px-6">
 
     <!-- Section Header -->
@@ -745,39 +743,39 @@ color: white !important;
         </p>
       </div>
 
-      <!-- Quick Links -->
+      <!-- Contact Details -->
       <div>
         <h4 class="text-sm font-semibold text-white mb-6">
-          Quick Links
+          Contact Details
         </h4>
 
-        <ul class="space-y-3 text-sm">
-          <li>
-            <a href="app/pages/contact.html" class="hover:text-white transition">
-              Contact Us
-            </a>
-          </li>
-          <li>
-            <a href="app/pages/psychological.html" class="hover:text-white transition">
-              Psychological Services
-            </a>
-          </li>
-          <li>
-            <a href="app/pages/pace.html" class="hover:text-white transition">
-              PACE Institute
-            </a>
-          </li>
-          <li>
-            <a href="app/pages/about.html" class="hover:text-white transition">
-              About Us
-            </a>
-          </li>
-          <li>
-            <a href="app/pages/gallery.html" class="hover:text-white transition">
-              Gallery
-            </a>
-          </li>
-        </ul>
+        <div class="space-y-4 text-sm">
+          <div class="flex items-start gap-3">
+            <i class="bx bx-phone text-emerald-400 text-lg mt-0.5"></i>
+            <div>
+              <p class="text-slate-300 mb-1">Phone Numbers</p>
+              <a href="tel:+919922156948" class="text-white hover:text-emerald-400 transition block">9922156948</a>
+              <a href="tel:+918459826288" class="text-white hover:text-emerald-400 transition block">8459826288</a>
+            </div>
+          </div>
+          
+          <div class="flex items-start gap-3">
+            <i class="bx bx-envelope text-emerald-400 text-lg mt-0.5"></i>
+            <div>
+              <p class="text-slate-300 mb-1">Email</p>
+              <a href="mailto:vijayaanandfoundation@gmail.com" class="text-white hover:text-emerald-400 transition break-all">vijayaanandfoundation@gmail.com</a>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-3">
+            <i class="bx bx-map text-emerald-400 text-lg mt-0.5"></i>
+            <div>
+              <p class="text-slate-300 mb-1">Quick Links</p>
+              <a href="app/pages/contact.html" class="text-white hover:text-emerald-400 transition block">Contact Us</a>
+              <a href="app/pages/about.html" class="text-white hover:text-emerald-400 transition block">About Us</a>
+            </div>
+          </div>
+        </div>
       </div>
 
     </div>
@@ -858,6 +856,77 @@ color: white !important;
   }
 </script>
 
+<!-- ================= FLOATING BUTTONS ================= -->
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/919922156948" target="_blank" 
+   class="fixed bottom-6 right-6 h-14 w-14 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 z-50 hover:scale-110">
+  <i class="bx bxl-whatsapp text-white text-2xl"></i>
+</a>
+
+<!-- Floating Forms Button -->
+<div class="fixed bottom-6 left-6 z-50">
+  <!-- Forms Dropdown Menu -->
+  <div id="floatingFormsMenu" class="absolute bottom-16 left-0 w-64 bg-white rounded-xl shadow-2xl border border-slate-200 opacity-0 invisible transform translate-y-4 transition-all duration-300">
+    <div class="p-4">
+      <h4 class="text-sm font-semibold text-slate-900 mb-3">Available Forms</h4>
+      <div class="space-y-2">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSduZvdT-8Z2eVdeYlC0H6MZrP2fkWuLoJZIjqftMcEGpTzNZw/viewform" 
+           target="_blank"
+           class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-50 transition text-sm">
+          <i class="bx bx-file text-emerald-600"></i>
+          <span class="text-slate-700">Admission Form</span>
+        </a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdhQ26S9fwF6jaf6x2Shh3azRmbYRh0LHMirg5gZM8ujCkgVw/viewform" 
+           target="_blank"
+           class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-50 transition text-sm">
+          <i class="bx bx-user-plus text-indigo-600"></i>
+          <span class="text-slate-700">Membership Form</span>
+        </a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSd1iYjysBpHZU2kn7-ZWCnDjVzGMxLgu3IsnJtVFArfmKVCDA/viewform" 
+           target="_blank"
+           class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-50 transition text-sm">
+          <i class="bx bx-heart text-rose-600"></i>
+          <span class="text-slate-700">Marriage Guidance Form</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Forms Button -->
+  <button id="floatingFormsBtn" 
+          class="h-14 w-14 bg-slate-800 hover:bg-slate-900 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110">
+    <i class="bx bx-file-blank text-white text-2xl"></i>
+  </button>
+</div>
+
+<!-- Floating Buttons JavaScript -->
+<script>
+  // Floating Forms Menu
+  const floatingFormsBtn = document.getElementById('floatingFormsBtn');
+  const floatingFormsMenu = document.getElementById('floatingFormsMenu');
+  let formsMenuOpen = false;
+
+  floatingFormsBtn.addEventListener('click', () => {
+    formsMenuOpen = !formsMenuOpen;
+    
+    if (formsMenuOpen) {
+      floatingFormsMenu.classList.remove('opacity-0', 'invisible', 'translate-y-4');
+      floatingFormsMenu.classList.add('opacity-100', 'visible', 'translate-y-0');
+    } else {
+      floatingFormsMenu.classList.add('opacity-0', 'invisible', 'translate-y-4');
+      floatingFormsMenu.classList.remove('opacity-100', 'visible', 'translate-y-0');
+    }
+  });
+
+  // Close forms menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!floatingFormsBtn.contains(e.target) && !floatingFormsMenu.contains(e.target)) {
+      formsMenuOpen = false;
+      floatingFormsMenu.classList.add('opacity-0', 'invisible', 'translate-y-4');
+      floatingFormsMenu.classList.remove('opacity-100', 'visible', 'translate-y-0');
+    }
+  });
+</script>
 
 </body>
 </html>
