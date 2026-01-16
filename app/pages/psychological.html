@@ -1,0 +1,639 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vijayanand Foundation - Psychological Services</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Boxicons -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+  <!-- CSS styles -->
+  <link rel="stylesheet" href="../style/basic-nav.css">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            logo: ['Anton', 'sans-serif'],
+            body: ['Lexend', 'sans-serif']
+          },
+          colors: {
+            primaryDark: '#0F172A'
+          }
+        }
+      }
+    }
+  </script>
+
+<style>
+  html, body {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  html::-webkit-scrollbar,
+  body::-webkit-scrollbar,
+  *::-webkit-scrollbar {
+    display: none;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  #siteHeader {
+    height: 72px;
+    background: white;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+  }
+
+  .nav-link {
+    position: relative;
+    color: black;
+    padding: 4px 0;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: black;
+    transform: translateX(-50%);
+    transition: width .25s ease;
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+
+  .nav-cta {
+    border-color: black;
+  }
+
+  /* FIXED OFFSET */
+  .page-wrapper {
+    padding-top: 72px;
+  }
+
+  #mobileMenu nav a {
+    display: block;
+    width: 100%;
+    line-height: 1.4;
+    padding: 6px 0;
+    white-space: normal;
+  }
+</style>
+</head>
+
+<body class="font-body bg-white text-black">
+
+<header id="siteHeader" class="fixed top-0 inset-x-0 z-50">
+  <nav class="relative max-w-7xl mx-auto px-6 h-20 flex items-center">
+    <a href="../../index.html" class="flex items-center">
+      <div class="leading-tight">
+        <div class="text-xl tracking-tight">Vijayanand Foundation</div>
+      </div>
+    </a>
+
+    <ul class="hidden md:flex absolute left-1/2 -translate-x-1/2 gap-10 text-base font-medium items-center">
+      <li><a href="pace.html" class="nav-link">PACE</a></li>
+      <li><a href="about.html" class="nav-link">About</a></li>
+      <li><a href="psychological.html" class="nav-link">Psychological</a></li>
+      <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+      <li class="relative group">
+        <button class="nav-link flex items-center gap-1">
+          More <i class='bx bx-chevron-down text-sm'></i>
+        </button>
+        <div class="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-64 rounded-xl bg-white shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition">
+          <a href="tujh.html" class="block px-5 py-3 text-sm hover:bg-slate-50">तुझी माझी रेशिम गाठ</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSd1iYjysBpHZU2kn7-ZWCnDjVzGMxLgu3IsnJtVFArfmKVCDA/viewform" target="_blank" class="block px-5 py-3 text-sm hover:bg-slate-50">Marriage Guidance Form</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdhQ26S9fwF6jaf6x2Shh3azRmbYRh0LHMirg5gZM8ujCkgVw/viewform" target="_blank" class="block px-5 py-3 text-sm hover:bg-slate-50">Membership Form</a>
+          <a href="contact.html" class="block px-5 py-3 text-sm hover:bg-slate-50">Contact Us</a>
+        </div>
+      </li>
+    </ul>
+
+    <div class="ml-auto hidden md:flex">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSduZvdT-8Z2eVdeYlC0H6MZrP2fkWuLoJZIjqftMcEGpTzNZw/viewform" 
+         target="_blank"
+         class="nav-cta inline-flex items-center gap-3 px-5 py-2 rounded-full border">
+        <span class="h-8 w-8 rounded-full bg-black text-white flex items-center justify-center">
+          <i class='bx bx-right-arrow-alt'></i>
+        </span>
+        <span class="text-sm">Admission Form</span>
+      </a>
+    </div>
+
+    <button id="menuBtn" class="ml-auto md:hidden text-2xl">
+      <i class='bx bx-menu'></i>
+    </button>
+  </nav>
+</header>
+
+<!-- ================= MOBILE SIDEBAR ================= -->
+<div id="mobileMenu"
+  class="fixed inset-y-0 left-0 w-80 bg-white z-50 transform -translate-x-full transition-transform duration-300 md:hidden shadow-2xl">
+
+  <!-- Header -->
+  <div class="p-6 border-b border-gray-200 flex justify-between items-start">
+    <a href="../../index.html">
+      <div>
+        <div class="font-body text-xl tracking-tight">
+            Vijayanand Foundation
+        </div>
+      </div>
+    </a>
+    <button id="closeBtn" class="text-2xl text-black">
+      <i class='bx bx-x'></i>
+    </button>
+  </div>
+
+  <!-- Nav -->
+  <nav class="px-6 py-8 space-y-6 text-lg font-medium text-primaryDark">
+    <a href="pace.html" class="block">PACE</a>
+    <a href="about.html" class="block">About Us</a>
+    <a href="psychological.html" class="block">Psychological Services</a>
+    <a href="gallery.html" class="block">Gallery</a>
+
+    <!-- Mobile More Dropdown -->
+    <div>
+      <button id="mobileExploreBtn" class="w-full flex items-center justify-between">
+        <span>More</span>
+        <i id="mobileExploreIcon" class='bx bx-chevron-down text-xl'></i>
+      </button>
+
+      <div id="mobileExploreMenu" class="mt-4 ml-4 space-y-4 hidden text-base">
+        <a href="tujh.html" class="block">तुझी माझी रेशिम गाठ</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSd1iYjysBpHZU2kn7-ZWCnDjVzGMxLgu3IsnJtVFArfmKVCDA/viewform" target="_blank" class="block">Marriage Guidance Form</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdhQ26S9fwF6jaf6x2Shh3azRmbYRh0LHMirg5gZM8ujCkgVw/viewform" target="_blank" class="block">Membership Form</a>
+        <a href="contact.html" class="block">Contact Us</a>
+      </div>
+    </div>
+
+    <div class="pt-6 border-t border-gray-200"></div>
+
+    <a
+      href="https://docs.google.com/forms/d/e/1FAIpQLSduZvdT-8Z2eVdeYlC0H6MZrP2fkWuLoJZIjqftMcEGpTzNZw/viewform" 
+      target="_blank"
+      class="flex items-center justify-between px-5 py-2 rounded-full border border-primaryDark hover:bg-primaryDark hover:text-white transition" style="display: inline-flex; padding: 10px 20px; border-radius: 9999px; border: 1px solid black;">
+      <span>Admission Form</span>
+      <span class="h-10 w-10 flex items-center justify-center rounded-full bg-teal-500 text-white">
+        <i class='bx bx-right-arrow-alt text-xl'></i>
+      </span>
+    </a>
+  </nav>
+</div>
+
+
+<main class="page-wrapper">
+
+<section class="relative min-h-screen flex items-center overflow-hidden -mt-[72px]">
+
+  <!-- Background -->
+  <div class="absolute inset-0">
+    <img src="../../src/images/info-bg.png" alt="PACE Institute of Yoga"
+         class="w-full h-full object-cover scale-105">
+    <div class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/65 to-black/30"></div>
+  </div>
+
+  <!-- Content -->
+  <div class="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-8" style="margin-top: 50px;">
+    <div class="max-w-xl lg:max-w-2xl text-left">
+
+      <!-- Badge -->
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-sm text-sm text-white/90 mb-6">
+        <span class="h-2 w-2 rounded-full bg-teal-400"></span>
+        Recognized by Government of India
+      </div>
+
+      <!-- Heading -->
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-white leading-tight">
+        Psychological Services
+        <span class="block mt-3 text-teal-300">
+          Vijayanand Foundation
+        </span>
+      </h1>
+
+      <!-- Description -->
+      <p class="mt-6 text-base sm:text-lg text-white/75 leading-relaxed">
+        Happiness Depends on Thought
+      </p>
+
+      <!-- Buttons -->
+      <div class="mt-10 flex flex-wrap gap-4">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSduZvdT-8Z2eVdeYlC0H6MZrP2fkWuLoJZIjqftMcEGpTzNZw/viewform" 
+           target="_blank"
+           class="inline-flex items-center gap-4 px-7 py-3.5 rounded-full bg-white text-slate-900 font-medium hover:bg-slate-100 transition">
+          <span class="h-10 w-10 rounded-full bg-sky-500 text-white flex items-center justify-center">
+            <i class='bx bx-file text-xl'></i>
+          </span>
+          Admission Form
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+
+<section class="bg-white py-28">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+
+    <!-- Heading -->
+    <div class="mb-20 max-w-3xl">
+      <h2 class="text-3xl sm:text-4xl font-semibold text-slate-900 mb-4">
+        Counselling of School Children
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+
+      <!-- LEFT CONTENT -->
+      <div class="space-y-6 text-slate-700 text-lg leading-relaxed">
+        <p>
+          School children problems are increasing day by day.
+          They cannot pay attention during childhood period.
+          They may be suffering from challenges and difficulties.
+        </p>
+
+        <p>
+          If we identify and prevent problems at early stage, we can stop big problems.
+        </p>
+
+        <div class="mt-8">
+          <h3 class="text-xl font-semibold text-slate-900 mb-4">Common problems:</h3>
+          <ul class="space-y-2 text-slate-700">
+            <li>• Learning problem</li>
+            <li>• Reading problem</li>
+            <li>• Writing problem</li>
+            <li>• Lack of self-esteem</li>
+            <li>• Lack of motivation</li>
+            <li>• Orientation problem</li>
+            <li>• Self-confidence problem</li>
+            <li>• Phobia</li>
+            <li>• Anxiety</li>
+            <li>• Stress</li>
+            <li>• Maladaptive behaviour</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- RIGHT : TRIANGLE IMAGE COMPOSITION -->
+      <div class="relative h-[420px] sm:h-[480px]">
+
+        <!-- TOP IMAGE -->
+        <div class="absolute top-0 right-10 z-10 w-44 sm:w-52 rounded-2xl border border-dashed border-indigo-300 bg-white p-1 shadow-lg">
+          <img
+            src="https://images.unsplash.com/photo-1509062522246-3755977927d7"
+            alt="Children learning together"
+            class="w-full h-full object-cover rounded-xl">
+        </div>
+
+        <!-- MAIN CENTER IMAGE -->
+        <div class="absolute top-24 left-0 z-30 w-64 sm:w-72 rounded-3xl border-2 border-dashed border-emerald-400 bg-white p-1 shadow-2xl">
+          <img
+            src="https://images.unsplash.com/photo-1588072432836-e10032774350"
+            alt="Child studying with focus"
+            class="w-full h-full object-cover rounded-2xl">
+        </div>
+
+        <!-- BOTTOM IMAGE -->
+        <div class="absolute bottom-0 right-24 z-20 w-44 sm:w-52 rounded-2xl border border-dashed border-amber-300 bg-white p-1 shadow-lg">
+          <img
+            src="https://images.unsplash.com/photo-1587691592099-24045742c181"
+            alt="Teacher guiding children"
+            class="w-full h-full object-cover rounded-xl">
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ================= SERVICES WE OFFER ================= -->
+<section class="bg-white py-28">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <span class="text-sm font-semibold tracking-wide text-emerald-600 uppercase">
+        Our Approach
+      </span>
+      <h2 class="mt-4 text-3xl sm:text-4xl font-semibold text-slate-900 mb-4">
+        Services We Offer
+      </h2>
+    </div>
+
+    <!-- Services Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      
+      <div class="bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl p-6 text-white">
+        <div class="h-12 w-12 rounded-lg bg-white/20 flex items-center justify-center mb-4 text-2xl">
+          <i class='bx bx-user'></i>
+        </div>
+        <h3 class="text-lg font-semibold mb-2">Individual Counselling</h3>
+      </div>
+
+      <div class="bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl p-6 text-white">
+        <div class="h-12 w-12 rounded-lg bg-white/20 flex items-center justify-center mb-4 text-2xl">
+          <i class='bx bx-group'></i>
+        </div>
+        <h3 class="text-lg font-semibold mb-2">Group Counselling</h3>
+      </div>
+
+      <div class="bg-gradient-to-br from-sky-500 to-blue-600 rounded-xl p-6 text-white">
+        <div class="h-12 w-12 rounded-lg bg-white/20 flex items-center justify-center mb-4 text-2xl">
+          <i class='bx bx-chalkboard'></i>
+        </div>
+        <h3 class="text-lg font-semibold mb-2">Lecture Method</h3>
+      </div>
+
+      <div class="bg-gradient-to-br from-amber-500 to-orange-600 rounded-xl p-6 text-white">
+        <div class="h-12 w-12 rounded-lg bg-white/20 flex items-center justify-center mb-4 text-2xl">
+          <i class='bx bx-dumbbell'></i>
+        </div>
+        <h3 class="text-lg font-semibold mb-2">Practical Method</h3>
+      </div>
+
+      <div class="bg-gradient-to-br from-rose-500 to-pink-600 rounded-xl p-6 text-white">
+        <div class="h-12 w-12 rounded-lg bg-white/20 flex items-center justify-center mb-4 text-2xl">
+          <i class='bx bx-clipboard'></i>
+        </div>
+        <h3 class="text-lg font-semibold mb-2">Individualized Assessment</h3>
+      </div>
+
+      <div class="bg-gradient-to-br from-violet-500 to-purple-600 rounded-xl p-6 text-white">
+        <div class="h-12 w-12 rounded-lg bg-white/20 flex items-center justify-center mb-4 text-2xl">
+          <i class='bx bx-heart-circle'></i>
+        </div>
+        <h3 class="text-lg font-semibold mb-2">Stress, Anxiety, Depression Treatment</h3>
+      </div>
+
+      <div class="bg-gradient-to-br from-teal-500 to-cyan-600 rounded-xl p-6 text-white">
+        <div class="h-12 w-12 rounded-lg bg-white/20 flex items-center justify-center mb-4 text-2xl">
+          <i class='bx bx-shield'></i>
+        </div>
+        <h3 class="text-lg font-semibold mb-2">Intervention for Mentally Illness</h3>
+      </div>
+
+      <div class="bg-gradient-to-br from-emerald-500 to-green-600 rounded-xl p-6 text-white">
+        <div class="h-12 w-12 rounded-lg bg-white/20 flex items-center justify-center mb-4 text-2xl">
+          <i class='bx bx-brain'></i>
+        </div>
+        <h3 class="text-lg font-semibold mb-2">Psychological Counselling</h3>
+      </div>
+
+      <div class="bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl p-6 text-white">
+        <div class="h-12 w-12 rounded-lg bg-white/20 flex items-center justify-center mb-4 text-2xl">
+          <i class='bx bx-book'></i>
+        </div>
+        <h3 class="text-lg font-semibold mb-2">Educational Guidance</h3>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- Boxicons CDN -->
+<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+<section class="bg-slate-50 py-28">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+
+    <!-- Section Header -->
+    <div class="text-center mb-20">
+      <h2 class="text-3xl sm:text-4xl font-semibold text-slate-900 mb-4">
+        Psychological Testing & Treatment
+      </h2>
+    </div>
+
+    <!-- Services Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+
+      <!-- Card 1 -->
+      <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-lg transition">
+        <div class="h-14 w-14 rounded-xl bg-indigo-50 flex items-center justify-center text-indigo-600 mb-6 text-3xl">
+          <i class='bx bx-brain'></i>
+        </div>
+        <h3 class="text-xl font-semibold text-slate-900 mb-3">
+          Intelligence Quotient (IQ) Test
+        </h3>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-lg transition">
+        <div class="h-14 w-14 rounded-xl bg-emerald-50 flex items-center justify-center text-emerald-600 mb-6 text-3xl">
+          <i class='bx bx-line-chart'></i>
+        </div>
+        <h3 class="text-xl font-semibold text-slate-900 mb-3">
+          Development Quotient (DQ) Test
+        </h3>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-lg transition">
+        <div class="h-14 w-14 rounded-xl bg-violet-50 flex items-center justify-center text-violet-600 mb-6 text-3xl">
+          <i class='bx bx-user-circle'></i>
+        </div>
+        <h3 class="text-xl font-semibold text-slate-900 mb-3">
+          Personality Test
+        </h3>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-lg transition">
+        <div class="h-14 w-14 rounded-xl bg-sky-50 flex items-center justify-center text-sky-600 mb-6 text-3xl">
+          <i class='bx bx-book-open'></i>
+        </div>
+        <h3 class="text-xl font-semibold text-slate-900 mb-3">
+          Learning Disability Test
+        </h3>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-lg transition">
+        <div class="h-14 w-14 rounded-xl bg-amber-50 flex items-center justify-center text-amber-600 mb-6 text-3xl">
+          <i class='bx bx-heart'></i>
+        </div>
+        <h3 class="text-xl font-semibold text-slate-900 mb-3">
+          Emotional Quotient (EQ) Test
+        </h3>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-lg transition">
+        <div class="h-14 w-14 rounded-xl bg-rose-50 flex items-center justify-center text-rose-600 mb-6 text-3xl">
+          <i class='bx bx-shield-quarter'></i>
+        </div>
+        <h3 class="text-xl font-semibold text-slate-900 mb-3">
+          Anxiety, Stress, Depression Test
+        </h3>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="bg-slate-900 text-slate-300">
+  <div class="max-w-7xl mx-auto px-6 py-16">
+
+    <!-- Top Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+
+      <!-- Brand & Head Office -->
+      <div>
+        <!-- Text Logo -->
+        <div class="mb-6">
+          <a href="../../index.html">
+            <h3 class="text-xl font-semibold tracking-wide text-white">
+              Vijayaanand Foundation
+            </h3>
+            <span class="block mt-1 h-0.5 w-16 bg-emerald-500"></span>
+          </a>
+        </div>
+
+        <h4 class="text-sm font-semibold text-white mb-3">
+          Head Office – Pune
+        </h4>
+
+        <p class="text-sm leading-relaxed">
+          Vijayaanand Foundation, SSD Sai Luxuria<br>
+          Near Akshara International School,<br>
+          Vinode Corner, Bhumkar Chowk,<br>
+          Wakad, Pune – 411057.
+        </p>
+      </div>
+
+      <!-- Sub Branch -->
+      <div>
+        <h4 class="text-sm font-semibold text-white mb-6">
+          Sub Branch – Chiplun
+        </h4>
+
+        <p class="text-sm leading-relaxed">
+          Vijayaanand Foundation,<br>
+          Khandat Pali, Tal. Chiplun,<br>
+          Dist. Ratnagiri,<br>
+          Maharashtra, India – 415605.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h4 class="text-sm font-semibold text-white mb-6">
+          Quick Links
+        </h4>
+
+        <ul class="space-y-3 text-sm">
+          <li>
+            <a href="contact.html" class="hover:text-white transition">
+              Contact Us
+            </a>
+          </li>
+          <li>
+            <a href="psychological.html" class="hover:text-white transition">
+              Psychological Services
+            </a>
+          </li>
+          <li>
+            <a href="pace.html" class="hover:text-white transition">
+              PACE Institute
+            </a>
+          </li>
+          <li>
+            <a href="about.html" class="hover:text-white transition">
+              About Us
+            </a>
+          </li>
+          <li>
+            <a href="gallery.html" class="hover:text-white transition">
+              Gallery
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Divider -->
+    <div class="my-10 border-t border-white/10"></div>
+
+    <!-- Bottom Bar -->
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
+
+      <!-- Copyright -->
+      <p class="text-xs text-slate-400">
+        © 2026 Vijayaanand Foundation. All rights reserved.
+      </p>
+
+      <!-- Contact Icons -->
+      <div class="flex items-center gap-4">
+
+        <a href="https://wa.me/919922156948" target="_blank"
+           class="h-10 w-10 rounded-full bg-green-500 flex items-center justify-center hover:scale-105 transition">
+          <i class='bx bxl-whatsapp text-white text-xl'></i>
+        </a>
+
+        <a href="tel:+919922156948"
+           class="h-10 w-10 rounded-full bg-slate-700 flex items-center justify-center hover:bg-slate-600 transition">
+          <i class='bx bx-phone text-white text-lg'></i>
+        </a>
+
+        <a href="mailto:vijayaanandfoundation@gmail.com"
+           class="h-10 w-10 rounded-full bg-indigo-600 flex items-center justify-center hover:bg-indigo-500 transition">
+          <i class='bx bx-envelope text-white text-lg'></i>
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+</footer>
+
+
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const closeBtn = document.getElementById('closeBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  menuBtn.onclick = () => mobileMenu.classList.remove('-translate-x-full');
+  closeBtn.onclick = () => mobileMenu.classList.add('-translate-x-full');
+</script>
+
+<script>
+  const mobileExploreBtn = document.getElementById('mobileExploreBtn')
+  const mobileExploreMenu = document.getElementById('mobileExploreMenu')
+  const mobileExploreIcon = document.getElementById('mobileExploreIcon')
+
+  mobileExploreBtn.addEventListener('click', () => {
+    mobileExploreMenu.classList.toggle('hidden')
+    mobileExploreIcon.classList.toggle('bx-chevron-down')
+    mobileExploreIcon.classList.toggle('bx-chevron-up')
+  })
+</script>
+
+
+</body>
+</html>

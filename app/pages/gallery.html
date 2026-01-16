@@ -1,0 +1,662 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vijayanand Foundation - Gallery</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Boxicons -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+  <!-- CSS styles -->
+  <link rel="stylesheet" href="../style/basic-nav.css">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            logo: ['Anton', 'sans-serif'],
+            body: ['Lexend', 'sans-serif']
+          },
+          colors: {
+            primaryDark: '#0F172A'
+          }
+        }
+      }
+    }
+  </script>
+
+<style>
+  html, body {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  html::-webkit-scrollbar,
+  body::-webkit-scrollbar,
+  *::-webkit-scrollbar {
+    display: none;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  #siteHeader {
+    height: 72px;
+    background: white;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+  }
+
+  .nav-link {
+    position: relative;
+    color: black;
+    padding: 4px 0;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: black;
+    transform: translateX(-50%);
+    transition: width .25s ease;
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+
+  .nav-cta {
+    border-color: black;
+  }
+
+  /* FIXED OFFSET */
+  .page-wrapper {
+    padding-top: 72px;
+  }
+
+  #mobileMenu nav a {
+    display: block;
+    width: 100%;
+    line-height: 1.4;
+    padding: 6px 0;
+    white-space: normal;
+  }
+</style>
+</head>
+
+<body class="font-body bg-white text-black">
+
+<header id="siteHeader" class="fixed top-0 inset-x-0 z-50">
+  <nav class="relative max-w-7xl mx-auto px-6 h-20 flex items-center">
+    <a href="../../index.html" class="flex items-center">
+      <div class="leading-tight">
+        <div class="text-xl tracking-tight">Vijayanand Foundation</div>
+      </div>
+    </a>
+
+    <ul class="hidden md:flex absolute left-1/2 -translate-x-1/2 gap-10 text-base font-medium items-center">
+      <li><a href="pace.html" class="nav-link">PACE</a></li>
+      <li><a href="about.html" class="nav-link">About</a></li>
+      <li><a href="psychological.html" class="nav-link">Psychological</a></li>
+      <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+      <li class="relative group">
+        <button class="nav-link flex items-center gap-1">
+          More <i class="bx bx-chevron-down text-sm"></i>
+        </button>
+        <div class="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-64 rounded-xl bg-white shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition">
+          <a href="tujh.html" class="block px-5 py-3 text-sm hover:bg-slate-50">तुझी माझी रेशिम गाठ</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSd1iYjysBpHZU2kn7-ZWCnDjVzGMxLgu3IsnJtVFArfmKVCDA/viewform" target="_blank" class="block px-5 py-3 text-sm hover:bg-slate-50">Marriage Guidance Form</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdhQ26S9fwF6jaf6x2Shh3azRmbYRh0LHMirg5gZM8ujCkgVw/viewform" target="_blank" class="block px-5 py-3 text-sm hover:bg-slate-50">Membership Form</a>
+          <a href="contact.html" class="block px-5 py-3 text-sm hover:bg-slate-50">Contact Us</a>
+        </div>
+      </li>
+    </ul>
+
+    <div class="ml-auto hidden md:flex">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSduZvdT-8Z2eVdeYlC0H6MZrP2fkWuLoJZIjqftMcEGpTzNZw/viewform" 
+         target="_blank"
+         class="nav-cta inline-flex items-center gap-3 px-5 py-2 rounded-full border">
+        <span class="h-8 w-8 rounded-full bg-black text-white flex items-center justify-center">
+          <i class="bx bx-right-arrow-alt"></i>
+        </span>
+        <span class="text-sm">Admission Form</span>
+      </a>
+    </div>
+
+    <button id="menuBtn" class="ml-auto md:hidden text-2xl">
+      <i class="bx bx-menu"></i>
+    </button>
+  </nav>
+</header>
+
+<!-- ================= MOBILE SIDEBAR ================= -->
+<div id="mobileMenu"
+  class="fixed inset-y-0 left-0 w-80 bg-white z-50 transform -translate-x-full transition-transform duration-300 md:hidden shadow-2xl">
+
+  <!-- Header -->
+  <div class="p-6 border-b border-gray-200 flex justify-between items-start">
+    <a href="../../index.html">
+      <div>
+        <div class="font-body text-xl tracking-tight">
+            Vijayanand Foundation
+        </div>
+      </div>
+    </a>
+    <button id="closeBtn" class="text-2xl text-black">
+      <i class="bx bx-x"></i>
+    </button>
+  </div>
+
+  <!-- Nav -->
+  <nav class="px-6 py-8 space-y-6 text-lg font-medium text-primaryDark">
+    <a href="pace.html" class="block">PACE</a>
+    <a href="about.html" class="block">About Us</a>
+    <a href="psychological.html" class="block">Psychological Services</a>
+    <a href="gallery.html" class="block">Gallery</a>
+
+    <!-- Mobile More Dropdown -->
+    <div>
+      <button id="mobileExploreBtn" class="w-full flex items-center justify-between">
+        <span>More</span>
+        <i id="mobileExploreIcon" class="bx bx-chevron-down text-xl"></i>
+      </button>
+
+      <div id="mobileExploreMenu" class="mt-4 ml-4 space-y-4 hidden text-base">
+        <a href="tujh.html" class="block">तुझी माझी रेशिम गाठ</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSd1iYjysBpHZU2kn7-ZWCnDjVzGMxLgu3IsnJtVFArfmKVCDA/viewform" target="_blank" class="block">Marriage Guidance Form</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdhQ26S9fwF6jaf6x2Shh3azRmbYRh0LHMirg5gZM8ujCkgVw/viewform" target="_blank" class="block">Membership Form</a>
+        <a href="contact.html" class="block">Contact Us</a>
+      </div>
+    </div>
+
+    <div class="pt-6 border-t border-gray-200"></div>
+
+    <a
+      href="https://docs.google.com/forms/d/e/1FAIpQLSduZvdT-8Z2eVdeYlC0H6MZrP2fkWuLoJZIjqftMcEGpTzNZw/viewform" 
+      target="_blank"
+      class="flex items-center justify-between px-5 py-2 rounded-full border border-primaryDark hover:bg-primaryDark hover:text-white transition" style="display: inline-flex; padding: 10px 20px; border-radius: 9999px; border: 1px solid black;">
+      <span>Admission Form</span>
+      <span class="h-10 w-10 flex items-center justify-center rounded-full bg-teal-500 text-white">
+        <i class="bx bx-right-arrow-alt text-xl"></i>
+      </span>
+    </a>
+  </nav>
+</div>
+
+
+<main class="page-wrapper">
+
+<section class="relative min-h-screen flex items-center overflow-hidden -mt-[72px]">
+
+  <!-- Background -->
+  <div class="absolute inset-0">
+    <img src="../../src/images/info-bg.png" alt="Gallery"
+         class="w-full h-full object-cover scale-105">
+    <div class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/65 to-black/30"></div>
+  </div>
+
+  <!-- Content -->
+  <div class="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-8" style="margin-top: 50px;">
+    <div class="max-w-xl lg:max-w-2xl text-left">
+
+      <!-- Badge -->
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-sm text-sm text-white/90 mb-6">
+        <span class="h-2 w-2 rounded-full bg-amber-400"></span>
+        Our Moments
+      </div>
+
+      <!-- Heading -->
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-white leading-tight">
+        Gallery
+        <span class="block mt-3 text-amber-300">
+          Capturing Our Journey
+        </span>
+      </h1>
+
+      <!-- Description -->
+      <p class="mt-6 text-base sm:text-lg text-white/75 leading-relaxed">
+        Explore moments from our events, programs, and activities that showcase our commitment to serving the community.
+      </p>
+
+    </div>
+  </div>
+
+</section>
+
+
+<!-- ================= GALLERY CONTENT ================= -->
+<section class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+
+    <div class="max-w-3xl mx-auto text-center mb-16">
+      <h2 class="text-3xl sm:text-4xl font-semibold text-slate-900 mb-4">
+        Photo Gallery
+      </h2>
+      <p class="text-slate-600 text-lg">
+        Explore moments from our events, workshops, and activities that showcase our commitment to serving the community.
+      </p>
+    </div>
+
+    <!-- Workshop Rorschach Inkblot Test Section -->
+    <div class="mb-20">
+      <div class="text-center mb-12">
+        <h3 class="text-2xl font-semibold text-slate-900 mb-2">Workshop Rorschach Inkblot Test</h3>
+        <p class="text-slate-600">Date: 24th Sept to 25th Sept 2022</p>
+      </div>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+        <div class="group cursor-pointer" onclick="openLightbox('https://lh3.googleusercontent.com/sitesv/AAzXCkfDcHtYAfGrVSoNmE7Ouf7ngZWIr2IbMzhXFSA5A3lvw96z77r9Dg-glev73RO0ozHzLxLd6P9QW5gEu8vWiHczXaX5KXXaBxwIck3-lu66HCQaBriRHmj2NIz7UGabuRiFG67O5IKWvDnb6t2h8YPWjXKFpMGaBnSuM5Z_afDH-rq931bOW7KhH-he2FYLd2oxg1Moqnv2jqWyuoROr8XDw6JKhcSbElPG=w1280')">
+          <div class="aspect-square overflow-hidden rounded-xl bg-slate-100">
+            <img src="https://lh3.googleusercontent.com/sitesv/AAzXCkfDcHtYAfGrVSoNmE7Ouf7ngZWIr2IbMzhXFSA5A3lvw96z77r9Dg-glev73RO0ozHzLxLd6P9QW5gEu8vWiHczXaX5KXXaBxwIck3-lu66HCQaBriRHmj2NIz7UGabuRiFG67O5IKWvDnb6t2h8YPWjXKFpMGaBnSuM5Z_afDH-rq931bOW7KhH-he2FYLd2oxg1Moqnv2jqWyuoROr8XDw6JKhcSbElPG=w1280" 
+                 alt="Workshop Rorschach Inkblot Test" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          </div>
+        </div>
+        
+        <div class="group cursor-pointer" onclick="openLightbox('https://lh3.googleusercontent.com/sitesv/AAzXCkfECUR90hgDKXk1wbLDgkoNnWGMGTDpVL3DXpxD2DeNZU0m9Utzoi3rdNVKqqznZIjCOP4cgPLI89tqwWVdMiHJphuYSho5Wpes_6lHp3mij0jHLI4T6J92wp2EG1lb13msRwXYkGIor1_mQIhCKItQs0aHbxdhOVB7vt3ZAE-lA2bl7Lyyi22D3BnBftzxBYvWQBoNHo2UbgtELuzWwCH0NbrvEhnl8HW1SYE=w1280')">
+          <div class="aspect-square overflow-hidden rounded-xl bg-slate-100">
+            <img src="https://lh3.googleusercontent.com/sitesv/AAzXCkfECUR90hgDKXk1wbLDgkoNnWGMGTDpVL3DXpxD2DeNZU0m9Utzoi3rdNVKqqznZIjCOP4cgPLI89tqwWVdMiHJphuYSho5Wpes_6lHp3mij0jHLI4T6J92wp2EG1lb13msRwXYkGIor1_mQIhCKItQs0aHbxdhOVB7vt3ZAE-lA2bl7Lyyi22D3BnBftzxBYvWQBoNHo2UbgtELuzWwCH0NbrvEhnl8HW1SYE=w1280" 
+                 alt="Workshop Rorschach Inkblot Test" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          </div>
+        </div>
+        
+        <div class="group cursor-pointer" onclick="openLightbox('https://lh3.googleusercontent.com/sitesv/AAzXCke4PthgmTSVYvYDqP7SevMo8LO7boItiYO4GBqsvX3QOHM0V-0U112JSFsd5ptd-lP02aVn-reC2HjNLvnyKfQUy9qKmVqSx9bHxu6uzWhFfwnfU4TNeqU3YHrTpMb0ctzArfyIvqJaf_lytqjZlGywPzKL_Wmglczcm55najWwQdTJUugZJHjlXb1NRfuuCSwuXE90xJSwJfHnHcKBLSfV0NrkSB__uO7E=w1280')">
+          <div class="aspect-square overflow-hidden rounded-xl bg-slate-100">
+            <img src="https://lh3.googleusercontent.com/sitesv/AAzXCke4PthgmTSVYvYDqP7SevMo8LO7boItiYO4GBqsvX3QOHM0V-0U112JSFsd5ptd-lP02aVn-reC2HjNLvnyKfQUy9qKmVqSx9bHxu6uzWhFfwnfU4TNeqU3YHrTpMb0ctzArfyIvqJaf_lytqjZlGywPzKL_Wmglczcm55najWwQdTJUugZJHjlXb1NRfuuCSwuXE90xJSwJfHnHcKBLSfV0NrkSB__uO7E=w1280" 
+                 alt="Workshop Rorschach Inkblot Test" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          </div>
+        </div>
+        
+        <div class="group cursor-pointer" onclick="openLightbox('https://lh3.googleusercontent.com/sitesv/AAzXCkeaV5YSWGwixWK9ZlvWbTaEJcQBscK_1tUe1ONzd2Y76McrGAQwv9hvP0zxSwVA2OP5TJ371PHLoKBVklGyu4GJ2s52wgccSj0PH1gBdX-onIR4DeRXo-OjSFYcgdn3BAtBjULyNQxOFajSYzkioF1oRa-TYWHPoHCuiOR07jbyidXwE43nS36MC4UVtH3OKrA0M3VDYfs6x93vgmr6JHEymyE1-ajFH35yz88=w1280')">
+          <div class="aspect-square overflow-hidden rounded-xl bg-slate-100">
+            <img src="https://lh3.googleusercontent.com/sitesv/AAzXCkeaV5YSWGwixWK9ZlvWbTaEJcQBscK_1tUe1ONzd2Y76McrGAQwv9hvP0zxSwVA2OP5TJ371PHLoKBVklGyu4GJ2s52wgccSj0PH1gBdX-onIR4DeRXo-OjSFYcgdn3BAtBjULyNQxOFajSYzkioF1oRa-TYWHPoHCuiOR07jbyidXwE43nS36MC4UVtH3OKrA0M3VDYfs6x93vgmr6JHEymyE1-ajFH35yz88=w1280" 
+                 alt="Workshop Rorschach Inkblot Test" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          </div>
+        </div>
+        
+        <div class="group cursor-pointer" onclick="openLightbox('https://lh3.googleusercontent.com/sitesv/AAzXCkfGnAgvUSSmStwj2CyjC5nzAegKxhzTng6LSbbnnPjKFcuXc4Agp2pP_K0s_--B5KkhC6zZeaGz4mU369hL9sz0G5f3ucwaUZZkvsSdZ0y5yk4yH8eHxoxj0L0uYyWnjlOffaZenK92LcWnfKqIz9bLkWAgBkiWL9Gg39cZ25zAEW79W2xoss8TftGWNE7k0ogLMF1cpU8bava_pV0F8bMBycwrKb8vBhd1=w1280')">
+          <div class="aspect-square overflow-hidden rounded-xl bg-slate-100">
+            <img src="https://lh3.googleusercontent.com/sitesv/AAzXCkfGnAgvUSSmStwj2CyjC5nzAegKxhzTng6LSbbnnPjKFcuXc4Agp2pP_K0s_--B5KkhC6zZeaGz4mU369hL9sz0G5f3ucwaUZZkvsSdZ0y5yk4yH8eHxoxj0L0uYyWnjlOffaZenK92LcWnfKqIz9bLkWAgBkiWL9Gg39cZ25zAEW79W2xoss8TftGWNE7k0ogLMF1cpU8bava_pV0F8bMBycwrKb8vBhd1=w1280" 
+                 alt="Workshop Rorschach Inkblot Test" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          </div>
+        </div>
+        
+        <div class="group cursor-pointer" onclick="openLightbox('https://lh3.googleusercontent.com/sitesv/AAzXCkcAPkl-qPO4OJ61gXZ6sxtzPVo-qUXJeGV7pxeFKg02J7hQig3psXFqkpEfYefW3IQEaDM15ZjQks6aUiqVVMYqCNThnKe0SwtlhBJfJ2iJ04H--HfOyJyY7ZtgrIwC4Tqp22wO37zk4vk5o3vn6p9P8Wni9cxlRIoXkHQkdddbfeGnEUjdlgYIimRdzBsVO9Kf7gmt8tpa62e-d_AsBYOk9bC2RbEB6tRu9tc=w1280')">
+          <div class="aspect-square overflow-hidden rounded-xl bg-slate-100">
+            <img src="https://lh3.googleusercontent.com/sitesv/AAzXCkcAPkl-qPO4OJ61gXZ6sxtzPVo-qUXJeGV7pxeFKg02J7hQig3psXFqkpEfYefW3IQEaDM15ZjQks6aUiqVVMYqCNThnKe0SwtlhBJfJ2iJ04H--HfOyJyY7ZtgrIwC4Tqp22wO37zk4vk5o3vn6p9P8Wni9cxlRIoXkHQkdddbfeGnEUjdlgYIimRdzBsVO9Kf7gmt8tpa62e-d_AsBYOk9bC2RbEB6tRu9tc=w1280" 
+                 alt="Workshop Rorschach Inkblot Test" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          </div>
+        </div>
+      </div>
+
+      <!-- More Workshop Images -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="group cursor-pointer" onclick="openLightbox('https://lh3.googleusercontent.com/sitesv/AAzXCkeJWnKT2j8onKHv8sZGsL7w5zb82yTZHJC3UwQFHi2G1yVZRuoMOi-Nmog1hcar_y6aTo5AmIt_skbKyGESipXPeHviXOHRIfSK-RDIiEe9nMaOl3Pbh4U300MM6ImpwtCEkoaQ7sKc1jXAinGXMXecyAYf1W2LJO_n-qNKctfaDDZkwTRT81oEcyeJpey7to24GYCuqIgPjY_jrf4N7W_0rV7dpjXsCBoxrUU=w1280')">
+          <div class="aspect-square overflow-hidden rounded-xl bg-slate-100">
+            <img src="https://lh3.googleusercontent.com/sitesv/AAzXCkeJWnKT2j8onKHv8sZGsL7w5zb82yTZHJC3UwQFHi2G1yVZRuoMOi-Nmog1hcar_y6aTo5AmIt_skbKyGESipXPeHviXOHRIfSK-RDIiEe9nMaOl3Pbh4U300MM6ImpwtCEkoaQ7sKc1jXAinGXMXecyAYf1W2LJO_n-qNKctfaDDZkwTRT81oEcyeJpey7to24GYCuqIgPjY_jrf4N7W_0rV7dpjXsCBoxrUU=w1280" 
+                 alt="Workshop Activity" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          </div>
+        </div>
+        
+        <div class="group cursor-pointer" onclick="openLightbox('https://lh3.googleusercontent.com/sitesv/AAzXCkeDuz8mr9tIdjSxhvt0Kkt4Jy_VpZiGKf32QLK4MnO4GYbOrp0hiNCO5kYiQrloDWBCc-UXAgCQ0em-Uw3AxR6ndTdK-9yYcVkN03n5HRqmmPakaGk5KnAztHDjv98vmrOOBRkqYnatUhO10zj1g3uF0iBYeQbLHUJqyYftYHPMjzaM4HchPCJoTyZZSqzWmRFwYXOtz-3kfPil5qCbwi4ABDyHMlqz-9ZDHN4=w1280')">
+          <div class="aspect-square overflow-hidden rounded-xl bg-slate-100">
+            <img src="https://lh3.googleusercontent.com/sitesv/AAzXCkeDuz8mr9tIdjSxhvt0Kkt4Jy_VpZiGKf32QLK4MnO4GYbOrp0hiNCO5kYiQrloDWBCc-UXAgCQ0em-Uw3AxR6ndTdK-9yYcVkN03n5HRqmmPakaGk5KnAztHDjv98vmrOOBRkqYnatUhO10zj1g3uF0iBYeQbLHUJqyYftYHPMjzaM4HchPCJoTyZZSqzWmRFwYXOtz-3kfPil5qCbwi4ABDyHMlqz-9ZDHN4=w1280" 
+                 alt="Workshop Activity" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          </div>
+        </div>
+        
+        <div class="group cursor-pointer" onclick="openLightbox('https://lh3.googleusercontent.com/sitesv/AAzXCkfFUsL463C2R8jeh3eoWgX8O7COopI2tbm0UdsV4MLbu9dpP6TpBK70o5hpy9nGq4QdRiz9ostcXWLEcqavrAQnCMWQYMEkE6dD7thQu3okHRdikw0woxmfhXVgrE1-pd52D8sTwQZAl02IIrUGf3tRnlzZ-y0xh3yVMM8jtITKa31qTQrSOXtwiyxkKewQzJiGFN7Ex-Ih3vFM239w3weIBkr4NlwxZeocLnM=w1280')">
+          <div class="aspect-square overflow-hidden rounded-xl bg-slate-100">
+            <img src="https://lh3.googleusercontent.com/sitesv/AAzXCkfFUsL463C2R8jeh3eoWgX8O7COopI2tbm0UdsV4MLbu9dpP6TpBK70o5hpy9nGq4QdRiz9ostcXWLEcqavrAQnCMWQYMEkE6dD7thQu3okHRdikw0woxmfhXVgrE1-pd52D8sTwQZAl02IIrUGf3tRnlzZ-y0xh3yVMM8jtITKa31qTQrSOXtwiyxkKewQzJiGFN7Ex-Ih3vFM239w3weIBkr4NlwxZeocLnM=w1280" 
+                 alt="Workshop Activity" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          </div>
+        </div>
+        
+        <div class="group cursor-pointer" onclick="openLightbox('https://lh3.googleusercontent.com/sitesv/AAzXCkdA65IxgwKfZBjQUpzEkhyaPH-PzyqZgSVebTM9ryXVf1Xc8EvAX1hg_s1JoxLYxbE47RyD7c8A_J3ckdJJLRKwO-HEjPLQ2ZBOZWMAF11DLwTnwMCua99B6_8fz7kasPDQX56aNqciEtTTcqAahNcFdgKaDo0RiinCZMTTCC3ks5FsYL1douYapt5BydCh9v0xa-91kNAj5E9lm8NARNeUfFaunPRkIyKo=w1280')">
+          <div class="aspect-square overflow-hidden rounded-xl bg-slate-100">
+            <img src="https://lh3.googleusercontent.com/sitesv/AAzXCkdA65IxgwKfZBjQUpzEkhyaPH-PzyqZgSVebTM9ryXVf1Xc8EvAX1hg_s1JoxLYxbE47RyD7c8A_J3ckdJJLRKwO-HEjPLQ2ZBOZWMAF11DLwTnwMCua99B6_8fz7kasPDQX56aNqciEtTTcqAahNcFdgKaDo0RiinCZMTTCC3ks5FsYL1douYapt5BydCh9v0xa-91kNAj5E9lm8NARNeUfFaunPRkIyKo=w1280" 
+                 alt="Workshop Activity" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Book Inaugural Section -->
+    <div class="mb-20">
+      <div class="text-center mb-12">
+        <h3 class="text-2xl font-semibold text-slate-900 mb-2">Book Inaugural</h3>
+        <p class="text-slate-600">Date: 24/04/2022</p>
+      </div>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="group cursor-pointer" onclick="openLightbox('https://lh3.googleusercontent.com/sitesv/AAzXCkeDK_XaMFJ83muSpNK2O0TsVij8GXmhrTa3qkInRC0XPGYogoJ6F-W1SalI0fRAC8xo5-PCg7ozAdc6aRM54sbqAMR0kFsTZohY7kkJEWuoVz5bNLtTePbJ_BFJVwbjzpF6eN8bwHw2nC8Lxl0d8PBjE5-JfEX5T_XJcsVRvRfNaCb_LcuoQ5u8LvFW-fmlyJS8L_dK-dzI0P4GELMw8ARJK6jTSctGi1PZ=w1280')">
+          <div class="aspect-square overflow-hidden rounded-xl bg-slate-100">
+            <img src="https://lh3.googleusercontent.com/sitesv/AAzXCkeDK_XaMFJ83muSpNK2O0TsVij8GXmhrTa3qkInRC0XPGYogoJ6F-W1SalI0fRAC8xo5-PCg7ozAdc6aRM54sbqAMR0kFsTZohY7kkJEWuoVz5bNLtTePbJ_BFJVwbjzpF6eN8bwHw2nC8Lxl0d8PBjE5-JfEX5T_XJcsVRvRfNaCb_LcuoQ5u8LvFW-fmlyJS8L_dK-dzI0P4GELMw8ARJK6jTSctGi1PZ=w1280" 
+                 alt="Book Inaugural Event" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          </div>
+        </div>
+        
+        <div class="group cursor-pointer" onclick="openLightbox('https://lh3.googleusercontent.com/sitesv/AAzXCkeMedW71ZKlfst5jhyiXte18Vl2KbighPCzarhujAVW-AQ7cTYGyDP1jYFQinctqCrKD8FmCnT4RAUQp1J3g8gQB3SHUfGxH0Mn3ztP_fHQOWxXRrHVvuT13ICDra79oVr59k-Oi36dDE931up3ADjegMsiejJyKHAyhs-KXetKthek3jUExI4oZhtM3bxKA7KG6S5XJ1MW1hYTA09vgUAcRkIQxYH9raOjPTs=w1280')">
+          <div class="aspect-square overflow-hidden rounded-xl bg-slate-100">
+            <img src="https://lh3.googleusercontent.com/sitesv/AAzXCkeMedW71ZKlfst5jhyiXte18Vl2KbighPCzarhujAVW-AQ7cTYGyDP1jYFQinctqCrKD8FmCnT4RAUQp1J3g8gQB3SHUfGxH0Mn3ztP_fHQOWxXRrHVvuT13ICDra79oVr59k-Oi36dDE931up3ADjegMsiejJyKHAyhs-KXetKthek3jUExI4oZhtM3bxKA7KG6S5XJ1MW1hYTA09vgUAcRkIQxYH9raOjPTs=w1280" 
+                 alt="Book Inaugural Event" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          </div>
+        </div>
+        
+        <div class="group cursor-pointer" onclick="openLightbox('https://lh3.googleusercontent.com/sitesv/AAzXCkd-O-P-idmiQ9OkYzY50nusjzaf22gqYILFHdDUb4UhwOBmOu1I-D-rP7p5ITuO35r9PHNSe8lnFDG7_NuMrSf7HiDJQphQNZ6fJr35UXonZARwP9Ho0RkbxtZIsBD1c7LgXiQ-uVceBRY5-6oWLwT2UTtYjDtOaIZpnquSjZ8D2mbtgqAOQS8aQNPwNZ57tIhAoWC15Sgu3mPy6hFNHIyCaD5WqdQ2wuVJ=w1280')">
+          <div class="aspect-square overflow-hidden rounded-xl bg-slate-100">
+            <img src="https://lh3.googleusercontent.com/sitesv/AAzXCkd-O-P-idmiQ9OkYzY50nusjzaf22gqYILFHdDUb4UhwOBmOu1I-D-rP7p5ITuO35r9PHNSe8lnFDG7_NuMrSf7HiDJQphQNZ6fJr35UXonZARwP9Ho0RkbxtZIsBD1c7LgXiQ-uVceBRY5-6oWLwT2UTtYjDtOaIZpnquSjZ8D2mbtgqAOQS8aQNPwNZ57tIhAoWC15Sgu3mPy6hFNHIyCaD5WqdQ2wuVJ=w1280" 
+                 alt="Book Inaugural Event" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          </div>
+        </div>
+        
+        <div class="group cursor-pointer" onclick="openLightbox('https://lh3.googleusercontent.com/sitesv/AAzXCkeE-daxqZZEPzn3VZ7mGl4pKxMKvg0Z8xYPGDlapiqKuZuMI3JZTJ8c6ysTQGGCQWTsU5-fJPSECcxbIsOUdaqtF5-gc_Cxh-fy0jId4BCh3pb201KhjQKezk-o6JG7kJkJCu1T-25ZzJAt-5bt3-pmwNAPBfBiD3eGyOBvb-C0a5ab3OcnGYXcKHx4cNiK7Cjni1Htxc7tSMTIj-SKuLnEiG4xnDpMQMNLgl0=w1280')">
+          <div class="aspect-square overflow-hidden rounded-xl bg-slate-100">
+            <img src="https://lh3.googleusercontent.com/sitesv/AAzXCkeE-daxqZZEPzn3VZ7mGl4pKxMKvg0Z8xYPGDlapiqKuZuMI3JZTJ8c6ysTQGGCQWTsU5-fJPSECcxbIsOUdaqtF5-gc_Cxh-fy0jId4BCh3pb201KhjQKezk-o6JG7kJkJCu1T-25ZzJAt-5bt3-pmwNAPBfBiD3eGyOBvb-C0a5ab3OcnGYXcKHx4cNiK7Cjni1Htxc7tSMTIj-SKuLnEiG4xnDpMQMNLgl0=w1280" 
+                 alt="Book Inaugural Event" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          </div>
+        </div>
+        
+        <div class="group cursor-pointer" onclick="openLightbox('https://lh3.googleusercontent.com/sitesv/AAzXCkeWOz94Z2iGVfM3Tw2N9PYGNuKotHPci83ru9ZOCKEMXxCRC_xr74EdJCENXgzaca4jfiPOiyup3rzwkQ677XdrfGGFaQipjsh5h4q5xPjF3XO_HTA-nk8JV_uslJKmMeBQfd_gE9dBvHALzR9y95qQoOYNZpnQeLc6PNkHqs0179uhM5V9sACVU82mS8K2kJvbWOWp7x35A4n314uNw8_Hnq8ndQgOTxmZP1o=w1280')">
+          <div class="aspect-square overflow-hidden rounded-xl bg-slate-100">
+            <img src="https://lh3.googleusercontent.com/sitesv/AAzXCkeWOz94Z2iGVfM3Tw2N9PYGNuKotHPci83ru9ZOCKEMXxCRC_xr74EdJCENXgzaca4jfiPOiyup3rzwkQ677XdrfGGFaQipjsh5h4q5xPjF3XO_HTA-nk8JV_uslJKmMeBQfd_gE9dBvHALzR9y95qQoOYNZpnQeLc6PNkHqs0179uhM5V9sACVU82mS8K2kJvbWOWp7x35A4n314uNw8_Hnq8ndQgOTxmZP1o=w1280" 
+                 alt="Book Inaugural Event" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          </div>
+        </div>
+        
+        <div class="group cursor-pointer" onclick="openLightbox('https://lh3.googleusercontent.com/sitesv/AAzXCkfMp5SwubC5ayQwiFm0NkFmMWw9uXgziWJ-_3W4WAgLrVuVjAat0kBuHTnYChJTzRb0-D3Du5cCStp8pFULGWmKv4FJ_hsJ9PaThAlzpNG-tyaXip6tylhdkmB88k4gAO1JQwXmLptcobeDx3FcPLpyrY6bc_YfHNCea3MEwX3vsv8MlCUHj73biLash-gwt6JBCT5LcKUB6GnqAfXkS5HkR10rF05gvVYK=w1280')">
+          <div class="aspect-square overflow-hidden rounded-xl bg-slate-100">
+            <img src="https://lh3.googleusercontent.com/sitesv/AAzXCkfMp5SwubC5ayQwiFm0NkFmMWw9uXgziWJ-_3W4WAgLrVuVjAat0kBuHTnYChJTzRb0-D3Du5cCStp8pFULGWmKv4FJ_hsJ9PaThAlzpNG-tyaXip6tylhdkmB88k4gAO1JQwXmLptcobeDx3FcPLpyrY6bc_YfHNCea3MEwX3vsv8MlCUHj73biLash-gwt6JBCT5LcKUB6GnqAfXkS5HkR10rF05gvVYK=w1280" 
+                 alt="Book Inaugural Event" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Additional Gallery Images -->
+    <div class="mb-20">
+      <div class="text-center mb-12">
+        <h3 class="text-2xl font-semibold text-slate-900 mb-2">More Moments</h3>
+        <p class="text-slate-600">Additional photos from our activities and events</p>
+      </div>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <!-- Additional images from the remaining URLs -->
+        <div class="group cursor-pointer" onclick="openLightbox('https://lh3.googleusercontent.com/sitesv/AAzXCkc24Xh_EntDdNFlUC5EdZN7e3SReiZhVKUnSKHk9KtHYjxxW2D0RyI7sKko0kdMnpNBsT0EDgqi_PnvZV5CZkWJcNvZEiIvfF0R2tc3QwYMRGRBGFuTk10A1iKXyE0cnt7OHh9-NjPRoSCngWIVq0OWE6zK2tmaiBtu7tiehoqaCAHvPv_22t0lQNiTvI4a0e6xvDDdSzP2R9TgR8ACD_GeH782Vjs2chGhuf0=w1280')">
+          <div class="aspect-square overflow-hidden rounded-xl bg-slate-100">
+            <img src="https://lh3.googleusercontent.com/sitesv/AAzXCkc24Xh_EntDdNFlUC5EdZN7e3SReiZhVKUnSKHk9KtHYjxxW2D0RyI7sKko0kdMnpNBsT0EDgqi_PnvZV5CZkWJcNvZEiIvfF0R2tc3QwYMRGRBGFuTk10A1iKXyE0cnt7OHh9-NjPRoSCngWIVq0OWE6zK2tmaiBtu7tiehoqaCAHvPv_22t0lQNiTvI4a0e6xvDDdSzP2R9TgR8ACD_GeH782Vjs2chGhuf0=w1280" 
+                 alt="Foundation Activity" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          </div>
+        </div>
+        
+        <div class="group cursor-pointer" onclick="openLightbox('https://lh3.googleusercontent.com/sitesv/AAzXCkfgCurYGyY0iqFgedgvvQSaAEZAg108Gihg_2HDD-BsyRcfIDmiPm8m-gg1MIQZcpu-hzalrqyBSjV6tnZm-ZvwrOYAZmLau2IjZwmmg2Wzc5MX8dYixnBUMFUY08e0MNRGSXeufLpb24jAUaI_zdUr5KV5_xPSfp0uzzXUDszpx1LO1eKBlbeCNWCUeLBjCwykJ5avuSirYJUR7oU5fXjinW8w0QMLftWtatQ=w1280')">
+          <div class="aspect-square overflow-hidden rounded-xl bg-slate-100">
+            <img src="https://lh3.googleusercontent.com/sitesv/AAzXCkfgCurYGyY0iqFgedgvvQSaAEZAg108Gihg_2HDD-BsyRcfIDmiPm8m-gg1MIQZcpu-hzalrqyBSjV6tnZm-ZvwrOYAZmLau2IjZwmmg2Wzc5MX8dYixnBUMFUY08e0MNRGSXeufLpb24jAUaI_zdUr5KV5_xPSfp0uzzXUDszpx1LO1eKBlbeCNWCUeLBjCwykJ5avuSirYJUR7oU5fXjinW8w0QMLftWtatQ=w1280" 
+                 alt="Foundation Activity" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          </div>
+        </div>
+        
+        <div class="group cursor-pointer" onclick="openLightbox('https://lh3.googleusercontent.com/sitesv/AAzXCkcTqlZQigdkpvbh0xV8EOsD8o-ApkeQPHkK7Gu-t-MTFxy9_qhFVXIx2DWxr8AcnhoZItsIAlwk_lxjeXDu3UrUMlobu7ED3PjtWLKgvkYOQ_kzgGAbYWsJo_dCmPKPEp4B3AtBhRDUF_iEGT6iPGD8EplHjZFy-LJBoC29MBT7MnTVT5XbJK0w2J7LBWbHT88ySA5ivaSD7ZAta1SsG7hUCH90j5D4Bas=w1280')">
+          <div class="aspect-square overflow-hidden rounded-xl bg-slate-100">
+            <img src="https://lh3.googleusercontent.com/sitesv/AAzXCkcTqlZQigdkpvbh0xV8EOsD8o-ApkeQPHkK7Gu-t-MTFxy9_qhFVXIx2DWxr8AcnhoZItsIAlwk_lxjeXDu3UrUMlobu7ED3PjtWLKgvkYOQ_kzgGAbYWsJo_dCmPKPEp4B3AtBhRDUF_iEGT6iPGD8EplHjZFy-LJBoC29MBT7MnTVT5XbJK0w2J7LBWbHT88ySA5ivaSD7ZAta1SsG7hUCH90j5D4Bas=w1280" 
+                 alt="Foundation Activity" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          </div>
+        </div>
+        
+        <div class="group cursor-pointer" onclick="openLightbox('https://lh3.googleusercontent.com/sitesv/AAzXCkfGORMYt2QbB-cA7j2Defpmys-d-rJ8BDJMrI3T3o2N2_rfJcSAEngvTzkuG-A5EDhh9tIOB9GF7GfdFb6qYR9Y-vuJGbmxxxWleOUhj_zdiciGUG5WqJDODHVt1HhSv0rBFEUzByJ4ZZxPrTTQfkxoENjxwV0Drz3Ub925WGS9SMH8vf1zc3t9PiEaBd7PVKKIm4bH17rvIDoy2lxC1noiV3cz6AN-CyTIgUk=w1280')">
+          <div class="aspect-square overflow-hidden rounded-xl bg-slate-100">
+            <img src="https://lh3.googleusercontent.com/sitesv/AAzXCkfGORMYt2QbB-cA7j2Defpmys-d-rJ8BDJMrI3T3o2N2_rfJcSAEngvTzkuG-A5EDhh9tIOB9GF7GfdFb6qYR9Y-vuJGbmxxxWleOUhj_zdiciGUG5WqJDODHVt1HhSv0rBFEUzByJ4ZZxPrTTQfkxoENjxwV0Drz3Ub925WGS9SMH8vf1zc3t9PiEaBd7PVKKIm4bH17rvIDoy2lxC1noiV3cz6AN-CyTIgUk=w1280" 
+                 alt="Foundation Activity" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          </div>
+        </div>
+        
+        <div class="group cursor-pointer" onclick="openLightbox('https://lh3.googleusercontent.com/sitesv/AAzXCkfb74jp8EjRlUjCDsUNStg4elNKnh4ifCNm-0ovzci9zyTZ6UdZIFxnuQgXQgvyluFc0-_XN-Pw09jv7iV_4nD8grEbq8u3LslhulDxDLmiTqrTQzJ1MFSmFlDghC_hhErBPfI50nEq8UhIUy-7TJaJZ1fr20Nvwu3ip3TfuuIiTGXE15gW0KkRAW0gOKc17eFHU9HA0n3jqL4hv3omBMBtdlfsjLchWzHZ=w1280')">
+          <div class="aspect-square overflow-hidden rounded-xl bg-slate-100">
+            <img src="https://lh3.googleusercontent.com/sitesv/AAzXCkfb74jp8EjRlUjCDsUNStg4elNKnh4ifCNm-0ovzci9zyTZ6UdZIFxnuQgXQgvyluFc0-_XN-Pw09jv7iV_4nD8grEbq8u3LslhulDxDLmiTqrTQzJ1MFSmFlDghC_hhErBPfI50nEq8UhIUy-7TJaJZ1fr20Nvwu3ip3TfuuIiTGXE15gW0KkRAW0gOKc17eFHU9HA0n3jqL4hv3omBMBtdlfsjLchWzHZ=w1280" 
+                 alt="Foundation Activity" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          </div>
+        </div>
+        
+        <div class="group cursor-pointer" onclick="openLightbox('https://lh3.googleusercontent.com/sitesv/AAzXCkcCk6xaTURKkBErTWj2zhhKPbvRLiBHqrdh74fQbIehPOeUjWvPHEGSCl73BEy98PDMI7j9xf7Y8LyE9Qng_TmeSSUa1Dp3UdIzw_fgvQKlyA8BNb3bVk9P_TyYONPuF3TiIez4XkY3DCeuYowZanNeMhjBoLd4XbgO81g03rJjd7b2B1ce6rR3RioPTZo7DhXXQt7lE_T6j1othDcb7n7ypSfbdfsiBQ-R550=w1280')">
+          <div class="aspect-square overflow-hidden rounded-xl bg-slate-100">
+            <img src="https://lh3.googleusercontent.com/sitesv/AAzXCkcCk6xaTURKkBErTWj2zhhKPbvRLiBHqrdh74fQbIehPOeUjWvPHEGSCl73BEy98PDMI7j9xf7Y8LyE9Qng_TmeSSUa1Dp3UdIzw_fgvQKlyA8BNb3bVk9P_TyYONPuF3TiIez4XkY3DCeuYowZanNeMhjBoLd4XbgO81g03rJjd7b2B1ce6rR3RioPTZo7DhXXQt7lE_T6j1othDcb7n7ypSfbdfsiBQ-R550=w1280" 
+                 alt="Foundation Activity" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          </div>
+        </div>
+        
+        <div class="group cursor-pointer" onclick="openLightbox('https://lh3.googleusercontent.com/sitesv/AAzXCkcGiY4wiAAUpefwHoAjvX0yqqyqZ8eyRbyJXOA-N2FMqm_tJ8fRdYrRC9knTNtDxuet3VXJc4oOoVbkTZy1GVqBD18Maq0RklAP-ph0RtI4Em5TXSppGMmcPIwkB4-gOpGQDvd80dIAQWo4xHRyhArmQeNES93eWl-7QzC9DmR1sDx173QgJpRxP7yG1NnLbCovKGJDFKvyWfduypybHHVXJ8RWCExCnk226DU=w1280')">
+          <div class="aspect-square overflow-hidden rounded-xl bg-slate-100">
+            <img src="https://lh3.googleusercontent.com/sitesv/AAzXCkcGiY4wiAAUpefwHoAjvX0yqqyqZ8eyRbyJXOA-N2FMqm_tJ8fRdYrRC9knTNtDxuet3VXJc4oOoVbkTZy1GVqBD18Maq0RklAP-ph0RtI4Em5TXSppGMmcPIwkB4-gOpGQDvd80dIAQWo4xHRyhArmQeNES93eWl-7QzC9DmR1sDx173QgJpRxP7yG1NnLbCovKGJDFKvyWfduypybHHVXJ8RWCExCnk226DU=w1280" 
+                 alt="Foundation Activity" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+      </div>
+        </div>
+        
+        <div class="group cursor-pointer" onclick="openLightbox('https://lh3.googleusercontent.com/sitesv/AAzXCkc4xwkfQajkdJalAN50fG78eHM1Nwih0OKBEmki0XLfBs3I6zR6g9KeCn1nmv5zvFKzda4GnaVlwVBPqzAmIE70Ubt8q-8bwk8dmx4vYgz0WeOP3glASlum3mxa4h-cCfKu3SKhmWxY-cejW2BnXqUDTBVwhK9_YSOC6SorwDi7JGEFWGt43cLFK-ethooYpqkt1fsOEIOOlL2HlREePBsWgU7WgkNhW5jK3pA=w1280')">
+          <div class="aspect-square overflow-hidden rounded-xl bg-slate-100">
+            <img src="https://lh3.googleusercontent.com/sitesv/AAzXCkc4xwkfQajkdJalAN50fG78eHM1Nwih0OKBEmki0XLfBs3I6zR6g9KeCn1nmv5zvFKzda4GnaVlwVBPqzAmIE70Ubt8q-8bwk8dmx4vYgz0WeOP3glASlum3mxa4h-cCfKu3SKhmWxY-cejW2BnXqUDTBVwhK9_YSOC6SorwDi7JGEFWGt43cLFK-ethooYpqkt1fsOEIOOlL2HlREePBsWgU7WgkNhW5jK3pA=w1280" 
+                 alt="Foundation Activity" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+      </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= LIGHTBOX MODAL ================= -->
+<div id="lightboxModal" class="fixed inset-0 bg-black bg-opacity-90 z-50 hidden flex items-center justify-center p-4">
+  <div class="relative max-w-4xl max-h-full">
+    <button onclick="closeLightbox()" class="absolute -top-10 right-0 text-white text-2xl hover:text-gray-300">
+      <i class="bx bx-x"></i>
+    </button>
+    <img id="lightboxImage" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'%3E%3C/svg%3E" alt="Gallery Image" class="max-w-full max-h-full object-contain rounded-lg">
+  </div>
+</div>
+
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="bg-slate-900 text-slate-300">
+  <div class="max-w-7xl mx-auto px-6 py-16">
+
+    <!-- Top Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+
+      <!-- Brand & Head Office -->
+      <div>
+        <!-- Text Logo -->
+        <div class="mb-6">
+          <a href="../../index.html">
+            <h3 class="text-xl font-semibold tracking-wide text-white">
+              Vijayaanand Foundation
+            </h3>
+            <span class="block mt-1 h-0.5 w-16 bg-emerald-500"></span>
+          </a>
+        </div>
+
+        <h4 class="text-sm font-semibold text-white mb-3">
+          Head Office – Pune
+        </h4>
+
+        <p class="text-sm leading-relaxed">
+          Vijayaanand Foundation, SSD Sai Luxuria<br>
+          Near Akshara International School,<br>
+          Vinode Corner, Bhumkar Chowk,<br>
+          Wakad, Pune – 411057.
+        </p>
+      </div>
+
+      <!-- Sub Branch -->
+      <div>
+        <h4 class="text-sm font-semibold text-white mb-6">
+          Sub Branch – Chiplun
+        </h4>
+
+        <p class="text-sm leading-relaxed">
+          Vijayaanand Foundation,<br>
+          Khandat Pali, Tal. Chiplun,<br>
+          Dist. Ratnagiri,<br>
+          Maharashtra, India – 415605.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h4 class="text-sm font-semibold text-white mb-6">
+          Quick Links
+        </h4>
+
+        <ul class="space-y-3 text-sm">
+          <li>
+            <a href="contact.html" class="hover:text-white transition">
+              Contact Us
+            </a>
+          </li>
+          <li>
+            <a href="psychological.html" class="hover:text-white transition">
+              Psychological Services
+            </a>
+          </li>
+          <li>
+            <a href="pace.html" class="hover:text-white transition">
+              PACE Institute
+            </a>
+          </li>
+          <li>
+            <a href="about.html" class="hover:text-white transition">
+              About Us
+            </a>
+          </li>
+          <li>
+            <a href="gallery.html" class="hover:text-white transition">
+              Gallery
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Divider -->
+    <div class="my-10 border-t border-white/10"></div>
+
+    <!-- Bottom Bar -->
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
+
+      <!-- Copyright -->
+      <p class="text-xs text-slate-400">
+        © 2026 Vijayaanand Foundation. All rights reserved.
+      </p>
+
+      <!-- Contact Icons -->
+      <div class="flex items-center gap-4">
+
+        <a href="https://wa.me/919922156948" target="_blank"
+           class="h-10 w-10 rounded-full bg-green-500 flex items-center justify-center hover:scale-105 transition">
+          <i class="bx bxl-whatsapp text-white text-xl"></i>
+        </a>
+
+        <a href="tel:+919922156948"
+           class="h-10 w-10 rounded-full bg-slate-700 flex items-center justify-center hover:bg-slate-600 transition">
+          <i class="bx bx-phone text-white text-lg"></i>
+        </a>
+
+        <a href="mailto:vijayaanandfoundation@gmail.com"
+           class="h-10 w-10 rounded-full bg-indigo-600 flex items-center justify-center hover:bg-indigo-500 transition">
+          <i class="bx bx-envelope text-white text-lg"></i>
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+</footer>
+
+
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const closeBtn = document.getElementById('closeBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  menuBtn.onclick = () => mobileMenu.classList.remove('-translate-x-full');
+  closeBtn.onclick = () => mobileMenu.classList.add('-translate-x-full');
+</script>
+
+<script>
+  const mobileExploreBtn = document.getElementById('mobileExploreBtn')
+  const mobileExploreMenu = document.getElementById('mobileExploreMenu')
+  const mobileExploreIcon = document.getElementById('mobileExploreIcon')
+
+  mobileExploreBtn.addEventListener('click', () => {
+    mobileExploreMenu.classList.toggle('hidden')
+    mobileExploreIcon.classList.toggle('bx-chevron-down')
+    mobileExploreIcon.classList.toggle('bx-chevron-up')
+  })
+</script>
+
+<script>
+  // Lightbox functionality
+  function openLightbox(imageSrc) {
+    const modal = document.getElementById('lightboxModal');
+    const image = document.getElementById('lightboxImage');
+    image.src = imageSrc;
+    modal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    const modal = document.getElementById('lightboxModal');
+    modal.classList.add('hidden');
+    document.body.style.overflow = 'auto';
+  }
+
+  // Close lightbox when clicking outside the image
+  document.getElementById('lightboxModal').addEventListener('click', function(e) {
+    if (e.target === this) {
+      closeLightbox();
+    }
+  });
+
+  // Close lightbox with Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      closeLightbox();
+    }
+  });
+</script>
+
+</body>
+</html>

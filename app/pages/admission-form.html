@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vijayanand Foundation - Admission Form</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Boxicons -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+  <!-- CSS styles -->
+  <link rel="stylesheet" href="../style/basic-nav.css">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            logo: ['Anton', 'sans-serif'],
+            body: ['Lexend', 'sans-serif']
+          },
+          colors: {
+            primaryDark: '#0F172A'
+          }
+        }
+      }
+    }
+  </script>
+
+<style>
+  html, body {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  html::-webkit-scrollbar,
+  body::-webkit-scrollbar,
+  *::-webkit-scrollbar {
+    display: none;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  #siteHeader {
+    height: 72px;
+    background: white;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+  }
+
+  .nav-link {
+    position: relative;
+    color: black;
+    padding: 4px 0;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: black;
+    transform: translateX(-50%);
+    transition: width .25s ease;
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+
+  .nav-cta {
+    border-color: black;
+  }
+
+  /* FIXED OFFSET */
+  .page-wrapper {
+    padding-top: 72px;
+  }
+
+  #mobileMenu nav a {
+    display: block;
+    width: 100%;
+    line-height: 1.4;
+    padding: 6px 0;
+    white-space: normal;
+  }
+</style>
+</head>
+
+<body class="font-body bg-white text-black">
+
+<header id="siteHeader" class="fixed top-0 inset-x-0 z-50">
+  <nav class="relative max-w-7xl mx-auto px-6 h-20 flex items-center">
+    <a href="../../index.html" class="flex items-center">
+      <div class="leading-tight">
+        <div class="text-xl tracking-tight">Vijayanand Foundation</div>
+      </div>
+    </a>
+
+    <ul class="hidden md:flex absolute left-1/2 -translate-x-1/2 gap-10 text-base font-medium items-center">
+      <li><a href="pace.html" class="nav-link">PACE</a></li>
+      <li><a href="about.html" class="nav-link">About</a></li>
+      <li><a href="psychological.html" class="nav-link">Psychological</a></li>
+      <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+      <li class="relative group">
+        <button class="nav-link flex items-center gap-1">
+          More <i class='bx bx-chevron-down text-sm'></i>
+        </button>
+        <div class="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-52 rounded-xl bg-white shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition">
+          <a href="tujh.html" class="block px-5 py-3 text-sm hover:bg-slate-50">तुझी माझी रेशिम गाठ</a>
+          <a href="contact.html" class="block px-5 py-3 text-sm hover:bg-slate-50">Contact Us</a>
+        </div>
+      </li>
+    </ul>
+
+    <div class="ml-auto hidden md:flex">
+      <a href="admission-form.html" class="nav-cta inline-flex items-center gap-3 px-5 py-2 rounded-full border">
+        <span class="h-8 w-8 rounded-full bg-black text-white flex items-center justify-center">
+          <i class='bx bx-right-arrow-alt'></i>
+        </span>
+        <span class="text-sm">Admission Form</span>
+      </a>
+    </div>
+
+    <button id="menuBtn" class="ml-auto md:hidden text-2xl">
+      <i class='bx bx-menu'></i>
+    </button>
+  </nav>
+</header>
+
+<!-- ================= MOBILE SIDEBAR ================= -->
+<div id="mobileMenu"
+  class="fixed inset-y-0 left-0 w-80 bg-white z-50 transform -translate-x-full transition-transform duration-300 md:hidden shadow-2xl">
+
+  <!-- Header -->
+  <div class="p-6 border-b border-gray-200 flex justify-between items-start">
+    <a href="../../index.html">
+      <div>
+        <div class="font-body text-xl tracking-tight">
+            Vijayanand Foundation
+        </div>
+      </div>
+    </a>
+    <button id="closeBtn" class="text-2xl text-black">
+      <i class='bx bx-x'></i>
+    </button>
+  </div>
+
+  <!-- Nav -->
+  <nav class="px-6 py-8 space-y-6 text-lg font-medium text-primaryDark">
+    <a href="pace.html" class="block">PACE</a>
+    <a href="about.html" class="block">About Us</a>
+    <a href="psychological.html" class="block">Psychological Services</a>
+    <a href="gallery.html" class="block">Gallery</a>
+
+    <!-- Mobile More Dropdown -->
+    <div>
+      <button id="mobileExploreBtn" class="w-full flex items-center justify-between">
+        <span>More</span>
+        <i id="mobileExploreIcon" class='bx bx-chevron-down text-xl'></i>
+      </button>
+
+      <div id="mobileExploreMenu" class="mt-4 ml-4 space-y-4 hidden text-base">
+        <a href="tujh.html" class="block">तुझी माझी रेशिम गाठ</a>
+        <a href="contact.html" class="block">Contact Us</a>
+      </div>
+    </div>
+
+    <div class="pt-6 border-t border-gray-200"></div>
+
+    <a href="admission-form.html"
+      class="flex items-center justify-between px-5 py-2 rounded-full border border-primaryDark hover:bg-primaryDark hover:text-white transition"style="display: inline-flex; padding: 10px 20px; border-radius: 9999px; border: 1px solid black;">
+      <span>Admission Form</span>
+      <span class="h-10 w-10 flex items-center justify-center rounded-full bg-teal-500 text-white">
+        <i class='bx bx-right-arrow-alt text-xl'></i>
+      </span>
+    </a>
+  </nav>
+</div>
+
+
+<main class="page-wrapper">
+
+<section class="relative min-h-[60vh] flex items-center overflow-hidden -mt-[72px]">
+
+  <!-- Background -->
+  <div class="absolute inset-0">
+    <img src="../../src/images/info-bg.png" alt="Admission Form"
+         class="w-full h-full object-cover scale-105">
+    <div class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/65 to-black/30"></div>
+  </div>
+
+  <!-- Content -->
+  <div class="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-8" style="margin-top: 50px;">
+    <div class="max-w-xl lg:max-w-2xl text-left">
+
+      <!-- Badge -->
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-sm text-sm text-white/90 mb-6">
+        <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
+        Admission Open
+      </div>
+
+      <!-- Heading -->
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-white leading-tight">
+        Admission Form
+        <span class="block mt-3 text-emerald-300">
+          Join Vijayanand Foundation
+        </span>
+      </h1>
+
+      <!-- Description -->
+      <p class="mt-6 text-base sm:text-lg text-white/75 leading-relaxed">
+        Fill out the form below to begin your journey with us. Our team will get back to you soon.
+      </p>
+
+    </div>
+  </div>
+
+</section>
+
+
+<!-- ================= ADMISSION FORM ================= -->
+<section class="py-24 bg-slate-50">
+  <div class="max-w-4xl mx-auto px-6 lg:px-8">
+
+    <div class="bg-white rounded-2xl p-8 lg:p-12 border border-slate-200 shadow-sm">
+      <form id="admissionForm" class="space-y-6">
+        
+        <!-- Personal Information -->
+        <div>
+          <h3 class="text-xl font-semibold text-slate-900 mb-6">Personal Information</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label for="firstName" class="block text-sm font-medium text-slate-700 mb-2">First Name *</label>
+              <input type="text" id="firstName" name="firstName" required
+                     class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition">
+            </div>
+            <div>
+              <label for="lastName" class="block text-sm font-medium text-slate-700 mb-2">Last Name *</label>
+              <input type="text" id="lastName" name="lastName" required
+                     class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition">
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-medium text-slate-700 mb-2">Email Address *</label>
+              <input type="email" id="email" name="email" required
+                     class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition">
+            </div>
+            <div>
+              <label for="phone" class="block text-sm font-medium text-slate-700 mb-2">Phone Number *</label>
+              <input type="tel" id="phone" name="phone" required
+                     class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition">
+            </div>
+            <div>
+              <label for="dateOfBirth" class="block text-sm font-medium text-slate-700 mb-2">Date of Birth *</label>
+              <input type="date" id="dateOfBirth" name="dateOfBirth" required
+                     class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition">
+            </div>
+            <div>
+              <label for="gender" class="block text-sm font-medium text-slate-700 mb-2">Gender *</label>
+              <select id="gender" name="gender" required
+                      class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition">
+                <option value="">Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Address Information -->
+        <div class="pt-6 border-t border-slate-200">
+          <h3 class="text-xl font-semibold text-slate-900 mb-6">Address Information</h3>
+          <div class="space-y-6">
+            <div>
+              <label for="address" class="block text-sm font-medium text-slate-700 mb-2">Full Address *</label>
+              <textarea id="address" name="address" rows="3" required
+                        class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition"></textarea>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div>
+                <label for="city" class="block text-sm font-medium text-slate-700 mb-2">City *</label>
+                <input type="text" id="city" name="city" required
+                       class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition">
+              </div>
+              <div>
+                <label for="state" class="block text-sm font-medium text-slate-700 mb-2">State *</label>
+                <input type="text" id="state" name="state" required
+                       class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition">
+              </div>
+              <div>
+                <label for="pincode" class="block text-sm font-medium text-slate-700 mb-2">Pincode *</label>
+                <input type="text" id="pincode" name="pincode" required
+                       class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course/Service Selection -->
+        <div class="pt-6 border-t border-slate-200">
+          <h3 class="text-xl font-semibold text-slate-900 mb-6">Course/Service Selection</h3>
+          <div class="space-y-6">
+            <div>
+              <label for="serviceType" class="block text-sm font-medium text-slate-700 mb-2">Select Service/Course *</label>
+              <select id="serviceType" name="serviceType" required
+                      class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition">
+                <option value="">Select a service or course</option>
+                <option value="pace-yoga">PACE Institute - Yoga Courses</option>
+                <option value="pace-naturopathy">PACE Institute - Naturopathy Courses</option>
+                <option value="counselling">Psychological Counselling</option>
+                <option value="therapy">Therapy & Rehabilitation</option>
+                <option value="child-counselling">Child Counselling</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div>
+              <label for="message" class="block text-sm font-medium text-slate-700 mb-2">Additional Information</label>
+              <textarea id="message" name="message" rows="4"
+                        class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition"
+                        placeholder="Please provide any additional information or questions..."></textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="pt-6 border-t border-slate-200">
+          <button type="submit"
+                  class="w-full md:w-auto px-8 py-4 rounded-full bg-emerald-600 text-white font-medium hover:bg-emerald-700 transition shadow-lg">
+            <span class="flex items-center justify-center gap-3">
+              <i class='bx bx-send text-xl'></i>
+              <span>Submit Admission Form</span>
+            </span>
+          </button>
+          <p class="mt-4 text-sm text-slate-500">
+            * Required fields. By submitting this form, you agree to our terms and conditions.
+          </p>
+        </div>
+
+      </form>
+    </div>
+
+    <!-- Contact Information -->
+    <div class="mt-12 bg-white rounded-2xl p-8 border border-slate-200">
+      <h3 class="text-xl font-semibold text-slate-900 mb-4">Need Help?</h3>
+      <p class="text-slate-600 mb-6">
+        If you have any questions about the admission process, please contact us:
+      </p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="flex items-center gap-3">
+          <i class='bx bx-phone text-emerald-600 text-xl'></i>
+          <div>
+            <p class="text-sm text-slate-600">Phone</p>
+            <a href="tel:+919922156948" class="text-slate-900 font-medium hover:text-emerald-600">9922156948</a>
+          </div>
+        </div>
+        <div class="flex items-center gap-3">
+          <i class='bx bx-envelope text-emerald-600 text-xl'></i>
+          <div>
+            <p class="text-sm text-slate-600">Email</p>
+            <a href="mailto:vijayaanandfoundation@gmail.com" class="text-slate-900 font-medium hover:text-emerald-600">vijayaanandfoundation@gmail.com</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="bg-slate-900 text-slate-300">
+  <div class="max-w-7xl mx-auto px-6 py-16">
+
+    <!-- Top Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+
+      <!-- Brand & Head Office -->
+      <div>
+        <!-- Text Logo -->
+        <div class="mb-6">
+          <a href="../../index.html">
+            <h3 class="text-xl font-semibold tracking-wide text-white">
+              Vijayaanand Foundation
+            </h3>
+            <span class="block mt-1 h-0.5 w-16 bg-emerald-500"></span>
+          </a>
+        </div>
+
+        <h4 class="text-sm font-semibold text-white mb-3">
+          Head Office – Pune
+        </h4>
+
+        <p class="text-sm leading-relaxed">
+          Vijayaanand Foundation, SSD Sai Luxuria<br>
+          Near Akshara International School,<br>
+          Vinode Corner, Bhumkar Chowk,<br>
+          Wakad, Pune – 411057.
+        </p>
+      </div>
+
+      <!-- Sub Branch -->
+      <div>
+        <h4 class="text-sm font-semibold text-white mb-6">
+          Sub Branch – Chiplun
+        </h4>
+
+        <p class="text-sm leading-relaxed">
+          Vijayaanand Foundation,<br>
+          Khandat Pali, Tal. Chiplun,<br>
+          Dist. Ratnagiri,<br>
+          Maharashtra, India – 415605.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h4 class="text-sm font-semibold text-white mb-6">
+          Quick Links
+        </h4>
+
+        <ul class="space-y-3 text-sm">
+          <li>
+            <a href="contact.html" class="hover:text-white transition">
+              Contact Us
+            </a>
+          </li>
+          <li>
+            <a href="psychological.html" class="hover:text-white transition">
+              Psychological Services
+            </a>
+          </li>
+          <li>
+            <a href="pace.html" class="hover:text-white transition">
+              PACE Institute
+            </a>
+          </li>
+          <li>
+            <a href="about.html" class="hover:text-white transition">
+              About Us
+            </a>
+          </li>
+          <li>
+            <a href="gallery.html" class="hover:text-white transition">
+              Gallery
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Divider -->
+    <div class="my-10 border-t border-white/10"></div>
+
+    <!-- Bottom Bar -->
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
+
+      <!-- Copyright -->
+      <p class="text-xs text-slate-400">
+        © 2026 Vijayaanand Foundation. All rights reserved.
+      </p>
+
+      <!-- Contact Icons -->
+      <div class="flex items-center gap-4">
+
+        <a href="https://wa.me/919922156948" target="_blank"
+           class="h-10 w-10 rounded-full bg-green-500 flex items-center justify-center hover:scale-105 transition">
+          <i class='bx bxl-whatsapp text-white text-xl'></i>
+        </a>
+
+        <a href="tel:+919922156948"
+           class="h-10 w-10 rounded-full bg-slate-700 flex items-center justify-center hover:bg-slate-600 transition">
+          <i class='bx bx-phone text-white text-lg'></i>
+        </a>
+
+        <a href="mailto:vijayaanandfoundation@gmail.com"
+           class="h-10 w-10 rounded-full bg-indigo-600 flex items-center justify-center hover:bg-indigo-500 transition">
+          <i class='bx bx-envelope text-white text-lg'></i>
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+</footer>
+
+
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const closeBtn = document.getElementById('closeBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  menuBtn.onclick = () => mobileMenu.classList.remove('-translate-x-full');
+  closeBtn.onclick = () => mobileMenu.classList.add('-translate-x-full');
+</script>
+
+<script>
+  const mobileExploreBtn = document.getElementById('mobileExploreBtn')
+  const mobileExploreMenu = document.getElementById('mobileExploreMenu')
+  const mobileExploreIcon = document.getElementById('mobileExploreIcon')
+
+  if (mobileExploreBtn) {
+    mobileExploreBtn.addEventListener('click', () => {
+      mobileExploreMenu.classList.toggle('hidden')
+      mobileExploreIcon.classList.toggle('bx-chevron-down')
+      mobileExploreIcon.classList.toggle('bx-chevron-up')
+    })
+  }
+</script>
+
+<script>
+  // Form submission handler
+  document.getElementById('admissionForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Get form data
+    const formData = new FormData(this);
+    const data = Object.fromEntries(formData);
+    
+    // Here you would typically send the data to a server
+    // For now, we'll show an alert
+    alert('Thank you for your interest! We have received your admission form. Our team will contact you soon.');
+    
+    // Reset form
+    this.reset();
+  });
+</script>
+
+</body>
+</html>
