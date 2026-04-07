@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Vijayanand Foundation - Psychological Services</title>
+  <title>Vijayanand Foundation - Online Counselling</title>
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -94,6 +94,14 @@
 
 <body class="font-body bg-white text-black">
 
+<!-- Google Translate -->
+<div id="google_translate_element" style="position:fixed; bottom:20px; right:20px; z-index:1000;"></div>
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'en,hi,mr', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <header id="siteHeader" class="fixed top-0 inset-x-0 z-50">
   <nav class="relative max-w-7xl mx-auto px-6 h-20 flex items-center">
     <a href="../../index.html" class="flex items-center">
@@ -103,9 +111,11 @@
     </a>
 
     <ul class="hidden md:flex absolute left-1/2 -translate-x-1/2 gap-10 text-base font-medium items-center">
+      <li><a href="about.html" class="nav-link">About Us</a></li>
+      <li><a href="therapy-services.html" class="nav-link">Therapy Services</a></li>
       <li><a href="pace.html" class="nav-link">PACE</a></li>
-      <li><a href="about.html" class="nav-link">About</a></li>
-      <li><a href="psychological.html" class="nav-link">Psychological</a></li>
+      <li><a href="online-counselling.html" class="nav-link">Online Counselling</a></li>
+      <li><a href="blog.html" class="nav-link">Blog</a></li>
       <li><a href="gallery.html" class="nav-link">Gallery</a></li>
       <li class="relative group">
         <button class="nav-link flex items-center gap-1">
@@ -155,9 +165,11 @@
 
   <!-- Nav -->
   <nav class="px-6 py-8 space-y-6 text-lg font-medium text-primaryDark">
-    <a href="pace.html" class="block">PACE</a>
     <a href="about.html" class="block">About Us</a>
-    <a href="psychological.html" class="block">Psychological Services</a>
+    <a href="therapy-services.html" class="block">Therapy Services</a>
+    <a href="pace.html" class="block">PACE</a>
+    <a href="online-counselling.html" class="block">Online Counselling</a>
+    <a href="blog.html" class="block">Blog</a>
     <a href="gallery.html" class="block">Gallery</a>
 
     <!-- Mobile More Dropdown -->
@@ -194,7 +206,7 @@
 
   <!-- Background -->
   <div class="absolute inset-0">
-    <img src="../../src/images/info-bg.png" alt="PACE Institute of Yoga"
+    <img src="../../src/images/hero.jpg" alt="PACE Institute of Yoga"
          class="w-full h-full object-cover scale-105">
     <div class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/65 to-black/30"></div>
   </div>
@@ -205,21 +217,21 @@
 
       <!-- Badge -->
       <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-sm text-sm text-white/90 mb-6">
-        <span class="h-2 w-2 rounded-full bg-teal-400"></span>
-        Recognized by Government of India
+        <span class="h-2 w-2 rounded-full bg-sky-400"></span>
+        Professional Help Anytime, Anywhere
       </div>
 
       <!-- Heading -->
       <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-white leading-tight">
-        Psychological Services
-        <span class="block mt-3 text-teal-300">
-          Vijayanand Foundation
+        Online Counselling
+        <span class="block mt-3 text-sky-300">
+          Accessible Mental Health Support
         </span>
       </h1>
 
       <!-- Description -->
       <p class="mt-6 text-base sm:text-lg text-white/75 leading-relaxed">
-        Happiness Depends on Thought
+        Connect with our expert psychologists and therapists from the comfort of your home. We provide a safe, confidential, and supportive environment for your mental well-being.
       </p>
 
       <!-- Buttons -->
@@ -240,250 +252,34 @@
 </section>
 
 
-<section class="bg-white py-28">
-  <div class="max-w-7xl mx-auto px-6 lg:px-8">
-
-    <!-- Heading -->
-    <div class="mb-20 max-w-3xl">
+<!-- ================= ONLINE COUNSELLING FORM ================= -->
+<section class="py-24 bg-slate-50">
+  <div class="max-w-4xl mx-auto px-6 lg:px-8">
+    
+    <div class="text-center mb-12">
       <h2 class="text-3xl sm:text-4xl font-semibold text-slate-900 mb-4">
-        Counselling of School Children
+        Book an Online Session
       </h2>
+      <p class="text-slate-600 text-lg">
+        Please fill out the form below to schedule your online counselling session. Our team will get back to you shortly to confirm the appointment.
+      </p>
     </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-
-      <!-- LEFT CONTENT -->
-      <div class="space-y-6 text-slate-700 text-lg leading-relaxed">
-        <p>
-          School children problems are increasing day by day.
-          They cannot pay attention during childhood period.
-          They may be suffering from challenges and difficulties.
+    <!-- Google Sheet / Form Embed Placeholder -->
+    <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex items-center justify-center" style="min-height: 500px;">
+      <div class="text-center">
+        <div class="h-16 w-16 bg-sky-100 text-sky-600 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl">
+          <i class='bx bx-spreadsheet'></i>
+        </div>
+        <h3 class="text-xl font-semibold text-slate-900 mb-2">Google Form Integration Pending</h3>
+        <p class="text-slate-500 max-w-sm mx-auto">
+          The booking form will be integrated here once the client provides the Google Sheet/Form link.
         </p>
-
-        <p>
-          If we identify and prevent problems at early stage, we can stop big problems.
-        </p>
-
-        <div class="mt-8">
-          <h3 class="text-xl font-semibold text-slate-900 mb-4">Common problems:</h3>
-          <ul class="space-y-2 text-slate-700">
-            <li>• Learning problem</li>
-            <li>• Reading problem</li>
-            <li>• Writing problem</li>
-            <li>• Lack of self-esteem</li>
-            <li>• Lack of motivation</li>
-            <li>• Orientation problem</li>
-            <li>• Self-confidence problem</li>
-            <li>• Phobia</li>
-            <li>• Anxiety</li>
-            <li>• Stress</li>
-            <li>• Maladaptive behaviour</li>
-          </ul>
-        </div>
       </div>
-
-      <!-- RIGHT : TRIANGLE IMAGE COMPOSITION -->
-      <div class="relative h-[420px] sm:h-[480px]">
-
-        <!-- TOP IMAGE -->
-        <div class="absolute top-0 right-10 z-10 w-44 sm:w-52 rounded-2xl border border-dashed border-indigo-300 bg-white p-1 shadow-lg">
-          <img
-            src="https://images.unsplash.com/photo-1509062522246-3755977927d7"
-            alt="Children learning together"
-            class="w-full h-full object-cover rounded-xl">
-        </div>
-
-        <!-- MAIN CENTER IMAGE -->
-        <div class="absolute top-24 left-0 z-30 w-64 sm:w-72 rounded-3xl border-2 border-dashed border-emerald-400 bg-white p-1 shadow-2xl">
-          <img
-            src="https://images.unsplash.com/photo-1588072432836-e10032774350"
-            alt="Child studying with focus"
-            class="w-full h-full object-cover rounded-2xl">
-        </div>
-
-        <!-- BOTTOM IMAGE -->
-        <div class="absolute bottom-0 right-24 z-20 w-44 sm:w-52 rounded-2xl border border-dashed border-amber-300 bg-white p-1 shadow-lg">
-          <img
-            src="https://images.unsplash.com/photo-1587691592099-24045742c181"
-            alt="Teacher guiding children"
-            class="w-full h-full object-cover rounded-xl">
-        </div>
-
-      </div>
-
     </div>
 
   </div>
 </section>
-
-
-<!-- ================= SERVICES WE OFFER ================= -->
-<section class="bg-white py-28">
-  <div class="max-w-7xl mx-auto px-6 lg:px-8">
-
-    <!-- Section Header -->
-    <div class="text-center mb-16">
-      <span class="text-sm font-semibold tracking-wide text-emerald-600 uppercase">
-        Our Approach
-      </span>
-      <h2 class="mt-4 text-3xl sm:text-4xl font-semibold text-slate-900 mb-4">
-        Services We Offer
-      </h2>
-    </div>
-
-    <!-- Services Grid -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      
-      <div class="bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl p-6 text-white">
-        <div class="h-12 w-12 rounded-lg bg-white/20 flex items-center justify-center mb-4 text-2xl">
-          <i class='bx bx-user'></i>
-        </div>
-        <h3 class="text-lg font-semibold mb-2">Individual Counselling</h3>
-      </div>
-
-      <div class="bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl p-6 text-white">
-        <div class="h-12 w-12 rounded-lg bg-white/20 flex items-center justify-center mb-4 text-2xl">
-          <i class='bx bx-group'></i>
-        </div>
-        <h3 class="text-lg font-semibold mb-2">Group Counselling</h3>
-      </div>
-
-      <div class="bg-gradient-to-br from-sky-500 to-blue-600 rounded-xl p-6 text-white">
-        <div class="h-12 w-12 rounded-lg bg-white/20 flex items-center justify-center mb-4 text-2xl">
-          <i class='bx bx-chalkboard'></i>
-        </div>
-        <h3 class="text-lg font-semibold mb-2">Lecture Method</h3>
-      </div>
-
-      <div class="bg-gradient-to-br from-amber-500 to-orange-600 rounded-xl p-6 text-white">
-        <div class="h-12 w-12 rounded-lg bg-white/20 flex items-center justify-center mb-4 text-2xl">
-          <i class='bx bx-dumbbell'></i>
-        </div>
-        <h3 class="text-lg font-semibold mb-2">Practical Method</h3>
-      </div>
-
-      <div class="bg-gradient-to-br from-rose-500 to-pink-600 rounded-xl p-6 text-white">
-        <div class="h-12 w-12 rounded-lg bg-white/20 flex items-center justify-center mb-4 text-2xl">
-          <i class='bx bx-clipboard'></i>
-        </div>
-        <h3 class="text-lg font-semibold mb-2">Individualized Assessment</h3>
-      </div>
-
-      <div class="bg-gradient-to-br from-violet-500 to-purple-600 rounded-xl p-6 text-white">
-        <div class="h-12 w-12 rounded-lg bg-white/20 flex items-center justify-center mb-4 text-2xl">
-          <i class='bx bx-heart-circle'></i>
-        </div>
-        <h3 class="text-lg font-semibold mb-2">Stress, Anxiety, Depression Treatment</h3>
-      </div>
-
-      <div class="bg-gradient-to-br from-teal-500 to-cyan-600 rounded-xl p-6 text-white">
-        <div class="h-12 w-12 rounded-lg bg-white/20 flex items-center justify-center mb-4 text-2xl">
-          <i class='bx bx-shield'></i>
-        </div>
-        <h3 class="text-lg font-semibold mb-2">Intervention for Mentally Illness</h3>
-      </div>
-
-      <div class="bg-gradient-to-br from-emerald-500 to-green-600 rounded-xl p-6 text-white">
-        <div class="h-12 w-12 rounded-lg bg-white/20 flex items-center justify-center mb-4 text-2xl">
-          <i class='bx bx-brain'></i>
-        </div>
-        <h3 class="text-lg font-semibold mb-2">Psychological Counselling</h3>
-      </div>
-
-      <div class="bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl p-6 text-white">
-        <div class="h-12 w-12 rounded-lg bg-white/20 flex items-center justify-center mb-4 text-2xl">
-          <i class='bx bx-book'></i>
-        </div>
-        <h3 class="text-lg font-semibold mb-2">Educational Guidance</h3>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-
-<!-- Boxicons CDN -->
-<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-
-<section class="bg-slate-50 py-28">
-  <div class="max-w-7xl mx-auto px-6 lg:px-8">
-
-    <!-- Section Header -->
-    <div class="text-center mb-20">
-      <h2 class="text-3xl sm:text-4xl font-semibold text-slate-900 mb-4">
-        Psychological Testing & Treatment
-      </h2>
-    </div>
-
-    <!-- Services Grid -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-
-      <!-- Card 1 -->
-      <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-lg transition">
-        <div class="h-14 w-14 rounded-xl bg-indigo-50 flex items-center justify-center text-indigo-600 mb-6 text-3xl">
-          <i class='bx bx-brain'></i>
-        </div>
-        <h3 class="text-xl font-semibold text-slate-900 mb-3">
-          Intelligence Quotient (IQ) Test
-        </h3>
-      </div>
-
-      <!-- Card 2 -->
-      <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-lg transition">
-        <div class="h-14 w-14 rounded-xl bg-emerald-50 flex items-center justify-center text-emerald-600 mb-6 text-3xl">
-          <i class='bx bx-line-chart'></i>
-        </div>
-        <h3 class="text-xl font-semibold text-slate-900 mb-3">
-          Development Quotient (DQ) Test
-        </h3>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-lg transition">
-        <div class="h-14 w-14 rounded-xl bg-violet-50 flex items-center justify-center text-violet-600 mb-6 text-3xl">
-          <i class='bx bx-user-circle'></i>
-        </div>
-        <h3 class="text-xl font-semibold text-slate-900 mb-3">
-          Personality Test
-        </h3>
-      </div>
-
-      <!-- Card 4 -->
-      <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-lg transition">
-        <div class="h-14 w-14 rounded-xl bg-sky-50 flex items-center justify-center text-sky-600 mb-6 text-3xl">
-          <i class='bx bx-book-open'></i>
-        </div>
-        <h3 class="text-xl font-semibold text-slate-900 mb-3">
-          Learning Disability Test
-        </h3>
-      </div>
-
-      <!-- Card 5 -->
-      <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-lg transition">
-        <div class="h-14 w-14 rounded-xl bg-amber-50 flex items-center justify-center text-amber-600 mb-6 text-3xl">
-          <i class='bx bx-heart'></i>
-        </div>
-        <h3 class="text-xl font-semibold text-slate-900 mb-3">
-          Emotional Quotient (EQ) Test
-        </h3>
-      </div>
-
-      <!-- Card 6 -->
-      <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-lg transition">
-        <div class="h-14 w-14 rounded-xl bg-rose-50 flex items-center justify-center text-rose-600 mb-6 text-3xl">
-          <i class='bx bx-shield-quarter'></i>
-        </div>
-        <h3 class="text-xl font-semibold text-slate-900 mb-3">
-          Anxiety, Stress, Depression Test
-        </h3>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
 
 
 
@@ -503,7 +299,7 @@
         <div class="mb-6">
           <a href="../../index.html">
             <h3 class="text-xl font-semibold tracking-wide text-white">
-              Vijayaanand Foundation
+              Vijayanand Foundation
             </h3>
             <span class="block mt-1 h-0.5 w-16 bg-emerald-500"></span>
           </a>
@@ -514,7 +310,7 @@
         </h4>
 
         <p class="text-sm leading-relaxed">
-          Vijayaanand Foundation, SSD Sai Luxuria<br>
+          Vijayanand Foundation, SSD Sai Luxuria<br>
           Near Akshara International School,<br>
           Vinode Corner, Bhumkar Chowk,<br>
           Wakad, Pune – 411057.
@@ -528,7 +324,7 @@
         </h4>
 
         <p class="text-sm leading-relaxed">
-          Vijayaanand Foundation,<br>
+          Vijayanand Foundation,<br>
           Khandat Pali, Tal. Chiplun,<br>
           Dist. Ratnagiri,<br>
           Maharashtra, India – 415605.
@@ -548,13 +344,23 @@
             </a>
           </li>
           <li>
-            <a href="psychological.html" class="hover:text-white transition">
-              Psychological Services
+            <a href="therapy-services.html" class="hover:text-white transition">
+              Therapy Services
             </a>
           </li>
           <li>
             <a href="pace.html" class="hover:text-white transition">
               PACE Institute
+            </a>
+          </li>
+          <li>
+            <a href="online-counselling.html" class="hover:text-white transition">
+              Online Counselling
+            </a>
+          </li>
+          <li>
+            <a href="blog.html" class="hover:text-white transition">
+              Blog
             </a>
           </li>
           <li>
@@ -580,7 +386,7 @@
 
       <!-- Copyright -->
       <p class="text-xs text-slate-400">
-        © 2026 Vijayaanand Foundation. All rights reserved.
+        © 2026 Vijayanand Foundation. All rights reserved.
       </p>
 
       <!-- Contact Icons -->
@@ -596,7 +402,7 @@
           <i class='bx bx-phone text-white text-lg'></i>
         </a>
 
-        <a href="mailto:vijayaanandfoundation@gmail.com"
+        <a href="mailto:vijayanandtrust@gmail.com"
            class="h-10 w-10 rounded-full bg-indigo-600 flex items-center justify-center hover:bg-indigo-500 transition">
           <i class='bx bx-envelope text-white text-lg'></i>
         </a>
@@ -628,6 +434,78 @@
     mobileExploreIcon.classList.toggle('bx-chevron-down')
     mobileExploreIcon.classList.toggle('bx-chevron-up')
   })
+</script>
+
+<!-- ================= FLOATING BUTTONS ================= -->
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/919922156948" target="_blank" 
+   class="fixed bottom-6 right-6 h-14 w-14 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 z-50 hover:scale-110">
+  <i class="bx bxl-whatsapp text-white text-2xl"></i>
+</a>
+
+<!-- Floating Forms Button -->
+<div class="fixed bottom-6 left-6 z-50">
+  <!-- Forms Dropdown Menu -->
+  <div id="floatingFormsMenu" class="absolute bottom-16 left-0 w-64 bg-white rounded-xl shadow-2xl border border-slate-200 opacity-0 invisible transform translate-y-4 transition-all duration-300">
+    <div class="p-4">
+      <h4 class="text-sm font-semibold text-slate-900 mb-3">Available Forms</h4>
+      <div class="space-y-2">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSduZvdT-8Z2eVdeYlC0H6MZrP2fkWuLoJZIjqftMcEGpTzNZw/viewform" 
+           target="_blank"
+           class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-50 transition text-sm">
+          <i class="bx bx-file text-emerald-600"></i>
+          <span class="text-slate-700">Admission Form</span>
+        </a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdhQ26S9fwF6jaf6x2Shh3azRmbYRh0LHMirg5gZM8ujCkgVw/viewform" 
+           target="_blank"
+           class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-50 transition text-sm">
+          <i class="bx bx-user-plus text-indigo-600"></i>
+          <span class="text-slate-700">Membership Form</span>
+        </a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSd1iYjysBpHZU2kn7-ZWCnDjVzGMxLgu3IsnJtVFArfmKVCDA/viewform" 
+           target="_blank"
+           class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-50 transition text-sm">
+          <i class="bx bx-heart text-rose-600"></i>
+          <span class="text-slate-700">Marriage Guidance Form</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Forms Button -->
+  <button id="floatingFormsBtn" 
+          class="h-14 w-14 bg-slate-800 hover:bg-slate-900 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110">
+    <i class="bx bx-file-blank text-white text-2xl"></i>
+  </button>
+</div>
+
+<!-- Floating Buttons JavaScript -->
+<script>
+  // Floating Forms Menu
+  const floatingFormsBtn = document.getElementById('floatingFormsBtn');
+  const floatingFormsMenu = document.getElementById('floatingFormsMenu');
+  let formsMenuOpen = false;
+
+  floatingFormsBtn.addEventListener('click', () => {
+    formsMenuOpen = !formsMenuOpen;
+    
+    if (formsMenuOpen) {
+      floatingFormsMenu.classList.remove('opacity-0', 'invisible', 'translate-y-4');
+      floatingFormsMenu.classList.add('opacity-100', 'visible', 'translate-y-0');
+    } else {
+      floatingFormsMenu.classList.add('opacity-0', 'invisible', 'translate-y-4');
+      floatingFormsMenu.classList.remove('opacity-100', 'visible', 'translate-y-0');
+    }
+  });
+
+  // Close forms menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!floatingFormsBtn.contains(e.target) && !floatingFormsMenu.contains(e.target)) {
+      formsMenuOpen = false;
+      floatingFormsMenu.classList.add('opacity-0', 'invisible', 'translate-y-4');
+      floatingFormsMenu.classList.remove('opacity-100', 'visible', 'translate-y-0');
+    }
+  });
 </script>
 
 

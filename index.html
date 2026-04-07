@@ -61,17 +61,18 @@ html { scroll-behavior: smooth; }
 
 .nav-link {
 position: relative;
+transition: color .25s ease;
 }
 .nav-link::after {
 content: '';
 position: absolute;
 left: 50%;
-bottom: -4px;
+bottom: -6px;
 width: 0;
 height: 2px;
-background: white;
+background: rgba(255, 255, 255, 0.95);
 transform: translateX(-50%);
-transition: width .3s ease;
+transition: width .25s ease;
 }
 .nav-link:hover::after {
 width: 100%;
@@ -88,34 +89,75 @@ background: rgba(70, 207, 171, 0.55);
 }
 
 
-/* Navbar scroll state */
-.nav-scrolled {
-background-color: white;
-box-shadow: 0 8px 30px rgba(0,0,0,0.06);
-transition: all 0.5s;
+/* Navbar base + scroll state */
+#siteHeader {
+  transition: all .35s ease;
 }
-
-/* Text color switch */
+#siteHeader .nav-panel {
+  background: linear-gradient(90deg, rgba(15,23,42,.58), rgba(15,23,42,.42));
+  border: 1px solid rgba(255,255,255,.18);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 14px 32px rgba(2, 6, 23, 0.28);
+  transition: all .35s ease;
+}
+.nav-scrolled .nav-panel {
+  background: rgba(255,255,255,.95);
+  border-color: rgba(15,23,42,.1);
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.1);
+}
 .nav-scrolled .nav-text,
 .nav-scrolled .nav-link,
 .nav-scrolled .nav-cta,
 .nav-scrolled #menuBtn {
-color: black !important;
+  color: #0f172a !important;
 }
-
-/* Underline color switch */
 .nav-scrolled .nav-link::after {
-background: black;
+  background: #0f172a;
 }
-
-/* CTA border + hover fix */
 .nav-scrolled .nav-cta {
-border-color: black;
+  border-color: #0f172a;
+}
+.nav-scrolled .nav-cta:hover {
+  background: #0f172a;
+  color: white !important;
 }
 
-.nav-scrolled .nav-cta:hover {
-background: black;
-color: white !important;
+/* Google Translate — in navbar */
+#google_translate_element {
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  align-self: center;
+  flex-shrink: 0;
+}
+#google_translate_element .goog-te-gadget-simple {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.35) !important;
+  border-radius: 9999px !important;
+  padding: 5px 10px !important;
+  font-family: Lexend, system-ui, sans-serif !important;
+  font-size: 0.72rem !important;
+}
+/* Hide Google “G” logo in the widget */
+#google_translate_element .goog-te-gadget-icon,
+#google_translate_element .goog-te-gadget-simple img {
+  display: none !important;
+}
+#google_translate_element .goog-te-gadget-simple span {
+  border: none !important;
+  color: rgba(255, 255, 255, 0.95) !important;
+}
+#google_translate_element .goog-te-gadget-simple a span {
+  color: rgba(255, 255, 255, 0.95) !important;
+}
+.nav-scrolled #google_translate_element .goog-te-gadget-simple {
+  background-color: rgba(255, 255, 255, 0.98) !important;
+  border: 1px solid rgba(15, 23, 42, 0.12) !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+.nav-scrolled #google_translate_element .goog-te-gadget-simple span,
+.nav-scrolled #google_translate_element .goog-te-gadget-simple a span {
+  color: #0f172a !important;
 }
 
   </style>
@@ -125,65 +167,75 @@ color: white !important;
 <body class="font-body bg-white text-black">
 
 <!-- ================= NAVBAR ================= -->
-<header id="siteHeader" class="fixed w-full z-40">
-  <nav class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+<header id="siteHeader" class="fixed inset-x-0 top-0 z-40 w-full">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 pt-4">
+    <div class="nav-panel rounded-2xl px-4 sm:px-5 lg:px-6 py-3">
+      <div class="grid grid-cols-[minmax(0,1fr)_auto] xl:grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-3 lg:gap-5">
+        <!-- Logo -->
+        <a href="index.html" class="leading-tight text-white nav-text min-w-0">
+          <div class="font-body text-lg sm:text-xl tracking-tight truncate">
+            Vijayanand Foundation
+          </div>
+        </a>
 
-    <!-- Logo -->
-    <div class="leading-tight text-white nav-text">
-      <div class="font-body text-xl tracking-tight">
-        Vijayanand Foundation
-      </div>
-      <!-- <div class="text-xs opacity-80">
-        A service by Ewan Business Solutions
-      </div> -->
-    </div>
-
-    <!-- Links -->
-    <ul class="hidden md:flex absolute left-1/2 -translate-x-1/2 gap-10 text-base font-medium text-white nav-text">
-
-      <li><a href="app/pages/pace.html" class="nav-link">PACE</a></li>
-      <li><a href="app/pages/about.html" class="nav-link">About Us</a></li>
-      <li><a href="app/pages/psychological.html" class="nav-link">Psychological Services</a></li>
-      <li><a href="app/pages/gallery.html" class="nav-link">Gallery</a></li>
-
-      <!-- More Dropdown -->
-      <li class="relative group">
-        <button class="nav-link inline-flex items-center gap-1">
-          More
-          <i class="bx bx-chevron-down text-sm"></i>
-        </button>
-
-        <div class="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-52 rounded-xl bg-white shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-          <a href="app/pages/tujh.html" class="block px-5 py-3 text-sm text-slate-800 hover:bg-slate-50 rounded-t-xl">तुझी माझी रेशिम गाठ</a>
-          <a href="app/pages/contact.html" class="block px-5 py-3 text-sm text-slate-800 hover:bg-slate-50 rounded-b-xl">Contact Us</a>
+        <!-- Desktop Links -->
+        <div class="hidden xl:flex justify-center min-w-0">
+          <ul class="flex items-center justify-center gap-7 text-sm font-medium text-white nav-text">
+            <li><a href="app/pages/about.html" class="nav-link whitespace-nowrap">About Us</a></li>
+            <li><a href="app/pages/therapy-services.html" class="nav-link whitespace-nowrap">Therapy Services</a></li>
+            <li><a href="app/pages/pace.html" class="nav-link whitespace-nowrap">PACE</a></li>
+            <li><a href="app/pages/online-counselling.html" class="nav-link whitespace-nowrap">Online Counselling</a></li>
+            <li><a href="app/pages/blog.html" class="nav-link whitespace-nowrap">Blog</a></li>
+            <li><a href="app/pages/gallery.html" class="nav-link whitespace-nowrap">Gallery</a></li>
+            <li class="relative group">
+              <button type="button" class="nav-link inline-flex items-center gap-1 whitespace-nowrap">
+                More
+                <i class="bx bx-chevron-down text-sm"></i>
+              </button>
+              <div class="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-52 rounded-xl bg-white shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                <a href="app/pages/tujh.html" class="block px-5 py-3 text-sm text-slate-800 hover:bg-slate-50 rounded-t-xl">तुझी माझी रेशिम गाठ</a>
+                <a href="app/pages/contact.html" class="block px-5 py-3 text-sm text-slate-800 hover:bg-slate-50 rounded-b-xl">Contact Us</a>
+              </div>
+            </li>
+          </ul>
         </div>
-      </li>
-    </ul>
 
-    <!-- CTA -->
-    <div class="hidden md:flex">
-        <a
-        href="https://docs.google.com/forms/d/e/1FAIpQLSduZvdT-8Z2eVdeYlC0H6MZrP2fkWuLoJZIjqftMcEGpTzNZw/viewform" 
-        target="_blank"
-        class="nav-cta inline-flex items-center gap-3 px-5 py-2 rounded-full border border-white text-white hover:bg-white hover:text-black transition">
-        <span class="h-8 w-8 rounded-full bg-white text-black flex items-center justify-center">
-          <i class="bx bx-right-arrow-alt text-lg"></i>
-        </span>
-        <span class="text-sm font-medium">Admission</span>
-      </a>
+        <!-- Actions -->
+        <div class="flex items-center justify-end gap-2 sm:gap-3 lg:gap-4">
+          <div
+            id="google_translate_element"
+            class="hidden xl:flex"
+            aria-label="Translate this page"
+          ></div>
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSduZvdT-8Z2eVdeYlC0H6MZrP2fkWuLoJZIjqftMcEGpTzNZw/viewform"
+            target="_blank"
+            class="nav-cta hidden lg:inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-white text-white hover:bg-white hover:text-black transition whitespace-nowrap"
+          >
+            <span class="h-8 w-8 rounded-full bg-white text-black flex items-center justify-center flex-shrink-0">
+              <i class="bx bx-right-arrow-alt text-lg"></i>
+            </span>
+            <span class="text-sm font-medium">Admission</span>
+          </a>
+          <button id="menuBtn" type="button" class="xl:hidden text-2xl text-white nav-text leading-none">
+            <i class="bx bx-menu"></i>
+          </button>
+        </div>
+      </div>
     </div>
-
-    <!-- Mobile Menu Button -->
-    <button id="menuBtn" class="md:hidden text-2xl text-white nav-text">
-      <i class="bx bx-menu"></i>
-    </button>
-
   </nav>
 </header>
 
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'en,hi,mr', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 <!-- ================= MOBILE SIDEBAR ================= -->
 <div id="mobileMenu"
-  class="fixed inset-y-0 left-0 w-80 bg-white z-50 transform -translate-x-full transition-transform duration-300 md:hidden shadow-2xl">
+  class="fixed inset-y-0 left-0 w-80 bg-white z-50 transform -translate-x-full transition-transform duration-300 xl:hidden shadow-2xl">
 
   <!-- Header -->
   <div class="p-6 border-b border-gray-200 flex justify-between items-start">
@@ -196,33 +248,37 @@ color: white !important;
   </div>
 
   <!-- Nav -->
-  <nav class="px-6 py-8 space-y-6 text-lg font-medium text-primaryDark">
-    <a href="app/pages/pace.html" class="block">PACE</a>
-    <a href="app/pages/psychological.html" class="block">Psychological Services</a>
-    <a href="app/pages/gallery.html" class="block">Gallery</a>
+  <nav class="p-6 space-y-5 text-base font-medium text-slate-800">
+    <a href="app/pages/about.html" class="block hover:text-emerald-700 transition">About Us</a>
+    <a href="app/pages/therapy-services.html" class="block hover:text-emerald-700 transition">Therapy Services</a>
+    <a href="app/pages/pace.html" class="block hover:text-emerald-700 transition">PACE</a>
+    <a href="app/pages/online-counselling.html" class="block hover:text-emerald-700 transition">Online Counselling</a>
+    <a href="app/pages/blog.html" class="block hover:text-emerald-700 transition">Blog</a>
+    <a href="app/pages/gallery.html" class="block hover:text-emerald-700 transition">Gallery</a>
 
-    <!-- Mobile Explore Dropdown -->
-    <div>
-      <button id="mobileExploreBtn" class="w-full flex items-center justify-between">
+    <!-- Mobile More Dropdown -->
+    <div class="pt-1">
+      <button id="mobileExploreBtn" type="button" class="w-full flex items-center justify-between hover:text-emerald-700 transition">
         <span>More</span>
         <i id="mobileExploreIcon" class="bx bx-chevron-down text-xl"></i>
       </button>
 
-      <div id="mobileExploreMenu" class="mt-4 ml-4 space-y-4 hidden text-base">
-        <a href="app/pages/tujh.html" class="block">तुझी माझी रेशिम गाठ</a>
-        <a href="app/pages/contact.html" class="block">Contact Us</a>
+      <div id="mobileExploreMenu" class="mt-3 ml-4 space-y-3 hidden text-[15px] text-slate-700">
+        <a href="app/pages/tujh.html" class="block hover:text-emerald-700 transition">तुझी माझी रेशिम गाठ</a>
+        <a href="app/pages/contact.html" class="block hover:text-emerald-700 transition">Contact Us</a>
       </div>
     </div>
 
-    <div class="pt-6 border-t border-gray-200"></div>
+    <div class="pt-4 border-t border-gray-200"></div>
 
     <a
-      href="https://docs.google.com/forms/d/e/1FAIpQLSduZvdT-8Z2eVdeYlC0H6MZrP2fkWuLoJZIjqftMcEGpTzNZw/viewform" 
+      href="https://docs.google.com/forms/d/e/1FAIpQLSduZvdT-8Z2eVdeYlC0H6MZrP2fkWuLoJZIjqftMcEGpTzNZw/viewform"
       target="_blank"
-      class="flex items-center justify-between px-5 py-2 rounded-full border border-primaryDark hover:bg-primaryDark hover:text-white transition" style="display: inline-flex; padding: 10px 20px; border-radius: 9999px; border: 1px solid black;">
+      class="inline-flex items-center justify-between gap-3 px-5 py-2.5 rounded-full border border-primaryDark hover:bg-primaryDark hover:text-white transition w-full"
+    >
       <span>Admission</span>
-      <span class="h-10 w-10 flex items-center justify-center rounded-full bg-teal-500 text-white">
-        <i class="bx bx-right-arrow-alt text-xl"></i>
+      <span class="h-9 w-9 flex items-center justify-center rounded-full bg-teal-500 text-white">
+        <i class="bx bx-right-arrow-alt text-lg"></i>
       </span>
     </a>
   </nav>
@@ -247,40 +303,18 @@ color: white !important;
     <!-- Grid Layout -->
     <div class="max-w-5xl text-left">
 
-      <!-- Brand Strip -->
-      <div class="mb-6">
-        <div class="text-sm font-medium tracking-wide text-emerald-400 uppercase mb-2">
-          Vijayanand Trust / Vijayanand Foundation
-        </div>
-        <div class="text-lg font-semibold text-emerald-300">
-          Admission Open
-        </div>
-      </div>
-
       <!-- Main Heading -->
-      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight mb-6">
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight mb-4">
         <span class="text-sky-300">Happiness Depends on Thought</span>
       </h1>
 
-      <!-- Centre Name -->
-      <h2 class="text-2xl sm:text-3xl font-semibold text-white mb-6">
-        Vijayanand Child Counselling and Therapy Centre
-      </h2>
-
-      <!-- Main Description -->
-      <p class="text-lg sm:text-xl text-white/90 leading-relaxed max-w-3xl mb-6">
-        Empowering lives, one step at a time. Come and see the difference compassionate care can make.
-      </p>
-      
-      <!-- Services Description -->
-      <p class="text-base text-white/85 leading-relaxed max-w-3xl mb-8">
-        We provide professional psychological and therapy services for children, youth, adults, and senior citizens.
+      <!-- Brief Vijayanand Info -->
+      <p class="text-white/80 text-base sm:text-lg leading-relaxed mb-8 max-w-xl">
+        Vijayanand Foundation — working for Social, Psychological, Educational, Medical, Research & Rehabilitation for all.
       </p>
 
-      <!-- CTA Buttons -->
+      <!-- CTA Button -->
       <div class="flex flex-col sm:flex-row gap-5">
-      
-
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSduZvdT-8Z2eVdeYlC0H6MZrP2fkWuLoJZIjqftMcEGpTzNZw/viewform" 
            target="_blank"
            class="inline-flex items-center gap-4 px-7 py-3.5 rounded-full bg-white text-slate-900 font-medium hover:bg-slate-100 transition">
@@ -498,14 +532,16 @@ color: white !important;
     <!-- Trust Description -->
     <div class="max-w-5xl mb-12 text-white/85 leading-relaxed text-base sm:text-lg">
       <p>
-        <span class="font-semibold text-white">Vijayanand Trust</span> works in Social, Psychological, Educational, Medical, Research and Rehabilitation fields.
-        We believe in improving mental, physical and emotional well-being of society.
+        Our trust is work on Social, Psychological, Educational, Medical, Research and Rehabilitation for all. Everyone have Well-being of mental, physical and economical domain, Our society is representing to diversity and diversity need to equality of thought, then we can achieve to destination of Life.
       </p>
     </div>
 
     <!-- Our Focus Section -->
     <div class="max-w-5xl mb-24">
       <h3 class="text-2xl font-semibold text-white mb-6">Our Focus</h3>
+      <p class="text-white/85 leading-relaxed mb-8">
+        “VIJAYANAND TRUST” focuses on child development, to provide Education for Young, Support to women for independent in life, caring to old age people, to help you for choice Marriage life partner (Vadhu - Var Suchak Kendra), assess your child ability, aptitude and choice his/ her carrier, some courses also you can complete under “PACE INSTITUTE”.
+      </p>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         <div class="flex items-center gap-3 px-4 py-3 rounded-lg bg-white/10 backdrop-blur border border-white/10">
           <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
@@ -513,27 +549,27 @@ color: white !important;
         </div>
         <div class="flex items-center gap-3 px-4 py-3 rounded-lg bg-white/10 backdrop-blur border border-white/10">
           <span class="h-2 w-2 rounded-full bg-sky-400"></span>
-          <span class="text-white/90">Youth development</span>
+          <span class="text-white/90">Education for Young</span>
         </div>
         <div class="flex items-center gap-3 px-4 py-3 rounded-lg bg-white/10 backdrop-blur border border-white/10">
           <span class="h-2 w-2 rounded-full bg-indigo-400"></span>
-          <span class="text-white/90">Women empowerment</span>
+          <span class="text-white/90">Support to women</span>
         </div>
         <div class="flex items-center gap-3 px-4 py-3 rounded-lg bg-white/10 backdrop-blur border border-white/10">
           <span class="h-2 w-2 rounded-full bg-amber-400"></span>
-          <span class="text-white/90">Old age support</span>
+          <span class="text-white/90">Care for old age people</span>
         </div>
         <div class="flex items-center gap-3 px-4 py-3 rounded-lg bg-white/10 backdrop-blur border border-white/10">
           <span class="h-2 w-2 rounded-full bg-rose-400"></span>
-          <span class="text-white/90">Marriage guidance (Vadhu–Var Suchak Kendra)</span>
+          <span class="text-white/90">Marriage guidance (Vadhu–Var)</span>
         </div>
         <div class="flex items-center gap-3 px-4 py-3 rounded-lg bg-white/10 backdrop-blur border border-white/10">
           <span class="h-2 w-2 rounded-full bg-teal-400"></span>
-          <span class="text-white/90">Career guidance</span>
+          <span class="text-white/90">Aptitude & Career choice</span>
         </div>
         <div class="flex items-center gap-3 px-4 py-3 rounded-lg bg-white/10 backdrop-blur border border-white/10">
           <span class="h-2 w-2 rounded-full bg-violet-400"></span>
-          <span class="text-white/90">Personality development</span>
+          <span class="text-white/90">PACE Institute Courses</span>
         </div>
       </div>
     </div>
@@ -548,7 +584,7 @@ color: white !important;
           <h3 class="text-xl font-semibold">Vision</h3>
         </div>
         <p class="text-white/85 leading-relaxed">
-          To achieve behavioural, social, educational and economic transformation for all.
+          We aim to achieve Behavioural, Social, Educational and Economic transformation for all towards Rehabilitation. All round development of children, Young, Adult, and old age people and give opportunity to all for succeed.
         </p>
       </div>
 
@@ -559,7 +595,7 @@ color: white !important;
           <h3 class="text-xl font-semibold">Mission</h3>
         </div>
         <p class="text-white/85 leading-relaxed">
-          To use best resources to solve problems of normal and special people and improve quality of life.
+          Use optimum level of resources in society for solution of the problems of all Persons with Special need as well as Normal.
         </p>
       </div>
 
@@ -570,7 +606,7 @@ color: white !important;
           <h3 class="text-xl font-semibold">Goal</h3>
         </div>
         <p class="text-white/85 leading-relaxed">
-          To improve access and quality of life for everyone.
+          Our goal is to improve access and quality of life.
         </p>
       </div>
 
@@ -579,68 +615,6 @@ color: white !important;
   </div>
 </section>
 
-
-<!-- ================= PACE INSTITUTE OF YOGA ================= -->
-<section class="py-24 bg-white">
-  <div class="max-w-7xl mx-auto px-6">
-
-    <!-- Header -->
-    <div class="max-w-3xl mb-16">
-      <span class="text-sm font-semibold tracking-wide text-amber-600 uppercase">
-        PACE Institute of Yoga
-      </span>
-      <h2 class="mt-4 text-3xl sm:text-4xl font-semibold text-slate-900 leading-tight">
-        Yoga for Mind, Body, and Inner Balance
-      </h2>
-      <p class="mt-5 text-slate-600 text-base sm:text-lg leading-relaxed">
-        Yoga helps in mental, physical and spiritual development.
-        It helps in stress management, lifestyle improvement and health balance.
-      </p>
-    </div>
-
-
-
-    <!-- Services -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-
-      <!-- Yoga Services -->
-      <div class="rounded-2xl bg-slate-50 p-8 border border-slate-200">
-        <h3 class="text-xl font-semibold text-slate-900 mb-6">
-          Yoga Services
-        </h3>
-        <ul class="space-y-3 text-slate-700">
-          <li class="flex items-center gap-3">
-            <span class="h-2.5 w-2.5 rounded-full bg-indigo-500"></span>
-            Behaviour problem therapy
-          </li>
-          <li class="flex items-center gap-3">
-            <span class="h-2.5 w-2.5 rounded-full bg-amber-500"></span>
-            Asana
-          </li>
-          <li class="flex items-center gap-3">
-            <span class="h-2.5 w-2.5 rounded-full bg-sky-500"></span>
-            Pranayama
-          </li>
-          <li class="flex items-center gap-3">
-            <span class="h-2.5 w-2.5 rounded-full bg-emerald-500"></span>
-            Yogic Mudra
-          </li>
-          <li class="flex items-center gap-3">
-            <span class="h-2.5 w-2.5 rounded-full bg-rose-500"></span>
-            Family Counselling
-          </li>
-          <li class="flex items-center gap-3">
-            <span class="h-2.5 w-2.5 rounded-full bg-teal-500"></span>
-            Marriage Counselling
-          </li>
-        </ul>
-      </div>
-
-    </div>
-
-
-  </div>
-</section>
 
 
 <!-- ================= CHILD COUNSELING & THERAPY CENTRE ================= -->
@@ -655,14 +629,14 @@ color: white !important;
         Vijayanand Child Counseling and Therapy Centre
       </h2>
       <p class="mt-6 text-lg text-slate-600 leading-relaxed">
-        Empowering lives, one step at a time. Come and see the difference compassionate care can make.
+        Empowering lives, one step at a time. Come see the difference compassionate care can make at Vijayanand Child Counseling and Therapy Centre.
       </p>
     </div>
 
     <div class="max-w-3xl mx-auto text-center">
       <a href="https://vijayanandcenter.odoo.com/" target="_blank"
          class="inline-flex items-center gap-4 px-8 py-4 rounded-full bg-sky-600 text-white font-medium hover:bg-sky-700 transition shadow-lg">
-        <i class="bx bx-link-external text-xl"></i>
+         <i class="bx bx-link-external text-xl"></i>
         <span>Visit Our Centre Website</span>
       </a>
       <p class="mt-4 text-sm text-slate-500">
@@ -680,16 +654,18 @@ color: white !important;
 <section class="py-24 bg-white">
   <div class="max-w-7xl mx-auto px-6">
 
-    <div class="max-w-3xl mb-16">
+    <div class="max-w-4xl mx-auto mb-16 text-center">
       <span class="text-sm font-semibold tracking-wide text-rose-600 uppercase">
         Marriage Guidance Services
       </span>
       <h2 class="mt-4 text-3xl sm:text-4xl font-semibold text-slate-900 leading-tight">
         Vadhu Var Suchak Kendra
       </h2>
-      <p class="mt-6 text-slate-600 text-base sm:text-lg leading-relaxed">
-        We help families find the right life partner using psychological and personality assessment. 
-        All information is kept secure and confidential. We help you take the right decision with confidence.
+      <p class="mt-6 text-slate-600 text-base sm:text-lg leading-relaxed text-left">
+        Vijayanand.org is one of the best option for you and yours family, which is give best option as per your personality. We provide Pre-marriage counselling with our best Psychologist and Counsellor who deal with you and assess your Personality help to you for choosing life partner. You join with us and assure your life. You and your life partner Birth information are most important equally important you’re psychological, social and health condition also. We provide all those support for happy and satisfactory life.
+      </p>
+      <p class="mt-4 text-slate-600 text-base sm:text-lg leading-relaxed text-left">
+        Your all information should be secure and confident, as per your profile we will provide best option for you and help for decision making, Relation is most important in our life so take decision with confidently.
       </p>
     </div>
 
@@ -711,7 +687,7 @@ color: white !important;
         <div class="mb-6">
           <a href="index.html">
             <h3 class="text-xl font-semibold tracking-wide text-white">
-              Vijayaanand Foundation
+              Vijayanand Foundation
             </h3>
             <span class="block mt-1 h-0.5 w-16 bg-emerald-500"></span>
           </a>
@@ -722,7 +698,7 @@ color: white !important;
         </h4>
 
         <p class="text-sm leading-relaxed">
-          Vijayaanand Foundation, SSD Sai Luxuria<br>
+          Vijayanand Foundation, SSD Sai Luxuria<br>
           Near Akshara International School,<br>
           Vinode Corner, Bhumkar Chowk,<br>
           Wakad, Pune – 411057.
@@ -736,7 +712,7 @@ color: white !important;
         </h4>
 
         <p class="text-sm leading-relaxed">
-          Vijayaanand Foundation,<br>
+          Vijayanand Foundation,<br>
           Khandat Pali, Tal. Chiplun,<br>
           Dist. Ratnagiri,<br>
           Maharashtra, India – 415605.
@@ -754,8 +730,8 @@ color: white !important;
             <i class="bx bx-phone text-emerald-400 text-lg mt-0.5"></i>
             <div>
               <p class="text-slate-300 mb-1">Phone Numbers</p>
-              <a href="tel:+919922156948" class="text-white hover:text-emerald-400 transition block">9922156948</a>
-              <a href="tel:+918459826288" class="text-white hover:text-emerald-400 transition block">8459826288</a>
+              <a href="tel:+919922156948" class="text-white hover:text-emerald-400 transition block">+91 9922156948</a>
+              <a href="tel:+918598262885" class="text-white hover:text-emerald-400 transition block">+91 8598262885</a>
             </div>
           </div>
           
@@ -763,7 +739,7 @@ color: white !important;
             <i class="bx bx-envelope text-emerald-400 text-lg mt-0.5"></i>
             <div>
               <p class="text-slate-300 mb-1">Email</p>
-              <a href="mailto:vijayaanandfoundation@gmail.com" class="text-white hover:text-emerald-400 transition break-all">vijayaanandfoundation@gmail.com</a>
+              <a href="mailto:vijayanandtrust@gmail.com" class="text-white hover:text-emerald-400 transition break-all">vijayanandtrust@gmail.com</a>
             </div>
           </div>
 
@@ -773,6 +749,7 @@ color: white !important;
               <p class="text-slate-300 mb-1">Quick Links</p>
               <a href="app/pages/contact.html" class="text-white hover:text-emerald-400 transition block">Contact Us</a>
               <a href="app/pages/about.html" class="text-white hover:text-emerald-400 transition block">About Us</a>
+              <a href="app/pages/therapy-services.html" class="text-white hover:text-emerald-400 transition block">Therapy Services</a>
             </div>
           </div>
         </div>
@@ -788,7 +765,7 @@ color: white !important;
 
       <!-- Copyright -->
       <p class="text-xs text-slate-400">
-        © 2026 Vijayaanand Foundation. All rights reserved.
+        © 2026 Vijayanand Foundation. All rights reserved.
       </p>
 
       <!-- Contact Icons -->
@@ -804,7 +781,7 @@ color: white !important;
           <i class="bx bx-phone text-white text-lg"></i>
         </a>
 
-        <a href="mailto:vijayaanandfoundation@gmail.com"
+        <a href="mailto:vijayanandtrust@gmail.com"
            class="h-10 w-10 rounded-full bg-indigo-600 flex items-center justify-center hover:bg-indigo-500 transition">
           <i class="bx bx-envelope text-white text-lg"></i>
         </a>
