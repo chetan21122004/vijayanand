@@ -14,7 +14,6 @@
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 
   <!-- CSS styles -->
-  <link rel="stylesheet" href="../style/basic-nav.css">
 
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -96,114 +95,15 @@
       white-space: normal;
     }
   </style>
+  <link rel="stylesheet" href="../style/site-shell.css">
+  <script src="../js/site-shell.js" defer></script>
 </head>
 
 <body class="font-body bg-white text-black">
 
-<!-- Google Translate -->
-<div id="google_translate_element" style="position:fixed; bottom:20px; right:20px; z-index:1000;"></div>
-<script type="text/javascript">
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'en,hi,mr', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
-}
-</script>
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-  <header id="siteHeader" class="fixed top-0 inset-x-0 z-50">
-    <nav class="relative max-w-7xl mx-auto px-6 h-20 flex items-center">
-      <a href="../../index.html" class="flex items-center">
-        <div class="leading-tight">
-          <div class="text-xl tracking-tight">Vijayanand Foundation</div>
-        </div>
-      </a>
+<div id="vf-header"></div>
 
-      <ul class="hidden md:flex absolute left-1/2 -translate-x-1/2 gap-10 text-base font-medium items-center">
-        <li><a href="about.html" class="nav-link">About Us</a></li>
-        <li><a href="therapy-services.html" class="nav-link">Therapy Services</a></li>
-        <li><a href="pace.html" class="nav-link">PACE</a></li>
-        <li><a href="online-counselling.html" class="nav-link">Online Counselling</a></li>
-        <li><a href="blog.html" class="nav-link">Blog</a></li>
-        <li><a href="gallery.html" class="nav-link">Gallery</a></li>
-        <li class="relative group">
-          <button class="nav-link flex items-center gap-1">
-            More <i class='bx bx-chevron-down text-sm'></i>
-          </button>
-          <div
-            class="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-52 rounded-xl bg-white shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition">
-            <a href="tujh.html" class="block px-5 py-3 text-sm hover:bg-slate-50">तुझी माझी रेशिम गाठ</a>
-            <a href="contact.html" class="block px-5 py-3 text-sm hover:bg-slate-50">Contact Us</a>
-          </div>
-        </li>
-      </ul>
-
-      <div class="ml-auto hidden md:flex">
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSduZvdT-8Z2eVdeYlC0H6MZrP2fkWuLoJZIjqftMcEGpTzNZw/viewform" target="_blank" class="nav-cta inline-flex items-center gap-3 px-5 py-2 rounded-full border">
-          <span class="h-8 w-8 rounded-full bg-black text-white flex items-center justify-center">
-            <i class='bx bx-right-arrow-alt'></i>
-          </span>
-          <span class="text-sm">Admission Form</span>
-        </a>
-      </div>
-
-      <button id="menuBtn" class="ml-auto md:hidden text-2xl">
-        <i class='bx bx-menu'></i>
-      </button>
-    </nav>
-  </header>
-
-  <!-- ================= MOBILE SIDEBAR ================= -->
-  <div id="mobileMenu"
-    class="fixed inset-y-0 left-0 w-80 bg-white z-50 transform -translate-x-full transition-transform duration-300 md:hidden shadow-2xl">
-
-    <!-- Header -->
-    <div class="p-6 border-b border-gray-200 flex justify-between items-start">
-      <a href="../../index.html">
-        <div>
-          <div class="font-body text-xl tracking-tight">
-            Vijayanand Foundation
-          </div>
-        </div>
-      </a>
-      <button id="closeBtn" class="text-2xl text-black">
-        <i class='bx bx-x'></i>
-      </button>
-    </div>
-
-    <!-- Nav -->
-    <nav class="px-6 py-8 space-y-6 text-lg font-medium text-primaryDark">
-      <a href="about.html" class="block">About Us</a>
-      <a href="therapy-services.html" class="block">Therapy Services</a>
-      <a href="pace.html" class="block">PACE</a>
-      <a href="online-counselling.html" class="block">Online Counselling</a>
-      <a href="blog.html" class="block">Blog</a>
-      <a href="gallery.html" class="block">Gallery</a>
-
-      <!-- Mobile More Dropdown -->
-      <div>
-        <button id="mobileExploreBtn" class="w-full flex items-center justify-between">
-          <span>More</span>
-          <i id="mobileExploreIcon" class='bx bx-chevron-down text-xl'></i>
-        </button>
-
-        <div id="mobileExploreMenu" class="mt-4 ml-4 space-y-4 hidden text-base">
-          <a href="tujh.html" class="block">तुझी माझी रेशिम गाठ</a>
-          <a href="contact.html" class="block">Contact Us</a>
-        </div>
-      </div>
-
-      <div class="pt-6 border-t border-gray-200"></div>
-
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSduZvdT-8Z2eVdeYlC0H6MZrP2fkWuLoJZIjqftMcEGpTzNZw/viewform" target="_blank" class="flex items-center justify-between px-5 py-2 rounded-full border border-primaryDark hover:bg-primaryDark hover:text-white transition"
-        style="display: inline-flex; padding: 10px 20px; border-radius: 9999px; border: 1px solid black;">
-        <span>Admission Form</span>
-        <span class="h-10 w-10 flex items-center justify-center rounded-full bg-teal-500 text-white">
-          <i class='bx bx-right-arrow-alt text-xl'></i>
-        </span>
-      </a>
-    </nav>
-  </div>
-
-
-  <main class="page-wrapper">
+<main class="page-wrapper">
 
     <section class="relative min-h-screen flex items-center overflow-hidden -mt-[72px]">
       <div class="absolute inset-0">
@@ -283,25 +183,25 @@ function googleTranslateElementInit() {
           <div>
             <h3 class="text-2xl font-semibold text-slate-900 mb-6">Our Yoga Services</h3>
             <ul class="space-y-3 text-lg text-slate-700 mb-8">
-              <li class="flex items-center gap-3"><i class='bx bx-check-circle text-teal-500'></i> Behaviour problem</li>
-              <li class="flex items-center gap-3"><i class='bx bx-check-circle text-teal-500'></i> Asana</li>
-              <li class="flex items-center gap-3"><i class='bx bx-check-circle text-teal-500'></i> Family Counselling</li>
-              <li class="flex items-center gap-3"><i class='bx bx-check-circle text-teal-500'></i> Marriage Counselling</li>
-              <li class="flex items-center gap-3"><i class='bx bx-check-circle text-teal-500'></i> Pranayama</li>
-              <li class="flex items-center gap-3"><i class='bx bx-check-circle text-teal-500'></i> Yogic mudra</li>
+              <li class="flex items-center gap-3"><i class="bx bx-check-circle text-teal-500"></i> Behaviour problem</li>
+              <li class="flex items-center gap-3"><i class="bx bx-check-circle text-teal-500"></i> Asana</li>
+              <li class="flex items-center gap-3"><i class="bx bx-check-circle text-teal-500"></i> Family Counselling</li>
+              <li class="flex items-center gap-3"><i class="bx bx-check-circle text-teal-500"></i> Marriage Counselling</li>
+              <li class="flex items-center gap-3"><i class="bx bx-check-circle text-teal-500"></i> Pranayama</li>
+              <li class="flex items-center gap-3"><i class="bx bx-check-circle text-teal-500"></i> Yogic mudra</li>
             </ul>
             <p class="text-slate-600 italic">"So many options are available for the treatment. Yog is the best therapeutic strategy. Those balance our mind and body."</p>
           </div>
           <div>
             <h3 class="text-2xl font-semibold text-slate-900 mb-6">Why Yoga?</h3>
             <ul class="space-y-3 text-lg text-slate-700">
-              <li class="flex items-center gap-3"><i class='bx bxs-star text-amber-400'></i> Improves mental health</li>
-              <li class="flex items-center gap-3"><i class='bx bxs-star text-amber-400'></i> Improves physical health
+              <li class="flex items-center gap-3"><i class="bx bxs-star text-amber-400"></i> Improves mental health</li>
+              <li class="flex items-center gap-3"><i class="bx bxs-star text-amber-400"></i> Improves physical health
               </li>
-              <li class="flex items-center gap-3"><i class='bx bxs-star text-amber-400'></i> Reduces stress</li>
-              <li class="flex items-center gap-3"><i class='bx bxs-star text-amber-400'></i> Improves concentration</li>
-              <li class="flex items-center gap-3"><i class='bx bxs-star text-amber-400'></i> Controls behaviour</li>
-              <li class="flex items-center gap-3"><i class='bx bxs-star text-amber-400'></i> Helps in peaceful life</li>
+              <li class="flex items-center gap-3"><i class="bx bxs-star text-amber-400"></i> Reduces stress</li>
+              <li class="flex items-center gap-3"><i class="bx bxs-star text-amber-400"></i> Improves concentration</li>
+              <li class="flex items-center gap-3"><i class="bx bxs-star text-amber-400"></i> Controls behaviour</li>
+              <li class="flex items-center gap-3"><i class="bx bxs-star text-amber-400"></i> Helps in peaceful life</li>
             </ul>
           </div>
         </div>
@@ -310,61 +210,184 @@ function googleTranslateElementInit() {
 
     <section class="bg-white py-24" id="programs">
       <div class="max-w-7xl mx-auto px-6 lg:px-8">
-        <div class="max-w-3xl mb-12">
-          <h2 class="text-3xl sm:text-4xl font-semibold text-slate-900 mb-4">Courses Offered</h2>
-          <p class="text-lg text-slate-600">All courses are short term, recognized and certified.</p>
+        <div class="max-w-4xl mb-12">
+          <span class="text-sm font-semibold tracking-wide text-emerald-600 uppercase">Institute Course List</span>
+          <h2 class="mt-3 text-3xl sm:text-4xl font-semibold text-slate-900 leading-tight">Courses &amp; Professional Programs</h2>
+          <p class="mt-5 text-lg text-slate-600 leading-relaxed">
+            Explore diploma, certificate, professional development, and advanced programs offered through the institute.
+          </p>
+          <div class="mt-7 flex flex-wrap gap-3 text-sm font-medium">
+            <span class="rounded-full bg-orange-50 border border-orange-200 px-4 py-2 text-orange-800">Diploma</span>
+            <span class="rounded-full bg-orange-50 border border-orange-200 px-4 py-2 text-orange-800">Certificate</span>
+            <span class="rounded-full bg-orange-50 border border-orange-200 px-4 py-2 text-orange-800">Professional Development</span>
+            <span class="rounded-full bg-orange-50 border border-orange-200 px-4 py-2 text-orange-800">Advanced Programs</span>
+          </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <!-- One Month -->
-          <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
-            <h3 class="text-xl font-bold text-slate-900 mb-4 text-emerald-600">One Month Courses</h3>
-            <ul class="space-y-2 text-slate-700 text-sm">
-              <li>• Basic Yoga Course</li>
-              <li>• Stress Management Yoga</li>
-              <li>• Meditation Course</li>
-              <li>• Pranayama Course</li>
-              <li>• Personality Development Course</li>
-              <li>• Weight Loss Yoga Course</li>
-              <li>• Therapy Yoga Course</li>
-            </ul>
-          </div>
+        <div class="space-y-5">
+          <details class="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm" open>
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 bg-orange-50 px-5 py-5 sm:px-7">
+              <span>
+                <span class="block text-xs font-semibold tracking-widest text-emerald-600 uppercase">Category A · 21 Courses</span>
+                <span class="mt-1 block text-lg font-semibold text-slate-900">Diploma Courses — Yoga &amp; Wellness</span>
+              </span>
+              <i class="bx bx-chevron-down text-2xl text-slate-600 transition-transform group-open:rotate-180" aria-hidden="true"></i>
+            </summary>
+            <div class="overflow-x-auto">
+              <table class="w-full min-w-[680px] border-collapse text-left">
+                <caption class="sr-only">Diploma Courses in Yoga and Wellness</caption>
+                <thead class="bg-slate-900 text-white">
+                  <tr><th scope="col" class="w-24 px-6 py-4 text-sm font-semibold">Sr. No.</th><th scope="col" class="px-6 py-4 text-sm font-semibold">Course Name</th><th scope="col" class="w-40 px-6 py-4 text-sm font-semibold">Duration</th></tr>
+                </thead>
+                <tbody class="divide-y divide-slate-200 text-sm text-slate-700">
+                  <tr><td class="px-6 py-4">1</td><td class="px-6 py-4 font-medium text-slate-900">Advance Diploma in Yoga Teacher Training</td><td class="px-6 py-4">1 Year</td></tr>
+                  <tr class="bg-slate-50/70"><td class="px-6 py-4">2</td><td class="px-6 py-4 font-medium text-slate-900">CMS&amp;ED</td><td class="px-6 py-4">1 Year</td></tr>
+                  <tr><td class="px-6 py-4">3</td><td class="px-6 py-4 font-medium text-slate-900">Diploma in Acupressure</td><td class="px-6 py-4">1 Year</td></tr>
+                  <tr class="bg-slate-50/70"><td class="px-6 py-4">4</td><td class="px-6 py-4 font-medium text-slate-900">Diploma in Acupressure &amp; Acupuncture</td><td class="px-6 py-4">1 Year</td></tr>
+                  <tr><td class="px-6 py-4">5</td><td class="px-6 py-4 font-medium text-slate-900">Diploma in Astro Science</td><td class="px-6 py-4">1 Year</td></tr>
+                  <tr class="bg-slate-50/70"><td class="px-6 py-4">6</td><td class="px-6 py-4 font-medium text-slate-900">Diploma in Cupping Therapy</td><td class="px-6 py-4">1 Year</td></tr>
+                  <tr><td class="px-6 py-4">7</td><td class="px-6 py-4 font-medium text-slate-900">Diploma in Diet &amp; Nutrition</td><td class="px-6 py-4">1 Year</td></tr>
+                  <tr class="bg-slate-50/70"><td class="px-6 py-4">8</td><td class="px-6 py-4 font-medium text-slate-900">Diploma in Magnetic Therapy</td><td class="px-6 py-4">1 Year</td></tr>
+                  <tr><td class="px-6 py-4">9</td><td class="px-6 py-4 font-medium text-slate-900">Diploma in Multipurpose Health Worker</td><td class="px-6 py-4">1 Year</td></tr>
+                  <tr class="bg-slate-50/70"><td class="px-6 py-4">10</td><td class="px-6 py-4 font-medium text-slate-900">Diploma in Naturopathy (ND)</td><td class="px-6 py-4">1 Year</td></tr>
+                  <tr><td class="px-6 py-4">11</td><td class="px-6 py-4 font-medium text-slate-900">Diploma in Panchakarma</td><td class="px-6 py-4">1 Year</td></tr>
+                  <tr class="bg-slate-50/70"><td class="px-6 py-4">12</td><td class="px-6 py-4 font-medium text-slate-900">Diploma in Panchakarma Assistant</td><td class="px-6 py-4">1 Year</td></tr>
+                  <tr><td class="px-6 py-4">13</td><td class="px-6 py-4 font-medium text-slate-900">Diploma in Sanskrit &amp; Grammar</td><td class="px-6 py-4">1 Year</td></tr>
+                  <tr class="bg-slate-50/70"><td class="px-6 py-4">14</td><td class="px-6 py-4 font-medium text-slate-900">Diploma in Sanskrit Language &amp; Literature (DSLL)</td><td class="px-6 py-4">1 Year</td></tr>
+                  <tr><td class="px-6 py-4">15</td><td class="px-6 py-4 font-medium text-slate-900">Diploma in Shashwat Chikitsa</td><td class="px-6 py-4">1 Year</td></tr>
+                  <tr class="bg-slate-50/70"><td class="px-6 py-4">16</td><td class="px-6 py-4 font-medium text-slate-900">Diploma in Yoga Education</td><td class="px-6 py-4">1 Year</td></tr>
+                  <tr><td class="px-6 py-4">17</td><td class="px-6 py-4 font-medium text-slate-900">Diploma in Yoga Teacher Training</td><td class="px-6 py-4">1 Year</td></tr>
+                  <tr class="bg-slate-50/70"><td class="px-6 py-4">18</td><td class="px-6 py-4 font-medium text-slate-900">PG Diploma in Acupressure &amp; Acupuncture</td><td class="px-6 py-4">1 Year</td></tr>
+                  <tr><td class="px-6 py-4">19</td><td class="px-6 py-4 font-medium text-slate-900">PG Diploma in Diet &amp; Nutrition</td><td class="px-6 py-4">1 Year</td></tr>
+                  <tr class="bg-slate-50/70"><td class="px-6 py-4">20</td><td class="px-6 py-4 font-medium text-slate-900">PG Diploma in Naturopathy (PGND)</td><td class="px-6 py-4">1 Year</td></tr>
+                  <tr><td class="px-6 py-4">21</td><td class="px-6 py-4 font-medium text-slate-900">PG Diploma in Yoga Education</td><td class="px-6 py-4">1 Year</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </details>
 
-          <!-- Three Month -->
-          <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
-            <h3 class="text-xl font-bold text-slate-900 mb-4 text-sky-600">Three Month Courses</h3>
-            <ul class="space-y-2 text-slate-700 text-sm">
-              <li>• Yoga Instructor Course</li>
-              <li>• Yoga Therapy Course</li>
-              <li>• Advanced Yoga Course</li>
-              <li>• Meditation and Mind Control Course</li>
-              <li>• Health Management Course</li>
-            </ul>
+          <details class="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 bg-orange-50 px-5 py-5 sm:px-7">
+              <span>
+                <span class="block text-xs font-semibold tracking-widest text-emerald-600 uppercase">Category B · 9 Courses</span>
+                <span class="mt-1 block text-lg font-semibold text-slate-900">Skill Development &amp; Education Courses</span>
+              </span>
+              <i class="bx bx-chevron-down text-2xl text-slate-600 transition-transform group-open:rotate-180" aria-hidden="true"></i>
+            </summary>
+            <div class="overflow-x-auto">
+              <table class="w-full min-w-[680px] border-collapse text-left">
+                <caption class="sr-only">Skill Development and Education Courses</caption>
+                <thead class="bg-slate-900 text-white">
+                  <tr><th scope="col" class="w-24 px-6 py-4 text-sm font-semibold">Sr. No.</th><th scope="col" class="px-6 py-4 text-sm font-semibold">Course Name</th><th scope="col" class="w-40 px-6 py-4 text-sm font-semibold">Duration</th></tr>
+                </thead>
+                <tbody class="divide-y divide-slate-200 text-sm text-slate-700">
+                  <tr><td class="px-6 py-4">22</td><td class="px-6 py-4 font-medium text-slate-900">Advance Diploma in Computer Application (ADCA)</td><td class="px-6 py-4">1 Year</td></tr>
+                  <tr class="bg-slate-50/70"><td class="px-6 py-4">23</td><td class="px-6 py-4 font-medium text-slate-900">Advance Diploma in Early Childhood Care Education &amp; Applied Psychology (ECCE)</td><td class="px-6 py-4">1 Year</td></tr>
+                  <tr><td class="px-6 py-4">24</td><td class="px-6 py-4 font-medium text-slate-900">Diploma in Computer Application</td><td class="px-6 py-4">1 Year</td></tr>
+                  <tr class="bg-slate-50/70"><td class="px-6 py-4">25</td><td class="px-6 py-4 font-medium text-slate-900">Diploma in Cutting &amp; Sewing</td><td class="px-6 py-4">1 Year</td></tr>
+                  <tr><td class="px-6 py-4">26</td><td class="px-6 py-4 font-medium text-slate-900">Diploma in Library &amp; Information Assistance</td><td class="px-6 py-4">1 Year</td></tr>
+                  <tr class="bg-slate-50/70"><td class="px-6 py-4">27</td><td class="px-6 py-4 font-medium text-slate-900">PG Diploma in Computer Application</td><td class="px-6 py-4">1 Year</td></tr>
+                  <tr><td class="px-6 py-4">28</td><td class="px-6 py-4 font-medium text-slate-900">Primary Teachers Training</td><td class="px-6 py-4">1 Year</td></tr>
+                  <tr class="bg-slate-50/70"><td class="px-6 py-4">63</td><td class="px-6 py-4 font-medium text-slate-900">Nursery Teachers Training</td><td class="px-6 py-4">2 Years</td></tr>
+                  <tr><td class="px-6 py-4">64</td><td class="px-6 py-4 font-medium text-slate-900">Nursery Teachers Training (2 Years)</td><td class="px-6 py-4">2 Years</td></tr>
+                </tbody>
+              </table>
           </div>
+          </details>
 
-          <!-- Six Month -->
-          <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
-            <h3 class="text-xl font-bold text-slate-900 mb-4 text-indigo-600">Six Month Certificate</h3>
-            <ul class="space-y-2 text-slate-700 text-sm">
-              <li>• Diploma in Yoga</li>
-              <li>• Yoga Therapy Certificate</li>
-              <li>• Advanced Yoga Training</li>
-              <li>• Yoga Teacher Training</li>
-            </ul>
+          <details class="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 bg-orange-50 px-5 py-5 sm:px-7">
+              <span>
+                <span class="block text-xs font-semibold tracking-widest text-emerald-600 uppercase">Category C · 25 Courses</span>
+                <span class="mt-1 block text-lg font-semibold text-slate-900">Certificate Courses — Yoga &amp; Wellness</span>
+              </span>
+              <i class="bx bx-chevron-down text-2xl text-slate-600 transition-transform group-open:rotate-180" aria-hidden="true"></i>
+            </summary>
+            <div class="overflow-x-auto">
+              <table class="w-full min-w-[680px] border-collapse text-left">
+                <caption class="sr-only">Certificate Courses in Yoga and Wellness</caption>
+                <thead class="bg-slate-900 text-white">
+                  <tr><th scope="col" class="w-24 px-6 py-4 text-sm font-semibold">Sr. No.</th><th scope="col" class="px-6 py-4 text-sm font-semibold">Course Name</th><th scope="col" class="w-40 px-6 py-4 text-sm font-semibold">Duration</th></tr>
+                </thead>
+                <tbody class="divide-y divide-slate-200 text-sm text-slate-700">
+                  <tr><td class="px-6 py-4">29</td><td class="px-6 py-4 font-medium text-slate-900">100 Hours Yoga Teacher Training</td><td class="px-6 py-4">100 Hours</td></tr>
+                  <tr class="bg-slate-50/70"><td class="px-6 py-4">30</td><td class="px-6 py-4 font-medium text-slate-900">200 Hours Yoga Teacher Training</td><td class="px-6 py-4">200 Hours</td></tr>
+                  <tr><td class="px-6 py-4">31</td><td class="px-6 py-4 font-medium text-slate-900">400 Hours Yoga Teacher Training</td><td class="px-6 py-4">400 Hours</td></tr>
+                  <tr class="bg-slate-50/70"><td class="px-6 py-4">32</td><td class="px-6 py-4 font-medium text-slate-900">50 Hours Yoga Teacher Training</td><td class="px-6 py-4">50 Hours</td></tr>
+                  <tr><td class="px-6 py-4">33</td><td class="px-6 py-4 font-medium text-slate-900">600 Hours Yoga Teacher Training</td><td class="px-6 py-4">600 Hours</td></tr>
+                  <tr class="bg-slate-50/70"><td class="px-6 py-4">34</td><td class="px-6 py-4 font-medium text-slate-900">Certificate Course in Counseling</td><td class="px-6 py-4">1 Month</td></tr>
+                  <tr><td class="px-6 py-4">35</td><td class="px-6 py-4 font-medium text-slate-900">Certificate Course in Counseling</td><td class="px-6 py-4">6 Months</td></tr>
+                  <tr class="bg-slate-50/70"><td class="px-6 py-4">36</td><td class="px-6 py-4 font-medium text-slate-900">Certificate Course in Naturopathy</td><td class="px-6 py-4">6 Months</td></tr>
+                  <tr><td class="px-6 py-4">37</td><td class="px-6 py-4 font-medium text-slate-900">Certificate Course in School Counseling</td><td class="px-6 py-4">1 Month</td></tr>
+                  <tr class="bg-slate-50/70"><td class="px-6 py-4">38</td><td class="px-6 py-4 font-medium text-slate-900">Certificate Course in Yoga Education</td><td class="px-6 py-4">6 Months</td></tr>
+                  <tr><td class="px-6 py-4">39</td><td class="px-6 py-4 font-medium text-slate-900">Certificate Course in Yoga Therapy</td><td class="px-6 py-4">6 Months</td></tr>
+                  <tr class="bg-slate-50/70"><td class="px-6 py-4">40</td><td class="px-6 py-4 font-medium text-slate-900">Certificate in Acupressure &amp; Acupuncture</td><td class="px-6 py-4">6 Months</td></tr>
+                  <tr><td class="px-6 py-4">41</td><td class="px-6 py-4 font-medium text-slate-900">Certificate in Astro Science</td><td class="px-6 py-4">6 Months</td></tr>
+                  <tr class="bg-slate-50/70"><td class="px-6 py-4">42</td><td class="px-6 py-4 font-medium text-slate-900">Certificate in Cupping Therapy</td><td class="px-6 py-4">6 Months</td></tr>
+                  <tr><td class="px-6 py-4">43</td><td class="px-6 py-4 font-medium text-slate-900">Certificate in Diet &amp; Nutrition</td><td class="px-6 py-4">6 Months</td></tr>
+                  <tr class="bg-slate-50/70"><td class="px-6 py-4">44</td><td class="px-6 py-4 font-medium text-slate-900">Certificate in Diet &amp; Nutrition</td><td class="px-6 py-4">1 Month</td></tr>
+                  <tr><td class="px-6 py-4">45</td><td class="px-6 py-4 font-medium text-slate-900">Certificate in Face Yoga</td><td class="px-6 py-4">1 Month</td></tr>
+                  <tr class="bg-slate-50/70"><td class="px-6 py-4">46</td><td class="px-6 py-4 font-medium text-slate-900">Certificate in Massage Therapy</td><td class="px-6 py-4">6 Months</td></tr>
+                  <tr><td class="px-6 py-4">47</td><td class="px-6 py-4 font-medium text-slate-900">Certificate in Naturopathy</td><td class="px-6 py-4">6 Months</td></tr>
+                  <tr class="bg-slate-50/70"><td class="px-6 py-4">48</td><td class="px-6 py-4 font-medium text-slate-900">Certificate in Panchakarma</td><td class="px-6 py-4">6 Months</td></tr>
+                  <tr><td class="px-6 py-4">49</td><td class="px-6 py-4 font-medium text-slate-900">Certificate in Sanskrit &amp; Grammar</td><td class="px-6 py-4">6 Months</td></tr>
+                  <tr class="bg-slate-50/70"><td class="px-6 py-4">50</td><td class="px-6 py-4 font-medium text-slate-900">Certificate in Shashwat Chikitsa</td><td class="px-6 py-4">6 Months</td></tr>
+                  <tr><td class="px-6 py-4">51</td><td class="px-6 py-4 font-medium text-slate-900">Certificate in Yogic Physiotherapy</td><td class="px-6 py-4">1 Year</td></tr>
+                  <tr class="bg-slate-50/70"><td class="px-6 py-4">52</td><td class="px-6 py-4 font-medium text-slate-900">Certified Ayurvedic Wellness Consultant (CAWC)</td><td class="px-6 py-4">5 Days / 40 Hours</td></tr>
+                  <tr><td class="px-6 py-4">53</td><td class="px-6 py-4 font-medium text-slate-900">Garbha Sanskar — Prenatal &amp; Postnatal Yoga Trainer</td><td class="px-6 py-4">6 Months</td></tr>
+                </tbody>
+              </table>
           </div>
+          </details>
 
-          <!-- Workshops -->
-          <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
-            <h3 class="text-xl font-bold text-slate-900 mb-4 text-amber-600">Skills Based Workshops</h3>
-            <ul class="space-y-2 text-slate-700 text-sm">
-              <li>• Stress Management Workshop</li>
-              <li>• Anger Management Workshop</li>
-              <li>• Personality Development Workshop</li>
-              <li>• Meditation Workshop</li>
-              <li>• Corporate Yoga Workshop</li>
-              <li>• Student Special Yoga Workshop</li>
-            </ul>
+          <details class="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 bg-orange-50 px-5 py-5 sm:px-7">
+              <span>
+                <span class="block text-xs font-semibold tracking-widest text-emerald-600 uppercase">Category D · 6 Courses</span>
+                <span class="mt-1 block text-lg font-semibold text-slate-900">Professional Development Courses</span>
+              </span>
+              <i class="bx bx-chevron-down text-2xl text-slate-600 transition-transform group-open:rotate-180" aria-hidden="true"></i>
+            </summary>
+            <div class="overflow-x-auto">
+              <table class="w-full min-w-[680px] border-collapse text-left">
+                <caption class="sr-only">Professional Development Courses</caption>
+                <thead class="bg-slate-900 text-white">
+                  <tr><th scope="col" class="w-24 px-6 py-4 text-sm font-semibold">Sr. No.</th><th scope="col" class="px-6 py-4 text-sm font-semibold">Course Name</th><th scope="col" class="w-40 px-6 py-4 text-sm font-semibold">Duration</th></tr>
+                </thead>
+                <tbody class="divide-y divide-slate-200 text-sm text-slate-700">
+                  <tr><td class="px-6 py-4">54</td><td class="px-6 py-4 font-medium text-slate-900">Professional Development Course on Basic Counseling</td><td class="px-6 py-4">1 Month</td></tr>
+                  <tr class="bg-slate-50/70"><td class="px-6 py-4">55</td><td class="px-6 py-4 font-medium text-slate-900">Professional Development Course on Basic Counseling</td><td class="px-6 py-4">6 Months</td></tr>
+                  <tr><td class="px-6 py-4">56</td><td class="px-6 py-4 font-medium text-slate-900">Professional Development Course on Early Child Care and Intervention</td><td class="px-6 py-4">1 Month</td></tr>
+                  <tr class="bg-slate-50/70"><td class="px-6 py-4">57</td><td class="px-6 py-4 font-medium text-slate-900">Professional Development Course on Early Child Care and Intervention</td><td class="px-6 py-4">6 Months</td></tr>
+                  <tr><td class="px-6 py-4">58</td><td class="px-6 py-4 font-medium text-slate-900">Professional Development Course on Psychological Counseling</td><td class="px-6 py-4">1 Month</td></tr>
+                  <tr class="bg-slate-50/70"><td class="px-6 py-4">59</td><td class="px-6 py-4 font-medium text-slate-900">Professional Development Course on Psychological Counseling</td><td class="px-6 py-4">6 Months</td></tr>
+                </tbody>
+              </table>
           </div>
+          </details>
+
+          <details class="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 bg-orange-50 px-5 py-5 sm:px-7">
+              <span>
+                <span class="block text-xs font-semibold tracking-widest text-emerald-600 uppercase">Category E · 3 Programs</span>
+                <span class="mt-1 block text-lg font-semibold text-slate-900">Advanced / Other Programs</span>
+              </span>
+              <i class="bx bx-chevron-down text-2xl text-slate-600 transition-transform group-open:rotate-180" aria-hidden="true"></i>
+            </summary>
+            <div class="overflow-x-auto">
+              <table class="w-full min-w-[680px] border-collapse text-left">
+                <caption class="sr-only">Advanced and Other Programs</caption>
+                <thead class="bg-slate-900 text-white">
+                  <tr><th scope="col" class="w-24 px-6 py-4 text-sm font-semibold">Sr. No.</th><th scope="col" class="px-6 py-4 text-sm font-semibold">Course Name</th><th scope="col" class="w-40 px-6 py-4 text-sm font-semibold">Duration</th></tr>
+                </thead>
+                <tbody class="divide-y divide-slate-200 text-sm text-slate-700">
+                  <tr><td class="px-6 py-4">60</td><td class="px-6 py-4 font-medium text-slate-900">Diploma in Yogic-Physio Therapy</td><td class="px-6 py-4">2 Years</td></tr>
+                  <tr class="bg-slate-50/70"><td class="px-6 py-4">61</td><td class="px-6 py-4 font-medium text-slate-900">DNYS</td><td class="px-6 py-4">3 Years</td></tr>
+                  <tr><td class="px-6 py-4">62</td><td class="px-6 py-4 font-medium text-slate-900">National Yoga Invigilator / Judge Training Programme</td><td class="px-6 py-4">As per Programme</td></tr>
+                </tbody>
+              </table>
+          </div>
+          </details>
         </div>
       </div>
     </section>
@@ -404,155 +427,8 @@ function googleTranslateElementInit() {
 
   </main>
 
-  <!-- ================= FOOTER ================= -->
-  <footer class="bg-slate-900 text-slate-300">
-    <div class="max-w-7xl mx-auto px-6 py-16">
-
-      <!-- Top Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-
-        <!-- Brand & Head Office -->
-        <div>
-          <!-- Text Logo -->
-          <div class="mb-6">
-            <a href="../../index.html">
-              <h3 class="text-xl font-semibold tracking-wide text-white">
-                Vijayanand Foundation
-              </h3>
-              <span class="block mt-1 h-0.5 w-16 bg-emerald-500"></span>
-            </a>
-          </div>
-
-          <h4 class="text-sm font-semibold text-white mb-3">
-            Head Office – Pune
-          </h4>
-
-          <p class="text-sm leading-relaxed">
-            Vijayanand Foundation, SSD Sai Luxuria<br>
-            Near Akshara International School,<br>
-            Vinode Corner, Bhumkar Chowk,<br>
-            Wakad, Pune – 411057.
-          </p>
-        </div>
-
-        <!-- Sub Branch -->
-        <div>
-          <h4 class="text-sm font-semibold text-white mb-6">
-            Sub Branch – Chiplun
-          </h4>
-
-          <p class="text-sm leading-relaxed">
-            Vijayanand Foundation,<br>
-            Khandat Pali, Tal. Chiplun,<br>
-            Dist. Ratnagiri,<br>
-            Maharashtra, India – 415605.
-          </p>
-        </div>
-
-        <!-- Quick Links -->
-        <div>
-          <h4 class="text-sm font-semibold text-white mb-6">
-            Quick Links
-          </h4>
-
-          <ul class="space-y-3 text-sm">
-            <li>
-              <a href="contact.html" class="hover:text-white transition">
-                Contact Us
-              </a>
-            </li>
-            <li>
-              <a href="therapy-services.html" class="hover:text-white transition">
-                Therapy Services
-              </a>
-            </li>
-            <li>
-              <a href="pace.html" class="hover:text-white transition">
-                PACE Institute
-              </a>
-            </li>
-            <li>
-              <a href="online-counselling.html" class="hover:text-white transition">
-                Online Counselling
-              </a>
-            </li>
-            <li>
-              <a href="blog.html" class="hover:text-white transition">
-                Blog
-              </a>
-            </li>
-            <li>
-              <a href="about.html" class="hover:text-white transition">
-                About Us
-              </a>
-            </li>
-            <li>
-              <a href="gallery.html" class="hover:text-white transition">
-                Gallery
-              </a>
-            </li>
-          </ul>
-        </div>
-
-      </div>
-
-      <!-- Divider -->
-      <div class="my-10 border-t border-white/10"></div>
-
-      <!-- Bottom Bar -->
-      <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
-
-        <!-- Copyright -->
-        <p class="text-xs text-slate-400">
-          © 2026 Vijayanand Foundation. All rights reserved.
-        </p>
-
-        <!-- Contact Icons -->
-        <div class="flex items-center gap-4">
-
-          <a href="https://wa.me/919922156948" target="_blank"
-            class="h-10 w-10 rounded-full bg-green-500 flex items-center justify-center hover:scale-105 transition">
-            <i class='bx bxl-whatsapp text-white text-xl'></i>
-          </a>
-
-          <a href="tel:+919922156948"
-            class="h-10 w-10 rounded-full bg-slate-700 flex items-center justify-center hover:bg-slate-600 transition">
-            <i class='bx bx-phone text-white text-lg'></i>
-          </a>
-
-          <a href="mailto:vijayanandtrust@gmail.com"
-            class="h-10 w-10 rounded-full bg-indigo-600 flex items-center justify-center hover:bg-indigo-500 transition">
-            <i class='bx bx-envelope text-white text-lg'></i>
-          </a>
-
-        </div>
-
-      </div>
-
-    </div>
-  </footer>
-
-
-  <script>
-    const menuBtn = document.getElementById('menuBtn');
-    const closeBtn = document.getElementById('closeBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-
-    menuBtn.onclick = () => mobileMenu.classList.remove('-translate-x-full');
-    closeBtn.onclick = () => mobileMenu.classList.add('-translate-x-full');
-  </script>
-
-  <script>
-    const mobileExploreBtn = document.getElementById('mobileExploreBtn')
-    const mobileExploreMenu = document.getElementById('mobileExploreMenu')
-    const mobileExploreIcon = document.getElementById('mobileExploreIcon')
-
-    mobileExploreBtn.addEventListener('click', () => {
-      mobileExploreMenu.classList.toggle('hidden')
-      mobileExploreIcon.classList.toggle('bx-chevron-down')
-      mobileExploreIcon.classList.toggle('bx-chevron-up')
-    })
-  </script>
+  <div id="vf-footer"></div>
+  
 
 </body>
 

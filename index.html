@@ -12,7 +12,6 @@
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 
   <!-- CSS styles -->
-  <link rel="stylesheet" href="app/style/index-page.css">
 
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -162,135 +161,19 @@ background: rgba(70, 207, 171, 0.55);
 
   </style>
 
+  <link rel="stylesheet" href="app/style/site-shell.css">
+  <script src="app/js/site-shell.js" defer></script>
 </head>
 
 <body class="font-body bg-white text-black">
 
-<!-- ================= NAVBAR ================= -->
-<header id="siteHeader" class="fixed inset-x-0 top-0 z-40 w-full">
-  <nav class="max-w-7xl mx-auto px-4 sm:px-6 pt-4">
-    <div class="nav-panel rounded-2xl px-4 sm:px-5 lg:px-6 py-3">
-      <div class="grid grid-cols-[minmax(0,1fr)_auto] xl:grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-3 lg:gap-5">
-        <!-- Logo -->
-        <a href="index.html" class="leading-tight text-white nav-text min-w-0">
-          <div class="font-body text-lg sm:text-xl tracking-tight truncate">
-            Vijayanand Foundation
-          </div>
-        </a>
-
-        <!-- Desktop Links -->
-        <div class="hidden xl:flex justify-center min-w-0">
-          <ul class="flex items-center justify-center gap-7 text-sm font-medium text-white nav-text">
-            <li><a href="app/pages/about.html" class="nav-link whitespace-nowrap">About Us</a></li>
-            <li><a href="app/pages/therapy-services.html" class="nav-link whitespace-nowrap">Therapy Services</a></li>
-            <li><a href="app/pages/pace.html" class="nav-link whitespace-nowrap">PACE</a></li>
-            <li><a href="app/pages/online-counselling.html" class="nav-link whitespace-nowrap">Online Counselling</a></li>
-            <li><a href="app/pages/blog.html" class="nav-link whitespace-nowrap">Blog</a></li>
-            <li><a href="app/pages/gallery.html" class="nav-link whitespace-nowrap">Gallery</a></li>
-            <li class="relative group">
-              <button type="button" class="nav-link inline-flex items-center gap-1 whitespace-nowrap">
-                More
-                <i class="bx bx-chevron-down text-sm"></i>
-              </button>
-              <div class="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-52 rounded-xl bg-white shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                <a href="app/pages/tujh.html" class="block px-5 py-3 text-sm text-slate-800 hover:bg-slate-50 rounded-t-xl">तुझी माझी रेशिम गाठ</a>
-                <a href="app/pages/contact.html" class="block px-5 py-3 text-sm text-slate-800 hover:bg-slate-50 rounded-b-xl">Contact Us</a>
-              </div>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Actions -->
-        <div class="flex items-center justify-end gap-2 sm:gap-3 lg:gap-4">
-          <div
-            id="google_translate_element"
-            class="hidden xl:flex"
-            aria-label="Translate this page"
-          ></div>
-          <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLSduZvdT-8Z2eVdeYlC0H6MZrP2fkWuLoJZIjqftMcEGpTzNZw/viewform"
-            target="_blank"
-            class="nav-cta hidden lg:inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-white text-white hover:bg-white hover:text-black transition whitespace-nowrap"
-          >
-            <span class="h-8 w-8 rounded-full bg-white text-black flex items-center justify-center flex-shrink-0">
-              <i class="bx bx-right-arrow-alt text-lg"></i>
-            </span>
-            <span class="text-sm font-medium">Admission</span>
-          </a>
-          <button id="menuBtn" type="button" class="xl:hidden text-2xl text-white nav-text leading-none">
-            <i class="bx bx-menu"></i>
-          </button>
-        </div>
-      </div>
-    </div>
-  </nav>
-</header>
-
-<script type="text/javascript">
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'en,hi,mr', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
-}
-</script>
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-<!-- ================= MOBILE SIDEBAR ================= -->
-<div id="mobileMenu"
-  class="fixed inset-y-0 left-0 w-80 bg-white z-50 transform -translate-x-full transition-transform duration-300 xl:hidden shadow-2xl">
-
-  <!-- Header -->
-  <div class="p-6 border-b border-gray-200 flex justify-between items-start">
-    <div>
-      <div class="font-body text-2xl text-primaryDark">Vijayanand Foundation</div>
-    </div>
-    <button id="closeBtn" class="text-2xl text-black">
-      <i class="bx bx-x"></i>
-    </button>
-  </div>
-
-  <!-- Nav -->
-  <nav class="p-6 space-y-5 text-base font-medium text-slate-800">
-    <a href="app/pages/about.html" class="block hover:text-emerald-700 transition">About Us</a>
-    <a href="app/pages/therapy-services.html" class="block hover:text-emerald-700 transition">Therapy Services</a>
-    <a href="app/pages/pace.html" class="block hover:text-emerald-700 transition">PACE</a>
-    <a href="app/pages/online-counselling.html" class="block hover:text-emerald-700 transition">Online Counselling</a>
-    <a href="app/pages/blog.html" class="block hover:text-emerald-700 transition">Blog</a>
-    <a href="app/pages/gallery.html" class="block hover:text-emerald-700 transition">Gallery</a>
-
-    <!-- Mobile More Dropdown -->
-    <div class="pt-1">
-      <button id="mobileExploreBtn" type="button" class="w-full flex items-center justify-between hover:text-emerald-700 transition">
-        <span>More</span>
-        <i id="mobileExploreIcon" class="bx bx-chevron-down text-xl"></i>
-      </button>
-
-      <div id="mobileExploreMenu" class="mt-3 ml-4 space-y-3 hidden text-[15px] text-slate-700">
-        <a href="app/pages/tujh.html" class="block hover:text-emerald-700 transition">तुझी माझी रेशिम गाठ</a>
-        <a href="app/pages/contact.html" class="block hover:text-emerald-700 transition">Contact Us</a>
-      </div>
-    </div>
-
-    <div class="pt-4 border-t border-gray-200"></div>
-
-    <a
-      href="https://docs.google.com/forms/d/e/1FAIpQLSduZvdT-8Z2eVdeYlC0H6MZrP2fkWuLoJZIjqftMcEGpTzNZw/viewform"
-      target="_blank"
-      class="inline-flex items-center justify-between gap-3 px-5 py-2.5 rounded-full border border-primaryDark hover:bg-primaryDark hover:text-white transition w-full"
-    >
-      <span>Admission</span>
-      <span class="h-9 w-9 flex items-center justify-center rounded-full bg-teal-500 text-white">
-        <i class="bx bx-right-arrow-alt text-lg"></i>
-      </span>
-    </a>
-  </nav>
-</div>
-
-
+<div id="vf-header"></div>
 
 <!-- ================= HERO ================= -->
 <section class="relative min-h-screen flex items-center overflow-hidden text-white">
 
   <!-- Background Video -->
-  <video class="absolute inset-0 w-full h-full object-cover" autoplay muted loop playsinline>
+  <video class="absolute inset-0 w-full h-full object-cover" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
     <source src="src/videos/hero-video-bg.mp4" type="video/mp4">
   </video>
 
@@ -343,6 +226,69 @@ function googleTranslateElementInit() {
       <i class="bx bx-user-plus"></i>
       <span>Membership Form</span>
     </a>
+  </div>
+</section>
+
+<!-- ================= HOME VIDEOS ================= -->
+<section class="vf-home-videos" aria-labelledby="homeVideosHeading">
+  <div class="vf-home-videos-inner">
+    <div class="vf-home-videos-head">
+      <div>
+        <span class="vf-home-videos-kicker">Watch our work</span>
+        <h2 id="homeVideosHeading">Moments from the foundation</h2>
+        <p>See counselling, therapy, and community programmes in action. Choose a highlight, then press play.</p>
+      </div>
+      <a class="vf-home-videos-link" href="app/pages/gallery.html">
+        Open full gallery
+        <i class="bx bx-right-arrow-alt" aria-hidden="true"></i>
+      </a>
+    </div>
+
+    <div class="vf-video-stage">
+      <div class="vf-video-main">
+        <video id="vfHomeVideo" controls playsinline preload="metadata" aria-label="Foundation video highlight">
+          <source src="src/videos/1.mp4" type="video/mp4">
+          Your browser does not support embedded video.
+        </video>
+        <div class="vf-video-caption">
+          <div>
+            <strong id="vfHomeVideoTitle">Foundation Highlight 01</strong>
+            <span id="vfHomeVideoMeta">Programme film · click play to watch</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="vf-video-thumbs" role="tablist" aria-label="Choose a foundation video">
+        <button type="button" class="vf-video-thumb is-active" data-vf-video="src/videos/1.mp4" data-title="Foundation Highlight 01" data-meta="Programme film · click play to watch" aria-pressed="true">
+          <span class="vf-video-thumb-index" aria-hidden="true"><i class="bx bx-play"></i></span>
+          <span>
+            <small>Clip 01</small>
+            <strong>Highlight 01</strong>
+          </span>
+        </button>
+        <button type="button" class="vf-video-thumb" data-vf-video="src/videos/2.mp4" data-title="Foundation Highlight 02" data-meta="Programme film · click play to watch" aria-pressed="false">
+          <span class="vf-video-thumb-index" aria-hidden="true"><i class="bx bx-play"></i></span>
+          <span>
+            <small>Clip 02</small>
+            <strong>Highlight 02</strong>
+          </span>
+        </button>
+        <button type="button" class="vf-video-thumb" data-vf-video="src/videos/3.mp4" data-title="Foundation Highlight 03" data-meta="Programme film · click play to watch" aria-pressed="false">
+          <span class="vf-video-thumb-index" aria-hidden="true"><i class="bx bx-play"></i></span>
+          <span>
+            <small>Clip 03</small>
+            <strong>Highlight 03</strong>
+          </span>
+        </button>
+        <button type="button" class="vf-video-thumb" data-vf-video="src/videos/4.mp4" data-title="Foundation Highlight 04" data-meta="Programme film · click play to watch" aria-pressed="false">
+          <span class="vf-video-thumb-index" aria-hidden="true"><i class="bx bx-play"></i></span>
+          <span>
+            <small>Clip 04</small>
+            <strong>Highlight 04</strong>
+          </span>
+        </button>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -621,29 +567,41 @@ function googleTranslateElementInit() {
 <section class="py-24 bg-gradient-to-br from-sky-50 to-indigo-50">
   <div class="max-w-7xl mx-auto px-6">
     
-    <div class="max-w-4xl mx-auto text-center mb-12">
-      <span class="text-sm font-semibold tracking-wide text-sky-600 uppercase">
-        Our Specialized Centre
-      </span>
-      <h2 class="mt-4 text-3xl sm:text-4xl font-semibold text-slate-900 leading-tight">
-        Vijayanand Child Counseling and Therapy Centre
-      </h2>
-      <p class="mt-6 text-lg text-slate-600 leading-relaxed">
-        Empowering lives, one step at a time. Come see the difference compassionate care can make at Vijayanand Child Counseling and Therapy Centre.
-      </p>
-    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-10 lg:gap-14 items-center">
+      <div class="overflow-hidden rounded-2xl border border-orange-200 bg-white shadow-xl">
+        <img
+          src="src/images/speech-therapy-services.jpg"
+          alt="Speech therapy services at Vijayanand Therapy Centre Pune"
+          class="w-full h-auto"
+          loading="lazy"
+          width="1024"
+          height="682"
+        >
+      </div>
 
-    <div class="max-w-3xl mx-auto text-center">
-      <a href="https://vijayanandcenter.odoo.com/" target="_blank"
-         class="inline-flex items-center gap-4 px-8 py-4 rounded-full bg-sky-600 text-white font-medium hover:bg-sky-700 transition shadow-lg">
-         <i class="bx bx-link-external text-xl"></i>
-        <span>Visit Our Centre Website</span>
-      </a>
-      <p class="mt-4 text-sm text-slate-500">
-        <a href="https://vijayanandcenter.odoo.com/" target="_blank" class="text-sky-600 hover:underline">
-          https://vijayanandcenter.odoo.com/
-        </a>
-      </p>
+      <div>
+        <span class="text-sm font-semibold tracking-wide text-sky-600 uppercase">
+          Our Specialized Centre
+        </span>
+        <h2 class="mt-4 text-3xl sm:text-4xl font-semibold text-slate-900 leading-tight">
+          Vijayanand Child Counseling and Therapy Centre
+        </h2>
+        <p class="mt-6 text-lg text-slate-600 leading-relaxed">
+          Empowering lives, one step at a time. Come see the difference compassionate care can make at Vijayanand Child Counseling and Therapy Centre.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="app/pages/therapy-services.html"
+             class="inline-flex items-center gap-3 px-7 py-3.5 rounded-full bg-slate-900 text-white font-medium hover:bg-slate-800 transition shadow-lg">
+            <span>Explore Therapy Services</span>
+            <i class="bx bx-right-arrow-alt text-lg" aria-hidden="true"></i>
+          </a>
+          <a href="https://vijayanandcenter.odoo.com/" target="_blank" rel="noopener noreferrer"
+             class="inline-flex items-center gap-3 px-7 py-3.5 rounded-full border border-slate-300 bg-white text-slate-900 font-medium hover:bg-slate-50 transition">
+            <i class="bx bx-link-external text-lg" aria-hidden="true"></i>
+            <span>Centre Website</span>
+          </a>
+        </div>
+      </div>
     </div>
 
   </div>
@@ -674,164 +632,18 @@ function googleTranslateElementInit() {
 </section>
 
 
-<!-- ================= FOOTER ================= -->
-<footer class="bg-slate-900 text-slate-300">
-  <div class="max-w-7xl mx-auto px-6 py-16">
-
-    <!-- Top Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-
-      <!-- Brand & Head Office -->
-      <div>
-        <!-- Text Logo -->
-        <div class="mb-6">
-          <a href="index.html">
-            <h3 class="text-xl font-semibold tracking-wide text-white">
-              Vijayanand Foundation
-            </h3>
-            <span class="block mt-1 h-0.5 w-16 bg-emerald-500"></span>
-          </a>
-        </div>
-
-        <h4 class="text-sm font-semibold text-white mb-3">
-          Head Office – Pune
-        </h4>
-
-        <p class="text-sm leading-relaxed">
-          Vijayanand Foundation, SSD Sai Luxuria<br>
-          Near Akshara International School,<br>
-          Vinode Corner, Bhumkar Chowk,<br>
-          Wakad, Pune – 411057.
-        </p>
-      </div>
-
-      <!-- Sub Branch -->
-      <div>
-        <h4 class="text-sm font-semibold text-white mb-6">
-          Sub Branch – Chiplun
-        </h4>
-
-        <p class="text-sm leading-relaxed">
-          Vijayanand Foundation,<br>
-          Khandat Pali, Tal. Chiplun,<br>
-          Dist. Ratnagiri,<br>
-          Maharashtra, India – 415605.
-        </p>
-      </div>
-
-      <!-- Contact Details -->
-      <div>
-        <h4 class="text-sm font-semibold text-white mb-6">
-          Contact Details
-        </h4>
-
-        <div class="space-y-4 text-sm">
-          <div class="flex items-start gap-3">
-            <i class="bx bx-phone text-emerald-400 text-lg mt-0.5"></i>
-            <div>
-              <p class="text-slate-300 mb-1">Phone Numbers</p>
-              <a href="tel:+919922156948" class="text-white hover:text-emerald-400 transition block">+91 9922156948</a>
-              <a href="tel:+918598262885" class="text-white hover:text-emerald-400 transition block">+91 8598262885</a>
-            </div>
-          </div>
-          
-          <div class="flex items-start gap-3">
-            <i class="bx bx-envelope text-emerald-400 text-lg mt-0.5"></i>
-            <div>
-              <p class="text-slate-300 mb-1">Email</p>
-              <a href="mailto:vijayanandtrust@gmail.com" class="text-white hover:text-emerald-400 transition break-all">vijayanandtrust@gmail.com</a>
-            </div>
-          </div>
-
-          <div class="flex items-start gap-3">
-            <i class="bx bx-map text-emerald-400 text-lg mt-0.5"></i>
-            <div>
-              <p class="text-slate-300 mb-1">Quick Links</p>
-              <a href="app/pages/contact.html" class="text-white hover:text-emerald-400 transition block">Contact Us</a>
-              <a href="app/pages/about.html" class="text-white hover:text-emerald-400 transition block">About Us</a>
-              <a href="app/pages/therapy-services.html" class="text-white hover:text-emerald-400 transition block">Therapy Services</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Divider -->
-    <div class="my-10 border-t border-white/10"></div>
-
-    <!-- Bottom Bar -->
-    <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
-
-      <!-- Copyright -->
-      <p class="text-xs text-slate-400">
-        © 2026 Vijayanand Foundation. All rights reserved.
-      </p>
-
-      <!-- Contact Icons -->
-      <div class="flex items-center gap-4">
-
-        <a href="https://wa.me/919922156948" target="_blank"
-           class="h-10 w-10 rounded-full bg-green-500 flex items-center justify-center hover:scale-105 transition">
-          <i class="bx bxl-whatsapp text-white text-xl"></i>
-        </a>
-
-        <a href="tel:+919922156948"
-           class="h-10 w-10 rounded-full bg-slate-700 flex items-center justify-center hover:bg-slate-600 transition">
-          <i class="bx bx-phone text-white text-lg"></i>
-        </a>
-
-        <a href="mailto:vijayanandtrust@gmail.com"
-           class="h-10 w-10 rounded-full bg-indigo-600 flex items-center justify-center hover:bg-indigo-500 transition">
-          <i class="bx bx-envelope text-white text-lg"></i>
-        </a>
-
-      </div>
-
-    </div>
-
-  </div>
-</footer>
+<div id="vf-footer"></div>
 
 
 
 <!-- sidebar -->
-<script>
-  const menuBtn = document.getElementById('menuBtn');
-  const closeBtn = document.getElementById('closeBtn');
-  const mobileMenu = document.getElementById('mobileMenu');
 
-  menuBtn.onclick = () => mobileMenu.classList.remove('-translate-x-full');
-  closeBtn.onclick = () => mobileMenu.classList.add('-translate-x-full');
-</script>
 
 <!-- header -->
-<script>
-  const header = document.getElementById('siteHeader');
 
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 80) {
-      header.classList.add('nav-scrolled');
-    } else {
-      header.classList.remove('nav-scrolled');
-    }
-  });
-</script>
 
 <!-- mobile explore dropdown -->
-<script>
-  const mobileExploreBtn = document.getElementById('mobileExploreBtn');
-  const mobileExploreMenu = document.getElementById('mobileExploreMenu');
-  const mobileExploreIcon = document.getElementById('mobileExploreIcon');
 
-  if (mobileExploreBtn) {
-    mobileExploreBtn.addEventListener('click', () => {
-      mobileExploreMenu.classList.toggle('hidden');
-      mobileExploreIcon.classList.toggle('bx-chevron-down');
-      mobileExploreIcon.classList.toggle('bx-chevron-up');
-    });
-  }
-</script>
 
 <!-- ================= FLOATING BUTTONS ================= -->
 <!-- Floating WhatsApp Button -->
