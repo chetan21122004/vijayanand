@@ -6,7 +6,13 @@
   --vf-brand-dark: #663200;
   --vf-gold: #ffd400;
   --vf-cream: #fff7ed;
-  --vf-footer: #2a1303;
+  --vf-page: #fffaf5;
+  --vf-footer: #fff7ed;
+}
+
+html,
+body {
+  background: var(--vf-page);
 }
 
 /* Logo-derived accent layer for the existing Tailwind page sections. */
@@ -32,7 +38,7 @@
 .text-indigo-400,
 .text-amber-300,
 .text-amber-400 {
-  color: var(--vf-gold) !important;
+  color: #c2410c !important;
 }
 
 .bg-emerald-50,
@@ -458,7 +464,8 @@ body.vf-menu-open {
   position: relative;
   overflow: hidden;
   background: var(--vf-footer);
-  color: #ead9cd;
+  border-top: 1px solid var(--vf-line);
+  color: var(--vf-muted);
   font-family: "Lexend", system-ui, sans-serif;
 }
 
@@ -466,8 +473,8 @@ body.vf-menu-open {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 8% 0%, rgba(255, 102, 52, 0.22), transparent 29%),
-    radial-gradient(circle at 92% 100%, rgba(255, 212, 0, 0.1), transparent 28%);
+    radial-gradient(circle at 8% 0%, rgba(255, 102, 52, 0.1), transparent 29%),
+    radial-gradient(circle at 92% 100%, rgba(255, 212, 0, 0.12), transparent 28%);
   content: "";
   pointer-events: none;
 }
@@ -490,7 +497,7 @@ body.vf-menu-open {
   align-items: center;
   gap: 12px;
   margin-bottom: 18px;
-  color: #fff;
+  color: var(--vf-ink);
   text-decoration: none;
 }
 
@@ -508,21 +515,21 @@ body.vf-menu-open {
 .vf-footer-brand small {
   display: block;
   margin-top: 3px;
-  color: #bca89a;
+  color: var(--vf-muted);
   font-size: 0.68rem;
 }
 
 .vf-footer-intro {
   max-width: 340px;
   margin: 0;
-  color: #bca89a;
+  color: var(--vf-muted);
   font-size: 0.83rem;
   line-height: 1.75;
 }
 
 .vf-footer-title {
   margin: 4px 0 20px;
-  color: #fff;
+  color: var(--vf-ink);
   font-size: 0.78rem;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -541,7 +548,7 @@ body.vf-menu-open {
 
 .vf-footer-address {
   margin: 0;
-  color: #bca89a;
+  color: var(--vf-muted);
   font-size: 0.8rem;
   font-style: normal;
   line-height: 1.75;
@@ -558,7 +565,7 @@ body.vf-menu-open {
 
 .vf-footer-links a,
 .vf-footer-contact a {
-  color: #ead9cd;
+  color: var(--vf-ink);
   font-size: 0.8rem;
   text-decoration: none;
   transition: color 180ms ease;
@@ -566,7 +573,7 @@ body.vf-menu-open {
 
 .vf-footer-links a:hover,
 .vf-footer-contact a:hover {
-  color: var(--vf-gold);
+  color: var(--vf-brand);
 }
 
 .vf-footer-contact li {
@@ -589,12 +596,12 @@ body.vf-menu-open {
   gap: 24px;
   margin-top: 52px;
   padding-top: 22px;
-  border-top: 1px solid rgba(255, 255, 255, 0.13);
+  border-top: 1px solid var(--vf-line);
 }
 
 .vf-footer-bottom p {
   margin: 0;
-  color: #9f8879;
+  color: var(--vf-muted);
   font-size: 0.72rem;
 }
 
@@ -608,18 +615,19 @@ body.vf-menu-open {
   width: 38px;
   height: 38px;
   place-items: center;
-  border: 1px solid rgba(255, 255, 255, 0.16);
+  border: 1px solid var(--vf-line);
   border-radius: 11px;
-  background: rgba(255, 255, 255, 0.05);
-  color: #fff;
+  background: #fff;
+  color: var(--vf-ink);
   font-size: 1.08rem;
   text-decoration: none;
-  transition: background-color 180ms ease, border-color 180ms ease;
+  transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease;
 }
 
 .vf-socials a:hover {
-  border-color: rgba(255, 212, 0, 0.5);
-  background: rgba(255, 102, 52, 0.3);
+  border-color: rgba(255, 102, 52, 0.45);
+  background: #fff;
+  color: var(--vf-brand);
 }
 
 .vf-site-header a:focus-visible,
@@ -709,9 +717,9 @@ body.vf-menu-open {
 
 .vf-home-videos {
   background:
-    radial-gradient(circle at 12% 0%, rgba(255, 102, 52, 0.16), transparent 32%),
-    linear-gradient(180deg, #2a1303 0%, #1a0c02 100%);
-  color: #fff7ed;
+    radial-gradient(circle at 12% 0%, rgba(255, 102, 52, 0.12), transparent 32%),
+    linear-gradient(180deg, #fffaf5 0%, #fff7ed 100%);
+  color: var(--vf-ink);
   padding: 88px 0;
 }
 
@@ -737,15 +745,15 @@ body.vf-menu-open {
 }
 
 .vf-home-videos-head p {
-  max-width: 520px;
+  max-width: 540px;
   margin: 12px 0 0;
-  color: #ead9cd;
+  color: var(--vf-muted);
   font-size: 1rem;
   line-height: 1.7;
 }
 
 .vf-home-videos-kicker {
-  color: var(--vf-gold);
+  color: var(--vf-brand);
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -756,7 +764,7 @@ body.vf-menu-open {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: #fff;
+  color: var(--vf-brand-dark);
   font-size: 0.9rem;
   font-weight: 600;
   text-decoration: none;
@@ -764,7 +772,7 @@ body.vf-menu-open {
 }
 
 .vf-home-videos-link:hover {
-  color: var(--vf-gold);
+  color: var(--vf-brand);
 }
 
 .vf-video-stage {
@@ -775,10 +783,10 @@ body.vf-menu-open {
 
 .vf-video-main {
   overflow: hidden;
-  border: 1px solid rgba(255, 102, 52, 0.28);
+  border: 1px solid var(--vf-line);
   border-radius: 24px;
-  background: #000;
-  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.35);
+  background: #fff;
+  box-shadow: 0 18px 40px rgba(102, 50, 0, 0.08);
 }
 
 .vf-video-main video {
@@ -786,7 +794,7 @@ body.vf-menu-open {
   width: 100%;
   aspect-ratio: 16 / 9;
   object-fit: contain;
-  background: #000;
+  background: #f4ece4;
 }
 
 .vf-video-caption {
@@ -795,8 +803,8 @@ body.vf-menu-open {
   justify-content: space-between;
   gap: 12px;
   padding: 16px 20px 18px;
-  background: rgba(255, 255, 255, 0.04);
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: #fff;
+  border-top: 1px solid var(--vf-line);
 }
 
 .vf-video-caption strong {
@@ -805,7 +813,7 @@ body.vf-menu-open {
 }
 
 .vf-video-caption span {
-  color: #bca89a;
+  color: var(--vf-muted);
   font-size: 0.78rem;
 }
 
@@ -822,9 +830,9 @@ body.vf-menu-open {
   width: 100%;
   min-height: 84px;
   padding: 12px 14px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--vf-line);
   border-radius: 16px;
-  background: rgba(255, 255, 255, 0.04);
+  background: #fff;
   color: inherit;
   text-align: left;
   cursor: pointer;
@@ -833,8 +841,8 @@ body.vf-menu-open {
 
 .vf-video-thumb:hover,
 .vf-video-thumb.is-active {
-  border-color: rgba(255, 102, 52, 0.55);
-  background: rgba(255, 102, 52, 0.14);
+  border-color: rgba(255, 102, 52, 0.45);
+  background: var(--vf-cream);
 }
 
 .vf-video-thumb-index {
@@ -850,7 +858,7 @@ body.vf-menu-open {
 
 .vf-video-thumb small {
   display: block;
-  color: #bca89a;
+  color: var(--vf-muted);
   font-size: 0.72rem;
 }
 

@@ -21,7 +21,7 @@
 
   const themeColor = document.querySelector('meta[name="theme-color"]') || document.createElement("meta");
   themeColor.name = "theme-color";
-  themeColor.content = "#663200";
+  themeColor.content = "#fff7ed";
   if (!themeColor.parentNode) document.head.appendChild(themeColor);
 
   const navItems = [
@@ -251,7 +251,7 @@
       thumb.classList.toggle("is-active", active);
       thumb.setAttribute("aria-pressed", String(active));
     });
-    if (homeVideoTitle) homeVideoTitle.textContent = button.getAttribute("data-title") || "Foundation highlight";
+    if (homeVideoTitle) homeVideoTitle.textContent = button.getAttribute("data-title") || "Autism Awareness";
     if (homeVideoMeta) homeVideoMeta.textContent = button.getAttribute("data-meta") || "";
   };
 
