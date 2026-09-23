@@ -145,7 +145,7 @@
             <div>
               <h2 class="vf-footer-title">Contact</h2>
               <ul class="vf-footer-contact">
-                <li><i class="bx bx-phone" aria-hidden="true"></i><span><a href="tel:+919922156948">+91 99221 56948</a><br><a href="tel:+918598262885">+91 85982 62885</a></span></li>
+                <li><i class="bx bx-phone" aria-hidden="true"></i><span><a href="tel:+918459826288">+91 84598 26288</a></span></li>
                 <li><i class="bx bx-envelope" aria-hidden="true"></i><a href="mailto:vijayanandtrust@gmail.com">vijayanandtrust@gmail.com</a></li>
                 <li><i class="bx bx-map" aria-hidden="true"></i><a href="${pageHref("contact.html")}">View locations and contact details</a></li>
                 <li><i class="bx bxs-star" aria-hidden="true"></i><a href="${googleReviewHref}" target="_blank" rel="noopener noreferrer">Review us on Google</a></li>
@@ -155,9 +155,9 @@
           <div class="vf-footer-bottom">
             <p>© 2026 Vijayanand Foundation. All rights reserved.</p>
             <div class="vf-socials" aria-label="Contact links">
-              <a href="https://wa.me/919922156948" target="_blank" rel="noopener noreferrer" aria-label="Contact us on WhatsApp"><i class="bx bxl-whatsapp" aria-hidden="true"></i></a>
+              <a href="https://wa.me/918459826288" target="_blank" rel="noopener noreferrer" aria-label="Contact us on WhatsApp"><i class="bx bxl-whatsapp" aria-hidden="true"></i></a>
               <a href="${googleReviewHref}" target="_blank" rel="noopener noreferrer" aria-label="Review Vijayanand Foundation on Google"><i class="bx bxl-google" aria-hidden="true"></i></a>
-              <a href="tel:+919922156948" aria-label="Call Vijayanand Foundation"><i class="bx bx-phone" aria-hidden="true"></i></a>
+              <a href="tel:+918459826288" aria-label="Call Vijayanand Foundation"><i class="bx bx-phone" aria-hidden="true"></i></a>
               <a href="mailto:vijayanandtrust@gmail.com" aria-label="Email Vijayanand Foundation"><i class="bx bx-envelope" aria-hidden="true"></i></a>
             </div>
           </div>
